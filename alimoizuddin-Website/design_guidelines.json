@@ -1,0 +1,121 @@
+{
+  "theme": "dark",
+  "archetype": "Archetype 5 (Jewel & Luxury) + Editorial",
+  "colors": {
+    "background": {
+      "primary": "#0D0D0D",
+      "secondary": "#111116",
+      "mesh_navy": "rgba(31, 71, 136, 0.15)",
+      "mesh_gold": "rgba(201, 168, 76, 0.05)"
+    },
+    "text": {
+      "primary": "#F5F0E8",
+      "muted": "#888880",
+      "accent": "#C9A84C",
+      "inverse": "#0D0D0D"
+    },
+    "border": {
+      "gold_thin": "rgba(201, 168, 76, 0.3)",
+      "gold_solid": "#C9A84C",
+      "subtle": "rgba(136, 136, 128, 0.15)"
+    },
+    "accent": {
+      "navy": "#1F4788",
+      "gold": "#C9A84C"
+    }
+  },
+  "typography": {
+    "fonts": {
+      "heading": "'Cormorant Garamond', serif",
+      "body": "'DM Sans', sans-serif",
+      "mono": "'JetBrains Mono', monospace"
+    },
+    "scales": {
+      "h1": "text-5xl sm:text-6xl lg:text-7xl font-light tracking-tighter leading-none",
+      "h2": "text-4xl sm:text-5xl lg:text-6xl font-light tracking-tight text-[#F5F0E8]",
+      "h3": "text-2xl sm:text-3xl font-light text-[#F5F0E8]",
+      "body": "text-base leading-relaxed text-[#888880]",
+      "body_large": "text-lg sm:text-xl leading-relaxed text-[#F5F0E8]",
+      "overline": "text-xs font-mono uppercase tracking-[0.2em] text-[#C9A84C]",
+      "quote": "text-3xl sm:text-4xl font-serif italic text-[#C9A84C] leading-snug"
+    }
+  },
+  "layout_and_spacing": {
+    "philosophy": "Generous whitespace, asymmetric grids, breathing room.",
+    "container": "max-w-7xl mx-auto px-6 md:px-12 lg:px-20",
+    "section_padding": "py-24 md:py-32 lg:py-40",
+    "grid": {
+      "bento_asymmetric": "grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12"
+    }
+  },
+  "textures_and_surfaces": {
+    "noise_overlay": "Fixed full-screen div with pointer-events-none, z-50, opacity-[0.03], mix-blend-overlay, SVG noise background.",
+    "mesh_gradient": "Hero background uses CSS radial-gradient circles in #1F4788 and #C9A84C with intense blur (blur-3xl), opacity ~15%, placed asymmetrically.",
+    "cards": "Flat bg-[#111116], 1px border border-[#888880]/15. No heavy drop shadows. Hover: border-[#C9A84C]/50 transition-colors duration-500.",
+    "dividers": "Horizontal rules: <hr className='border-t border-[#C9A84C]/30 my-12' />. Vertical rules used in timelines."
+  },
+  "motion_and_interactions": {
+    "scroll": "Lenis smooth scrolling mandatory for premium feel.",
+    "reveals": "Framer Motion: initial={opacity: 0, y: 30}, whileInView={opacity: 1, y: 0}, transition={duration: 0.8, ease: [0.16, 1, 0.3, 1]}. Stagger children.",
+    "hover": "Slow transitions (duration-500). Buttons fill with gold or navy. Text links get an underline expansion.",
+    "cursor_glow": "A subtle radial gradient following the mouse pointer, visible only on desktop, opacity-20."
+  },
+  "components": {
+    "nav": {
+      "style": "Sticky top-0 z-40 py-6 transition-all duration-300. Transparent at top, bg-[#0D0D0D]/90 backdrop-blur-md on scroll.",
+      "brand": "font-serif text-[#C9A84C] text-2xl tracking-widest",
+      "links": "Hidden on mobile. font-mono text-sm uppercase text-[#888880] hover:text-[#F5F0E8]",
+      "mobile_menu": "Full-screen overlay bg-[#0D0D0D], massive font-serif links."
+    },
+    "hero": {
+      "headline": "'I Build Systems That Think.' in H1 styling, text-[#F5F0E8].",
+      "buttons": {
+        "primary": "bg-[#C9A84C] text-[#0D0D0D] px-8 py-4 font-mono text-sm uppercase tracking-wider hover:bg-[#F5F0E8] transition-colors",
+        "secondary": "border border-[#C9A84C]/50 text-[#C9A84C] px-8 py-4 font-mono text-sm uppercase tracking-wider hover:border-[#C9A84C] hover:bg-[#C9A84C]/10 transition-colors"
+      },
+      "badge": "Top-right absolute or grid placed: minimal badge with gold border 'Certified AI Generalist'"
+    },
+    "about": {
+      "layout": "2-column asymmetric. Col 1 (span 5): Profile Photo with gold accent border. Col 2 (span 7): Pull-quote, bio paragraphs, 4 stat cards.",
+      "stat_cards": "Grid of 2 or 4. bg-[#111116], p-6, border-l-2 border-[#C9A84C]. Value: text-3xl font-serif text-[#F5F0E8]. Label: text-xs font-mono text-[#888880]."
+    },
+    "competencies": {
+      "chips": "Rounded-full border border-[#888880]/30 px-4 py-2 text-sm font-mono uppercase tracking-wider text-[#888880] hover:border-[#C9A84C] hover:text-[#C9A84C] cursor-pointer transition-colors"
+    },
+    "project_cards": {
+      "style": "Editorial large cards. bg-[#111116] border border-[#888880]/15 p-8 flex flex-col justify-end min-h-[400px].",
+      "image_treatment": "NO STOCK PHOTOS. Use pure CSS abstract geometric gradients inside the card or as a header block.",
+      "content": "Category tag (mono text-xs text-[#C9A84C]), Title (serif H3 text-[#F5F0E8]), Description (sans text-base text-[#888880])."
+    },
+    "gpt_ecosystem": {
+      "grid": "grid grid-cols-1 sm:grid-cols-2 gap-6",
+      "card": "Horizontal or stacked editorial layout. Vertical chip (rotated text) or small label area. Title & specs. Hover reveals subtle navy border/glow."
+    },
+    "timeline": {
+      "structure": "Left border absolute (border-l border-[#C9A84C]/30). Items have a gold dot relative to the border.",
+      "certifications": "Grid of minimal text-based cards. Gold accents."
+    },
+    "contact": {
+      "layout": "Three editorial cards (Freelance / Hiring / Collaboration) acting as buttons to mailto links with prefilled subjects."
+    }
+  },
+  "media": {
+    "profile_photo": "https://customer-assets.emergentagent.com/job_3e46ef77-ca74-4e8e-a719-ab3f22e4f199/artifacts/v3cmir8v_Profile%20Pic.jpg",
+    "rule_for_images": "Use the provided profile photo for the Identity/About section. For all other sections (Projects, Agents, etc.), USE ONLY CSS ABSTRACT GRADIENTS AND GEOMETRY. Do not use stock imagery or image placeholders."
+  },
+  "accessibility": {
+    "contrast_notes": "Navy (#1F4788) on Black (#0D0D0D) fails text contrast. Use Navy ONLY for background accents, subtle mesh gradients, and large structural elements. Use Warm White (#F5F0E8) and Gold (#C9A84C) for all readable text.",
+    "testing": "All interactive elements (links, buttons, filter chips, project cards) MUST use data-testid attributes (e.g., data-testid='hero-work-btn')."
+  },
+  "instructions_to_main_agent": [
+    "1. Initialize React app with Tailwind CSS.",
+    "2. Install required dependencies: `yarn add framer-motion @studio-freight/lenis lucide-react clsx tailwind-merge`.",
+    "3. Add Google Fonts (Cormorant Garamond, DM Sans, JetBrains Mono) to index.html or import in CSS.",
+    "4. Configure tailwind.config.js with the custom colors provided in this JSON.",
+    "5. Do NOT use Shadcn UI cards. Build custom HTML/Tailwind editorial layouts for all sections.",
+    "6. Apply a global SVG noise overlay in the App root.",
+    "7. Implement a custom cursor glow effect using framer-motion that tracks mouse position (desktop only).",
+    "8. Ensure every major section has an ID for the smooth scroll anchor links.",
+    "9. Strictly adhere to the typography scale: Display Serif for H1/H2, Mono for labels/tags, Clean Sans for paragraphs."
+  ]
+}

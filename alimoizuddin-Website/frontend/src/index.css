@@ -1,0 +1,319 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 5%;
+  --foreground: 36 33% 93%;
+  --card: 240 7% 9%;
+  --card-foreground: 36 33% 93%;
+  --popover: 240 7% 9%;
+  --popover-foreground: 36 33% 93%;
+  --primary: 44 53% 55%;
+  --primary-foreground: 0 0% 5%;
+  --secondary: 240 7% 11%;
+  --secondary-foreground: 36 33% 93%;
+  --muted: 60 4% 50%;
+  --muted-foreground: 60 4% 50%;
+  --accent: 44 53% 55%;
+  --accent-foreground: 0 0% 5%;
+  --destructive: 0 62% 30%;
+  --destructive-foreground: 36 33% 93%;
+  --border: 60 4% 30% / 0.2;
+  --input: 60 4% 30%;
+  --ring: 44 53% 55%;
+  --radius: 0.25rem;
+}
+
+* {
+  border-color: rgba(136, 136, 128, 0.15);
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #0d0d0d;
+  color: #f5f0e8;
+  font-family: "Geist", "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "ss01", "ss02", "cv11";
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Editorial display serif uses Fraunces optical-size + soft axis */
+.font-serif,
+[class*="font-serif"] {
+  font-family: "Fraunces", "Cormorant Garamond", Georgia, serif !important;
+  font-optical-sizing: auto;
+  font-variation-settings: "SOFT" 50, "opsz" 96;
+  letter-spacing: -0.005em;
+}
+
+::selection {
+  background: rgba(201, 168, 76, 0.35);
+  color: #f5f0e8;
+}
+
+/* Custom thin scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0d0d0d;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(201, 168, 76, 0.25);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(201, 168, 76, 0.5);
+}
+
+/* Grain / noise overlay */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 60;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.6 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+/* Editorial pull-quote */
+.pull-quote {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+/* Gold ribbon divider */
+.gold-divider {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(201, 168, 76, 0.6) 50%,
+    transparent 100%
+  );
+  width: 100%;
+}
+
+.gold-divider-left {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    rgba(201, 168, 76, 0.6) 0%,
+    rgba(201, 168, 76, 0.2) 60%,
+    transparent 100%
+  );
+}
+
+/* Subtle paper grain on dark cards */
+.card-grain {
+  background-color: #111116;
+  background-image:
+    radial-gradient(
+      circle at 20% 10%,
+      rgba(201, 168, 76, 0.04) 0%,
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 90% 90%,
+      rgba(31, 71, 136, 0.06) 0%,
+      transparent 50%
+    );
+}
+
+/* Mesh gradient hero */
+.hero-mesh {
+  background:
+    radial-gradient(
+      60rem 40rem at 12% 18%,
+      rgba(31, 71, 136, 0.35) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      55rem 38rem at 85% 70%,
+      rgba(201, 168, 76, 0.18) 0%,
+      transparent 65%
+    ),
+    radial-gradient(
+      40rem 30rem at 60% 110%,
+      rgba(31, 71, 136, 0.2) 0%,
+      transparent 65%
+    ),
+    #0d0d0d;
+}
+
+/* Cursor glow */
+.cursor-glow {
+  position: fixed;
+  width: 520px;
+  height: 520px;
+  border-radius: 9999px;
+  pointer-events: none;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle,
+    rgba(201, 168, 76, 0.12) 0%,
+    rgba(31, 71, 136, 0.05) 40%,
+    transparent 70%
+  );
+  transition: opacity 400ms ease;
+  filter: blur(20px);
+}
+
+@media (max-width: 768px) {
+  .cursor-glow {
+    display: none;
+  }
+}
+
+/* Underline animation for nav links */
+.link-underline {
+  position: relative;
+}
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 1px;
+  background: #c9a84c;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.link-underline:hover::after,
+.link-underline[data-active="true"]::after {
+  transform: scaleX(1);
+}
+
+/* Project card gradient placeholders */
+.card-abstract-1 {
+  background:
+    radial-gradient(
+      circle at 30% 30%,
+      rgba(201, 168, 76, 0.3),
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 70% 70%,
+      rgba(31, 71, 136, 0.45),
+      transparent 55%
+    ),
+    linear-gradient(135deg, #16161c 0%, #0d0d0d 100%);
+}
+.card-abstract-2 {
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(31, 71, 136, 0.4),
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 20% 80%,
+      rgba(201, 168, 76, 0.18),
+      transparent 50%
+    ),
+    linear-gradient(135deg, #0d0d0d 0%, #16161c 100%);
+}
+.card-abstract-3 {
+  background:
+    conic-gradient(
+      from 215deg at 50% 50%,
+      rgba(201, 168, 76, 0.18) 0deg,
+      rgba(31, 71, 136, 0.3) 90deg,
+      transparent 180deg,
+      rgba(201, 168, 76, 0.12) 270deg,
+      rgba(31, 71, 136, 0.25) 360deg
+    ),
+    #111116;
+}
+.card-abstract-4 {
+  background:
+    linear-gradient(120deg, rgba(31, 71, 136, 0.35), transparent 60%),
+    linear-gradient(300deg, rgba(201, 168, 76, 0.2), transparent 55%),
+    #111116;
+}
+.card-abstract-5 {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(201, 168, 76, 0.22), transparent 60%),
+    radial-gradient(circle at 50% 100%, rgba(31, 71, 136, 0.35), transparent 60%),
+    #111116;
+}
+
+/* tracker chip hover */
+.chip-glow:hover {
+  box-shadow: 0 0 0 1px rgba(201, 168, 76, 0.45), 0 8px 30px -10px rgba(201, 168, 76, 0.25);
+}
+
+/* Vertical rotated text for agent vertical chip */
+.vchip {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+}
+
+/* tiny micro-shimmer for the achievement badge */
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(201, 168, 76, 0.1) 0%,
+    rgba(201, 168, 76, 0.35) 50%,
+    rgba(201, 168, 76, 0.1) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 4.5s linear infinite;
+}
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Marquee */
+@keyframes marquee-slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee-track {
+  animation: marquee-slide 55s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* Status pulse */
+@keyframes status-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(80, 200, 120, 0.5); }
+  50% { box-shadow: 0 0 0 8px rgba(80, 200, 120, 0); }
+}
+.status-dot {
+  animation: status-pulse 2.4s ease-in-out infinite;
+}
+
+[data-debug-wrapper="true"] {
+  display: contents !important;
+}
