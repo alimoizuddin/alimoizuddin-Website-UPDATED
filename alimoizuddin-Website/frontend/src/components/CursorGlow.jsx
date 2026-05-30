@@ -1,32 +1,38 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
-// Subtle cursor-following radial glow (desktop only)
+// Cursor glow — uses RAF throttling to avoid layout thrashing on every mousemove
 export default function CursorGlow() {
-  const [pos, setPos] = useState({ x: -1000, y: -1000 });
   const [visible, setVisible] = useState(false);
+  const ref = useRef(null);
+  const rafRef = useRef(null);
 
   useEffect(() => {
     const onMove = (e) => {
-      setPos({ x: e.clientX, y: e.clientY });
-      setVisible(true);
+      if (rafRef.current) return; // skip if RAF already pending
+      rafRef.current = requestAnimationFrame(() => {
+        if (ref.current) {
+          ref.current.style.left = e.clientX + "px";
+          ref.current.style.top = e.clientY + "px";
+        }
+        setVisible(true);
+        rafRef.current = null;
+      });
     };
     const onLeave = () => setVisible(false);
-    window.addEventListener("mousemove", onMove);
-    window.addEventListener("mouseleave", onLeave);
+    window.addEventListener("mousemove", onMove, { passive: true });
+    window.addEventListener("mouseleave", onLeave, { passive: true });
     return () => {
       window.removeEventListener("mousemove", onMove);
       window.removeEventListener("mouseleave", onLeave);
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
     };
   }, []);
 
   return (
     <div
+      ref={ref}
       className="cursor-glow"
-      style={{
-        left: pos.x,
-        top: pos.y,
-        opacity: visible ? 1 : 0,
-      }}
+      style={{ opacity: visible ? 1 : 0 }}
       aria-hidden="true"
     />
   );
