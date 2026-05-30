@@ -25,12 +25,10 @@ export default function Hero() {
     }
   };
 
-  // Headline split: prefix + " " + suffix where the LAST word of suffix becomes gold
   const suffix = profile?.heroHeadlineSuffix || "That Think.";
   const suffixWords = suffix.split(" ");
   const lastWord = suffixWords[suffixWords.length - 1] || "";
   const suffixHead = suffixWords.slice(0, -1).join(" ");
-  // strip trailing punctuation so we can color the word only
   const m = lastWord.match(/^([^.,!?]+)([.,!?]*)$/);
   const goldWord = m ? m[1] : lastWord;
   const punct = m ? m[2] : "";
@@ -41,14 +39,14 @@ export default function Hero() {
       className="relative min-h-screen flex items-center hero-mesh overflow-hidden"
       data-testid="hero-section"
     >
-      {/* Decorative meshes */}
+      {/* Decorative meshes — hidden on mobile for performance */}
       <div
         aria-hidden
-        className="absolute -top-32 -left-32 w-[40rem] h-[40rem] rounded-full bg-[#1F4788] opacity-25 blur-[120px] animate-mesh-drift"
+        className="hero-blob-1 absolute -top-32 -left-32 w-[40rem] h-[40rem] rounded-full bg-[#1F4788] opacity-25 blur-[120px]"
       />
       <div
         aria-hidden
-        className="absolute bottom-0 right-0 w-[36rem] h-[36rem] rounded-full bg-[#C9A84C] opacity-[0.07] blur-[140px] animate-mesh-drift-slow"
+        className="hero-blob-2 absolute bottom-0 right-0 w-[36rem] h-[36rem] rounded-full bg-[#C9A84C] opacity-[0.07] blur-[140px]"
       />
 
       {/* Achievement badge */}
@@ -123,7 +121,7 @@ export default function Hero() {
           custom={2}
           className="mt-10 max-w-2xl font-mono text-xs sm:text-sm uppercase tracking-[0.22em] text-[#C9A84C]"
         >
-          AI Systems Architect · Certified AI Generalist · Content Systems Specialist
+          AI Systems Architect · Certified AI Generalist · 1st Prize Be10x · Top 0.1% ChatGPT
         </motion.p>
 
         <motion.p
