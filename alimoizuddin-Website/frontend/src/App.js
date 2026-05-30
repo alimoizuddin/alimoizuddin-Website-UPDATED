@@ -3,16 +3,16 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ContentProvider } from "./context/ContentContext";
 import { AuthProvider } from "./context/AuthContext";
-import Home from "./pages/Home";
-import AboutPage from "./pages/AboutPage";
-import SkillsPage from "./pages/SkillsPage";
-import ProjectsPage from "./pages/ProjectsPage";
-import AgentsPage from "./pages/AgentsPage";
-import PhilosophyPage from "./pages/PhilosophyPage";
-import ExperiencePage from "./pages/ExperiencePage";
-import ContactPage from "./pages/ContactPage";
 
-// Heavy / rarely visited routes — lazy-loaded so the main bundle stays small.
+// Lazy-load ALL pages so initial bundle is tiny
+const Home = lazy(() => import("./pages/Home"));
+const AboutPage = lazy(() => import("./pages/AboutPage"));
+const SkillsPage = lazy(() => import("./pages/SkillsPage"));
+const ProjectsPage = lazy(() => import("./pages/ProjectsPage"));
+const AgentsPage = lazy(() => import("./pages/AgentsPage"));
+const PhilosophyPage = lazy(() => import("./pages/PhilosophyPage"));
+const ExperiencePage = lazy(() => import("./pages/ExperiencePage"));
+const ContactPage = lazy(() => import("./pages/ContactPage"));
 const CaseStudy = lazy(() => import("./pages/CaseStudy"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const AdminLogin = lazy(() => import("./pages/AdminLogin"));
