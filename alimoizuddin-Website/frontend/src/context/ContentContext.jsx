@@ -3,6 +3,8 @@ import axios from "axios";
 import * as DEFAULTS from "../data/site";
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+const CACHE_KEY = "ali_site_content";
+const CACHE_TTL = 1000 * 60 * 30; // 30 minutes
 
 const buildDefaults = () => ({
   profile: {
@@ -23,12 +25,10 @@ const buildDefaults = () => ({
       "Convert information into execution.",
       "Use AI to amplify authentic human insight — not replace it.",
     ],
-    body:
-      "My edge is rare: literature-level understanding of human cognition, communication, and behavior — fused with systems-level mastery of AI architecture and automation. This combination is the foundation of every system I build.",
+    body: "My edge is rare: literature-level understanding of human cognition, communication, and behavior — fused with systems-level mastery of AI architecture and automation. This combination is the foundation of every system I build.",
   },
   about: {
-    quote:
-      "I combine literature-level understanding of humans with systems-level mastery of AI. Very few people genuinely have both.",
+    quote: "I combine literature-level understanding of humans with systems-level mastery of AI. Very few people genuinely have both.",
     paragraphs: [
       "An MA in English Literature gave me the cognitive scaffolding — narrative theory, voice, and the architecture of meaning. AI gave me the tooling to operationalize it. Most operators have one or the other. The interdisciplinary moat is the entire point.",
       "I've built 20+ production AI systems: RAG pipelines, agentic workflows, OCR engines that ingest decades of archives, and custom LLM architectures that eliminate generic AI output. The work compounds 40–60% overhead reductions across clients — and once won 1st Prize at the Be10x AI Hackathon.",
@@ -43,13 +43,34 @@ const buildDefaults = () => ({
   education: DEFAULTS.EDUCATION,
   projectCategories: DEFAULTS.PROJECT_CATEGORIES,
   stackMarquee: [
-    "GPT-5.5", "Gemini", "Claude", "Whisper", "n8n", "Apollo.io", "Apify",
+    "GPT-4", "Gemini", "Claude", "Whisper", "n8n", "Apollo.io", "Apify",
     "Pinecone", "ElevenLabs", "HeyGen", "VAPI.ai", "Lovable.dev",
     "React", "Tailwind", "Firebase", "Python", "Power BI", "DAX",
     "BM25", "RAG", "OCR", "Anki",
   ],
   projects: DEFAULTS.PROJECTS,
 });
+
+// Read from sessionStorage cache
+function readCache() {
+  try {
+    const raw = sessionStorage.getItem(CACHE_KEY);
+    if (!raw) return null;
+    const { data, ts } = JSON.parse(raw);
+    if (Date.now() - ts > CACHE_TTL) {
+      sessionStorage.removeItem(CACHE_KEY);
+      return null;
+    }
+    return data;
+  } catch { return null; }
+}
+
+// Write to sessionStorage cache
+function writeCache(data) {
+  try {
+    sessionStorage.setItem(CACHE_KEY, JSON.stringify({ data, ts: Date.now() }));
+  } catch {}
+}
 
 const ContentContext = createContext({
   content: buildDefaults(),
@@ -58,35 +79,28 @@ const ContentContext = createContext({
 });
 
 export function ContentProvider({ children }) {
-  const [content, setContent] = useState(buildDefaults());
-  const [loaded, setLoaded] = useState(false);
+  // Start with cache if available, else defaults — page renders instantly either way
+  const cached = readCache();
+  const [content, setContent] = useState(cached ? { ...buildDefaults(), ...cached } : buildDefaults());
+  const [loaded, setLoaded] = useState(true); // always true — never block render
 
   const fetchContent = useCallback(async () => {
     try {
-      // 5 second timeout — if backend is sleeping, don't block the page
       const { data } = await axios.get(`${API}/content`, { timeout: 5000 });
       if (data && typeof data === "object" && Object.keys(data).length > 0) {
         setContent((prev) => ({ ...prev, ...data }));
+        writeCache(data); // cache for next visit
       }
-    } catch (e) {
-      // silent fall-back to defaults — site works without backend
-    } finally {
-      setLoaded(true);
+    } catch {
+      // silent — defaults already showing
     }
   }, []);
 
   useEffect(() => {
-    // Defer API call by 2 seconds so page renders immediately with defaults
-    const timer = setTimeout(() => {
-      fetchContent();
-    }, 2000);
+    // Defer API call 3s so page is fully interactive first
+    const timer = setTimeout(fetchContent, 3000);
     return () => clearTimeout(timer);
   }, [fetchContent]);
-
-  // Mark as loaded immediately so page renders right away
-  useEffect(() => {
-    setLoaded(true);
-  }, []);
 
   return (
     <ContentContext.Provider value={{ content, loaded, refresh: fetchContent }}>
