@@ -5,7 +5,7 @@ export const PROFILE = {
   name: "Ali Moizuddin",
   shortName: "Ali Moizuddin",
   brand: "ALI MOIZUDDIN",
-  tagline: "AI Systems Architect · Certified AI Generalist · Content Systems Specialist",
+  tagline: "AI Systems Architect · Certified AI Generalist · 1st Prize Be10x · Top 0.1% ChatGPT",
   location: "Siliguri, West Bengal, India",
   email: "aalimoizuddin@outlook.com",
   phone: "+91 8392006965",
@@ -336,13 +336,13 @@ export const PROJECTS = [
     category: "EDTECH",
     title: "AI-Driven RAG Pipeline",
     description:
-      "Ingests transcripts, OCR PDFs, and past-year questions into a retrieval-augmented system; LLMs teach concepts using gamification + Jim Kwik retention frameworks.",
+      "Ingests transcripts, OCR PDFs, and past-year questions into a retrieval-augmented system; LLMs teach concepts using gamification + accelerated learning + spaced repetition frameworks.",
     metric: "40% retention lift",
     abstract: 4,
     caseStudy: true,
     detail: {
       role: "Solo build · system + pedagogy architect",
-      stack: ["Vector retrieval", "LLM orchestration", "Jim Kwik memorization frameworks", "Gamification loops"],
+      stack: ["Vector retrieval", "LLM orchestration", "Accelerated learning frameworks", "Gamification loops"],
       problem:
         "Most RAG systems hand you a paragraph. That isn't teaching — that's googling. Learners read it once and forgot it within 48 hours.",
       approach: [
@@ -551,7 +551,7 @@ export const PROJECTS = [
     category: "INFRASTRUCTURE",
     title: "Minimax AI Educational Pipeline",
     description:
-      "Prompt-optimized pipeline using a Minimax AI agent + raw course transcripts to conceptualize and generate a Python-focused educational comic book.",
+      "Prompt-optimized pipeline using a Minimax AI agent + structured learning content to conceptualize and generate a Python-focused educational comic book.",
     metric: "End-to-end automated",
     abstract: 1,
   },
@@ -563,6 +563,34 @@ export const PROJECTS = [
       "High-visibility, targeted escalation via LinkedIn + Twitter to bypass support tiers and resolve complex subscription blockers directly with MiniMax executive leadership.",
     metric: "Tier-1 bypass executed",
     abstract: 2,
+  },
+  // INFRASTRUCTURE
+  {
+    id: "cicd-pipeline",
+    category: "INFRASTRUCTURE",
+    title: "AI-Assisted CI/CD Code Review Pipeline",
+    description:
+      "n8n-orchestrated CI/CD workflow with an Autonomous QA Architect agent evaluating code submissions, enforcing structured JSON schema validation, and auto-routing pass/fail decisions with personalized developer feedback.",
+    metric: "Seconds vs. hours review",
+    abstract: 3,
+    caseStudy: true,
+    detail: {
+      role: "Solo build · hackathon project",
+      stack: ["n8n", "OpenAI (reasoning engine)", "Microsoft Outlook triggers", "Webhook routing", "JSON schema validation"],
+      problem:
+        "Engineering teams spend significant time on repetitive QA checks and initial review cycles before deployment. Most of that work follows predictable patterns — syntax issues, formatting mistakes, missing elements, or deployment blockers that AI can surface automatically.",
+      approach: [
+        "Built an n8n automation pipeline triggered by code submission events via Microsoft Outlook.",
+        "Deployed an Autonomous QA Architect agent evaluating syntax quality, structural issues, missing elements, and deployment readiness.",
+        "Enforced strict JSON schema output — solved the core problem of conversational AI responses breaking downstream workflow routing.",
+        "Pass decisions route code to deployment workflows; fail decisions auto-generate personalized developer feedback with specific issues and improvements.",
+      ],
+      result: [
+        "Review turnaround compressed from hours of waiting to seconds of automated pre-validation.",
+        "Developers receive structured, actionable feedback instantly — not generic error messages.",
+        "Demonstrated that AI systems require orchestration, schema enforcement, and carefully defined human escalation points to be production-reliable.",
+      ],
+    },
   },
   // BE10X
   {
@@ -649,32 +677,32 @@ export const PROJECT_CATEGORIES = [
 ];
 
 export const AGENTS = [
-  { name: "CircadianGPT", vertical: "HEALTH", desc: "Chronotype-aligned sleep optimization — personalized recovery, performance, and behavioral regulation protocols.", method: "Dr. Michael Breus chronobiology + The Power of When + Mastery of Sleep" },
-  { name: "10X Trial-Based Strength Engine", vertical: "HEALTH", desc: "Low-volume, high-efficiency strength programming with auto-regulated trial sets and recovery tracking.", method: "Mindvalley 10X Fitness methodology" },
-  { name: "WildGPT", vertical: "HEALTH", desc: "Behavioral transformation engine translating nutrition psychology into structured lifestyle reset systems.", method: "Eric Edmeades WildFit philosophy" },
-  { name: "SkinGPT", vertical: "HEALTH", desc: "Dermatology-informed decision support — structured routines for hydration, pigmentation, and barrier repair.", method: "20-section skincare knowledge base + Skin Quest Masterclass" },
+  { name: "CircadianGPT", vertical: "HEALTH", desc: "Chronotype-aligned sleep optimization — personalized recovery, performance, and behavioral regulation protocols.", method: "Chronobiology research · sleep science + circadian rhythm optimization frameworks" },
+  { name: "10X Trial-Based Strength Engine", vertical: "HEALTH", desc: "Low-volume, high-efficiency strength programming with auto-regulated trial sets and recovery tracking.", method: "Low-volume high-intensity training science + auto-regulation protocols" },
+  { name: "WildGPT", vertical: "HEALTH", desc: "Behavioral transformation engine translating nutrition psychology into structured lifestyle reset systems.", method: "Behavioral nutrition psychology + lifestyle transformation frameworks" },
+  { name: "SkinGPT", vertical: "HEALTH", desc: "Dermatology-informed decision support — structured routines for hydration, pigmentation, and barrier repair.", method: "Dermatology research + evidence-based skincare science protocols" },
   { name: "Task Manager (Moiz Matrix)", vertical: "PRODUCTIVITY", desc: "Execution-first task triage combining Eisenhower with a proprietary prioritization framework + calendar integrations.", method: "Eisenhower Matrix + proprietary Moiz Matrix · Zapier · Notion · Google Calendar" },
   { name: "Attention Engine", vertical: "PRODUCTIVITY", desc: "Cognitive load regulation system structuring deep-work blocks and minimizing attentional fragmentation.", method: "Cognitive load regulation + workflow sequencing" },
   { name: "Apex Prompt Architect", vertical: "PRODUCTIVITY", desc: "Multi-layer prompt orchestration meta-system generating reusable AI workflows, persona systems, and reasoning chains.", method: "Elite multi-layered prompt engineering" },
-  { name: "Habitatica", vertical: "PRODUCTIVITY", desc: "Identity-based habit formation engine with environmental design and compounding behavior systems.", method: "James Clear · Atomic Habits" },
+  { name: "Habitatica", vertical: "PRODUCTIVITY", desc: "Identity-based habit formation engine with environmental design and compounding behavior systems.", method: "Identity-based habit formation + behavioral psychology frameworks" },
   { name: "AI Job Hunt Orchestrator", vertical: "PRODUCTIVITY", desc: "Multi-agent pipeline for job sourcing, pain-point analysis, ATS optimization, and sniper-email generation — 15-minute execution loop.", method: "Claude + Apify + Perplexity + MiniMax Agent + Codex · 85%+ ATS fitment" },
-  { name: "TanGPT", vertical: "LIFESTYLE", desc: "Styling intelligence system translating color theory, wardrobe psychology, and grooming logic into outfit optimization frameworks.", method: "Tan France Hollywood styling methodology" },
+  { name: "StyleGPT", vertical: "LIFESTYLE", desc: "Styling intelligence system translating color theory, wardrobe psychology, and grooming logic into outfit optimization frameworks.", method: "Color theory + wardrobe psychology + personal styling frameworks" },
   { name: "Micro-Space Architect", vertical: "LIFESTYLE", desc: "Expert spatial optimization agent transforming sub-10m² environments into high-function living and working sanctuaries.", method: "Spatial optimization frameworks" },
-  { name: "Marni: The Digital Wing Girl", vertical: "LIFESTYLE", desc: "Relationship advisory agent with dynamic retrieval across YouTube, course transcripts, and PDFs for female-perspective social dynamics coaching.", method: "Marni Kinrys persona + live retrieval system" },
-  { name: "KwikGPT", vertical: "KNOWLEDGE", desc: "Accelerated learning system integrating rapid recall, active learning loops, and transcript-to-knowledge compression pipelines.", method: "Jim Kwik accelerated learning methodologies" },
+  { name: "Social Intelligence Engine", vertical: "LIFESTYLE", desc: "Relationship advisory agent with dynamic retrieval across research sources for female-perspective social dynamics coaching.", method: "Social dynamics frameworks + relationship intelligence research" },
+  { name: "AccelLearn", vertical: "KNOWLEDGE", desc: "Accelerated learning system integrating rapid recall, active learning loops, and transcript-to-knowledge compression pipelines.", method: "Accelerated learning science + memory optimization frameworks" },
   { name: "Universal Knowledge Architect", vertical: "KNOWLEDGE", desc: "Converts complex videos, PDFs, and raw data into Zero-Loss mastery documents calibrated to 7–10 year-old comprehension.", method: "Zero-loss mastery + 2025 knowledge bases" },
-  { name: "Digital Ghostwriting Engine (Cole OS)", vertical: "KNOWLEDGE", desc: "Execution-first writing system autonomously scanning Mega-Files for rapid content generation.", method: "Nicolas Cole core methodologies" },
+  { name: "Digital Ghostwriting Engine", vertical: "KNOWLEDGE", desc: "Execution-first writing system autonomously scanning knowledge bases for rapid content generation.", method: "Platform-native writing architecture + content systems frameworks" },
   { name: "B10X Submission Architect", vertical: "KNOWLEDGE", desc: "Ruthlessly critical evaluation agent auditing n8n architectures — directly drove 1st-place Be10x Hackathon win.", method: "Technical architecture evaluation + pitch optimization" },
-  { name: "The Architect's Cinematography", vertical: "KNOWLEDGE", desc: "Video post-production protocol applying high-impact cinematic grading to elite digital content.", method: "Empire Phase framework" },
+  { name: "The Architect's Cinematography", vertical: "KNOWLEDGE", desc: "Video post-production protocol applying high-impact cinematic grading to elite digital content.", method: "Cinematic post-production protocols + color grading systems" },
   { name: "The Architect's Studio", vertical: "KNOWLEDGE", desc: "Image processing engine transforming raw imagery into Steel & Shadow / Gotham aesthetic for tech founder visual branding.", method: "Creative Director framework + cohesive brand systems" },
-  { name: "KshitijGPT", vertical: "KNOWLEDGE", desc: "Hierarchical dating, social dynamics, and self-development coaching with dynamic retrieval — hallucination-free advice.", method: "Kshitij Sehrawat course visuals + live YouTube transcript retrieval" },
+  { name: "Dating Intelligence System", vertical: "KNOWLEDGE", desc: "Hierarchical dating, social dynamics, and self-development coaching with dynamic retrieval — hallucination-free advice.", method: "Social psychology + dating science + live source retrieval" },
 ];
 
 export const EXPERIENCE = [
   {
     role: "Independent AI Ghostwriter & Content Systems Specialist",
     org: "Self-Employed · Siliguri, India",
-    period: "Feb 2026 — Present",
+    period: "February 2026 — Present",
     bullets: [
       "Architected 15+ custom LLM pipelines (GPT-4 + Gemini) — reducing content production time by 60–80% and turning chaotic inputs into publish-ready assets.",
       "Engineered 6 voice-specific AI writing systems replicating client tone, worldview, and cadence — eliminating generic AI outputs and preserving founder voice across long-form outputs.",
@@ -737,9 +765,9 @@ export const CONTACT_CARDS = [
   {
     id: "freelance",
     title: "Freelance Inquiry",
-    desc: "Ghostwriting, AI content systems, automation pipelines.",
+    desc: "AI systems, automation pipelines, and content systems.",
     cta: "Start a Project",
-    subject: "Freelance Inquiry — Ghostwriting / AI Systems",
+    subject: "Freelance Inquiry — AI Systems / Content Systems",
   },
   {
     id: "hiring",
