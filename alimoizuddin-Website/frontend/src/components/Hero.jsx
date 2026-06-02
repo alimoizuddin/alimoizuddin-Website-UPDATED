@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowDown, Trophy } from "lucide-react";
 import { useContent } from "../context/ContentContext";
 
+
 const reveal = {
   hidden: { opacity: 0, y: 24 },
   show: (i = 0) => ({
@@ -11,6 +12,7 @@ const reveal = {
     transition: { duration: 0.9, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] },
   }),
 };
+
 
 export default function Hero() {
   const { profile } = useContent();
@@ -25,13 +27,15 @@ export default function Hero() {
     }
   };
 
-  const suffix = profile?.heroHeadlineSuffix || "That Think.";
+
+  const suffix = profile?.heroHeadlineSuffix || "That Reduce Manual Work.";
   const suffixWords = suffix.split(" ");
   const lastWord = suffixWords[suffixWords.length - 1] || "";
   const suffixHead = suffixWords.slice(0, -1).join(" ");
   const m = lastWord.match(/^([^.,!?]+)([.,!?]*)$/);
   const goldWord = m ? m[1] : lastWord;
   const punct = m ? m[2] : "";
+
 
   return (
     <section
@@ -49,6 +53,7 @@ export default function Hero() {
         className="hero-blob-2 absolute bottom-0 right-0 w-[36rem] h-[36rem] rounded-full bg-[#C9A84C] opacity-[0.07] blur-[140px]"
       />
 
+
       {/* Achievement badge */}
       <motion.div
         initial={{ opacity: 0, y: -12 }}
@@ -62,7 +67,7 @@ export default function Hero() {
           <div className="relative flex items-center gap-3 px-4 py-2.5 border border-[#C9A84C]/40 rounded-full bg-[#0D0D0D]/60 backdrop-blur-md">
             <Trophy className="w-3.5 h-3.5 text-[#C9A84C]" strokeWidth={1.5} />
             <span className="font-mono text-[10px] md:text-[11px] uppercase tracking-[0.22em] text-[#F5F0E8]">
-              1st Prize · Be10x AI Hackathon
+              Be10x AI Hackathon Winner
             </span>
             <span className="hidden sm:inline-block w-px h-3 bg-[#C9A84C]/40" />
             <span className="hidden sm:inline font-mono text-[10px] md:text-[11px] uppercase tracking-[0.22em] text-[#C9A84C]">
@@ -71,6 +76,7 @@ export default function Hero() {
           </div>
         </div>
       </motion.div>
+
 
       <div className="relative max-w-7xl mx-auto px-6 md:px-10 lg:px-16 pt-32 md:pt-40 pb-24 w-full">
         <motion.div
@@ -97,6 +103,7 @@ export default function Hero() {
           </span>
         </motion.div>
 
+
         <motion.h1
           variants={reveal}
           initial="hidden"
@@ -105,7 +112,7 @@ export default function Hero() {
           className="font-serif text-[#F5F0E8] text-[3.4rem] leading-[0.95] sm:text-7xl md:text-[5.5rem] lg:text-[7rem] xl:text-[8rem] font-light tracking-[-0.02em]"
           data-testid="hero-headline"
         >
-          {profile?.heroHeadlinePrefix || "I Build Systems"}
+          {profile?.heroHeadlinePrefix || "I Build AI Systems"}
           <br />
           <span className="italic text-[#F5F0E8]">
             {suffixHead && <>{suffixHead} </>}
@@ -114,6 +121,7 @@ export default function Hero() {
           </span>
         </motion.h1>
 
+
         <motion.p
           variants={reveal}
           initial="hidden"
@@ -121,8 +129,9 @@ export default function Hero() {
           custom={2}
           className="mt-10 max-w-2xl font-mono text-xs sm:text-sm uppercase tracking-[0.22em] text-[#C9A84C]"
         >
-          AI Systems Architect · Certified AI Generalist · 1st Prize Be10x · Top 0.1% ChatGPT
+          AI Systems Architect · Certified AI Generalist · Be10x Hackathon Winner · Top 0.1% ChatGPT User
         </motion.p>
+
 
         <motion.p
           variants={reveal}
@@ -132,8 +141,9 @@ export default function Hero() {
           className="mt-6 max-w-2xl text-lg md:text-xl text-[#888880] leading-relaxed"
         >
           {profile?.heroSub ||
-            "Transforming chaotic human cognition into scalable, autonomous AI infrastructure — for the operators, founders, and editorial-grade clients who can't afford generic."}
+            "Building RAG, agentic AI, n8n, OCR/BM25 search, transcription, SDR research, and workflow automation systems that turn messy information into repeatable execution."}
         </motion.p>
+
 
         <motion.div
           variants={reveal}
@@ -160,6 +170,7 @@ export default function Hero() {
           </a>
         </motion.div>
 
+
         {/* Scroll cue */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -176,6 +187,7 @@ export default function Hero() {
           </span>
         </motion.div>
 
+
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -189,3 +201,5 @@ export default function Hero() {
     </section>
   );
 }
+
+
