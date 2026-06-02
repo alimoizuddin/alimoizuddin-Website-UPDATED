@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { useContent } from "../context/ContentContext";
 
+
 const NAV_LINKS = [
   { path: "/about", label: "About" },
   { path: "/skills", label: "Skills" },
@@ -13,12 +14,14 @@ const NAV_LINKS = [
   { path: "/contact", label: "Contact" },
 ];
 
+
 export default function Nav() {
   const { profile } = useContent();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -27,9 +30,11 @@ export default function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+
   useEffect(() => {
     setOpen(false);
   }, [location.pathname]);
+
 
   return (
     <>
@@ -53,6 +58,9 @@ export default function Nav() {
                 <img
                   src={profile.photo}
                   alt=""
+                  width="32"
+                  height="32"
+                  decoding="async"
                   aria-hidden="true"
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-700"
                 />
@@ -62,6 +70,7 @@ export default function Nav() {
               {profile?.brand || "ALI MOIZUDDIN"}
             </span>
           </Link>
+
 
           <nav className="hidden lg:flex items-center gap-8">
             {NAV_LINKS.map((l) => {
@@ -80,6 +89,7 @@ export default function Nav() {
             })}
           </nav>
 
+
           <button
             type="button"
             className="lg:hidden text-[#F5F0E8] p-2"
@@ -91,6 +101,7 @@ export default function Nav() {
           </button>
         </div>
       </header>
+
 
       {open && (
         <div
