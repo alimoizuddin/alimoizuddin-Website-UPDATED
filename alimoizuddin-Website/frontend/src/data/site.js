@@ -12,7 +12,7 @@ export const PROFILE = {
   "linkedin": "https://www.linkedin.com/in/alimoizuddin",
   "notion": "https://wellfound.com/u/ali-moizuddin-1",
   "photo": "https://customer-assets.emergentagent.com/job_3e46ef77-ca74-4e8e-a719-ab3f22e4f199/artifacts/v3cmir8v_Profile%20Pic.jpg",
-  "statusPillLabel": "Open to AI systems roles & collaborations",
+  "statusPillLabel": "Available · 2 client slots",
   "heroHeadlinePrefix": "I Build AI Systems",
   "heroHeadlineSuffix": "That Reduce Manual Work.",
   "heroSub": "Building RAG, agentic AI, n8n, OCR/BM25 search, transcription, SDR research, and workflow automation systems that turn messy information into repeatable execution.",
