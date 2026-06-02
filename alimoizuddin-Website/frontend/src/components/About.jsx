@@ -3,10 +3,12 @@ import { motion } from "framer-motion";
 import { useContent } from "../context/ContentContext";
 import AnimatedNumber from "./AnimatedNumber";
 
+
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
   show: { opacity: 1, y: 0, transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] } },
 };
+
 
 export default function About() {
   const { profile, stats, about } = useContent();
@@ -32,6 +34,7 @@ export default function About() {
           <span className="block flex-1 h-px bg-[#C9A84C]/20" />
         </motion.div>
 
+
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
           {/* Left: portrait + pull-quote */}
           <motion.div
@@ -48,6 +51,10 @@ export default function About() {
                 <img
                   src={profile?.photo}
                   alt={`Portrait of ${profile?.name || "Ali Moizuddin"}`}
+                  width="640"
+                  height="800"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover grayscale contrast-110"
                   data-testid="about-portrait"
                 />
@@ -61,6 +68,7 @@ export default function About() {
                 />
               </div>
             </div>
+
 
             <div className="mt-10 grid grid-cols-3 gap-4 text-[#888880] font-mono text-[10px] uppercase tracking-[0.2em]">
               <div>
@@ -84,6 +92,7 @@ export default function About() {
             </div>
           </motion.div>
 
+
           {/* Right: text */}
           <motion.div
             variants={fadeUp}
@@ -99,11 +108,13 @@ export default function About() {
               {quote}
             </blockquote>
 
+
             <div className="mt-10 space-y-6 text-[#888880] text-base md:text-[17px] leading-[1.85] max-w-2xl">
               {paragraphs.map((p, i) => (
                 <p key={i}>{p}</p>
               ))}
             </div>
+
 
             <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-0 border-t border-[#C9A84C]/20">
               {(stats || []).map((s, i) => (
