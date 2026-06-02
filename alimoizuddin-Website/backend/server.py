@@ -2,10 +2,12 @@ from dotenv import load_dotenv
 from pathlib import Path
 import os
 
+
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / ".env")
 
-from fastapi import FastAPI, APIRouter, HTTPException, Depends, Request, UploadFile, File
+
+from fastapi import FastAPI, APIRouter, HTTPException, Depends, Request, UploadFile, File, Response
 from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
 from pydantic import BaseModel, Field, ConfigDict
@@ -18,25 +20,33 @@ import base64
 import bcrypt
 import jwt as pyjwt
 
+
 from seed_data import build_initial_content
+
 
 # ---------------- Config & DB ----------------
 JWT_SECRET = os.environ.get("JWT_SECRET", "dev-secret-change-me")
 JWT_ALGORITHM = "HS256"
 JWT_EXP_DAYS = 7
 
+
 ADMIN_EMAIL = os.environ.get("ADMIN_EMAIL", "admin@example.com")
 ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD", "admin123")
+
 
 mongo_url = os.environ["MONGO_URL"]
 client = AsyncIOMotorClient(mongo_url)
 db = client[os.environ["DB_NAME"]]
 
+
 app = FastAPI(title="Ali Moizuddin — Personal Brand API")
 api_router = APIRouter(prefix="/api")
 
+
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
+
+
 
 
 # ---------------- Auth helpers ----------------
@@ -44,11 +54,15 @@ def hash_password(password: str) -> str:
     return bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt()).decode("utf-8")
 
 
+
+
 def verify_password(plain: str, hashed: str) -> bool:
     try:
         return bcrypt.checkpw(plain.encode("utf-8"), hashed.encode("utf-8"))
     except Exception:
         return False
+
+
 
 
 def create_token(email: str) -> str:
@@ -59,6 +73,8 @@ def create_token(email: str) -> str:
         "type": "access",
     }
     return pyjwt.encode(payload, JWT_SECRET, algorithm=JWT_ALGORITHM)
+
+
 
 
 async def get_current_admin(request: Request) -> dict:
@@ -81,10 +97,14 @@ async def get_current_admin(request: Request) -> dict:
         raise HTTPException(status_code=401, detail="Invalid token")
 
 
+
+
 # ---------------- Models ----------------
 class LoginIn(BaseModel):
     email: str
     password: str
+
+
 
 
 class StatusCheck(BaseModel):
@@ -94,14 +114,20 @@ class StatusCheck(BaseModel):
     timestamp: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
 
+
+
 class StatusCheckCreate(BaseModel):
     client_name: str
+
+
 
 
 class ContactIntentCreate(BaseModel):
     kind: str
     subject: str
     source: Optional[str] = ""
+
+
 
 
 class ContactIntent(BaseModel):
@@ -113,12 +139,16 @@ class ContactIntent(BaseModel):
     timestamp: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
 
+
+
 class ContactMessageCreate(BaseModel):
     kind: str
     name: str
     email: str
     message: str
     source: Optional[str] = ""
+
+
 
 
 class ContactMessage(BaseModel):
@@ -133,10 +163,14 @@ class ContactMessage(BaseModel):
     timestamp: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
 
+
+
 class AnalyticsEventCreate(BaseModel):
     event: str
     payload: Optional[dict] = None
     source: Optional[str] = ""
+
+
 
 
 class AnalyticsEvent(BaseModel):
@@ -148,8 +182,12 @@ class AnalyticsEvent(BaseModel):
     timestamp: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
 
+
+
 class ContentSectionUpdate(BaseModel):
     value: Any
+
+
 
 
 # ---------------- Public endpoints ----------------
@@ -158,9 +196,13 @@ async def root():
     return {"message": "Ali Moizuddin — Personal Brand API", "status": "ok"}
 
 
+
+
 @api_router.get("/health")
 async def health():
     return {"status": "ok", "service": "personal-brand", "time": datetime.now(timezone.utc).isoformat()}
+
+
 
 
 @api_router.post("/status", response_model=StatusCheck)
@@ -172,6 +214,8 @@ async def create_status_check(payload: StatusCheckCreate):
     return obj
 
 
+
+
 @api_router.get("/status", response_model=List[StatusCheck])
 async def list_status_checks():
     out = await db.status_checks.find({}, {"_id": 0}).to_list(1000)
@@ -179,6 +223,8 @@ async def list_status_checks():
         if isinstance(r.get("timestamp"), str):
             r["timestamp"] = datetime.fromisoformat(r["timestamp"])
     return out
+
+
 
 
 @api_router.post("/contact-intent", response_model=ContactIntent)
@@ -190,6 +236,8 @@ async def log_contact_intent(payload: ContactIntentCreate):
     return obj
 
 
+
+
 @api_router.get("/contact-intent", response_model=List[ContactIntent])
 async def list_contact_intents():
     out = await db.contact_intents.find({}, {"_id": 0}).sort("timestamp", -1).to_list(500)
@@ -197,6 +245,8 @@ async def list_contact_intents():
         if isinstance(r.get("timestamp"), str):
             r["timestamp"] = datetime.fromisoformat(r["timestamp"])
     return out
+
+
 
 
 @api_router.post("/contact-message", response_model=ContactMessage)
@@ -209,6 +259,8 @@ async def submit_contact_message(payload: ContactMessageCreate):
     return obj
 
 
+
+
 @api_router.get("/admin/contact-messages", response_model=List[ContactMessage])
 async def list_contact_messages(user: dict = Depends(get_current_admin)):
     out = await db.contact_messages.find({}, {"_id": 0}).sort("timestamp", -1).to_list(500)
@@ -218,16 +270,22 @@ async def list_contact_messages(user: dict = Depends(get_current_admin)):
     return out
 
 
+
+
 @api_router.put("/admin/contact-messages/{msg_id}/read")
 async def mark_message_read(msg_id: str, user: dict = Depends(get_current_admin)):
     res = await db.contact_messages.update_one({"id": msg_id}, {"$set": {"read": True}})
     return {"updated": res.modified_count}
 
 
+
+
 @api_router.delete("/admin/contact-messages/{msg_id}")
 async def delete_message(msg_id: str, user: dict = Depends(get_current_admin)):
     res = await db.contact_messages.delete_one({"id": msg_id})
     return {"deleted": res.deleted_count}
+
+
 
 
 @api_router.get("/admin/contact-intents", response_model=List[ContactIntent])
@@ -239,6 +297,8 @@ async def admin_list_contact_intents(user: dict = Depends(get_current_admin)):
     return out
 
 
+
+
 @api_router.post("/analytics/event", response_model=AnalyticsEvent)
 async def log_analytics(payload: AnalyticsEventCreate):
     obj = AnalyticsEvent(**payload.model_dump())
@@ -246,6 +306,8 @@ async def log_analytics(payload: AnalyticsEventCreate):
     doc["timestamp"] = doc["timestamp"].isoformat()
     await db.analytics_events.insert_one(doc)
     return obj
+
+
 
 
 @api_router.get("/analytics/event", response_model=List[AnalyticsEvent])
@@ -258,6 +320,8 @@ async def list_analytics(limit: int = 500, event: Optional[str] = None):
     return out
 
 
+
+
 @api_router.get("/analytics/summary")
 async def analytics_summary():
     pipeline = [{"$group": {"_id": "$event", "count": {"$sum": 1}}}, {"$sort": {"count": -1}}]
@@ -268,6 +332,8 @@ async def analytics_summary():
     }
 
 
+
+
 # ---------------- Content (public read) ----------------
 CONTENT_SECTIONS = [
     "profile", "socials", "stats", "philosophy", "about", "contactCards",
@@ -276,9 +342,12 @@ CONTENT_SECTIONS = [
 ]
 
 
+
+
 @api_router.get("/content")
-async def get_all_content():
+async def get_all_content(response: Response):
     """Returns the full content map. Frontend uses this on boot."""
+    response.headers["Cache-Control"] = "public, max-age=60, stale-while-revalidate=600"
     doc = await db.site_content.find_one({"_id": "current"}) or {}
     if not doc:
         return {}
@@ -286,12 +355,17 @@ async def get_all_content():
     return doc
 
 
+
+
 @api_router.get("/content/{section}")
-async def get_content_section(section: str):
+async def get_content_section(section: str, response: Response):
+    response.headers["Cache-Control"] = "public, max-age=60, stale-while-revalidate=600"
     if section not in CONTENT_SECTIONS:
         raise HTTPException(status_code=404, detail="Unknown section")
     doc = await db.site_content.find_one({"_id": "current"}, {"_id": 0, section: 1}) or {}
     return {section: doc.get(section)}
+
+
 
 
 # ---------------- Auth endpoints ----------------
@@ -308,9 +382,13 @@ async def login(payload: LoginIn):
     }
 
 
+
+
 @api_router.get("/auth/me")
 async def me(user: dict = Depends(get_current_admin)):
     return user
+
+
 
 
 # ---------------- Admin: content CRUD ----------------
@@ -330,12 +408,16 @@ async def update_content_section(
     return {"ok": True, "section": section}
 
 
+
+
 @api_router.get("/admin/content")
 async def admin_get_content(user: dict = Depends(get_current_admin)):
     """Same as public /content but explicit admin route — used by dashboard."""
     doc = await db.site_content.find_one({"_id": "current"}) or {}
     doc.pop("_id", None)
     return doc
+
+
 
 
 # ---------------- Admin: image upload ----------------
@@ -362,6 +444,8 @@ async def upload_image(
     return {"id": image_id, "url": f"/api/uploads/{image_id}", "filename": file.filename, "size": len(contents)}
 
 
+
+
 @api_router.get("/uploads/{image_id}")
 async def serve_upload(image_id: str):
     from fastapi.responses import Response
@@ -375,6 +459,8 @@ async def serve_upload(image_id: str):
     return Response(content=raw, media_type=doc.get("content_type", "image/jpeg"), headers={"Cache-Control": "public, max-age=31536000"})
 
 
+
+
 @api_router.get("/admin/uploads")
 async def list_uploads(user: dict = Depends(get_current_admin)):
     docs = await db.uploads.find({}, {"data": 0}).sort("uploaded_at", -1).to_list(200)
@@ -383,14 +469,19 @@ async def list_uploads(user: dict = Depends(get_current_admin)):
     return docs
 
 
+
+
 @api_router.delete("/admin/uploads/{image_id}")
 async def delete_upload(image_id: str, user: dict = Depends(get_current_admin)):
     res = await db.uploads.delete_one({"_id": image_id})
     return {"deleted": res.deleted_count}
 
 
+
+
 # ---------------- App wiring ----------------
 app.include_router(api_router)
+
 
 app.add_middleware(
     CORSMiddleware,
@@ -401,6 +492,8 @@ app.add_middleware(
 )
 
 
+
+
 # ---------------- Startup: seed admin + content ----------------
 @app.on_event("startup")
 async def on_startup():
@@ -409,6 +502,7 @@ async def on_startup():
         await db.users.create_index("email", unique=True)
     except Exception:
         pass
+
 
     # Seed / sync admin user
     existing = await db.users.find_one({"email": ADMIN_EMAIL.lower()})
@@ -428,6 +522,7 @@ async def on_startup():
         )
         logger.info("Updated admin password from .env")
 
+
     # Seed site content if empty
     current = await db.site_content.find_one({"_id": "current"})
     if not current:
@@ -444,6 +539,35 @@ async def on_startup():
         logger.info("Seeded site_content with %d projects", len(projects))
 
 
+
+
 @app.on_event("shutdown")
 async def shutdown_db_client():
     client.close()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
