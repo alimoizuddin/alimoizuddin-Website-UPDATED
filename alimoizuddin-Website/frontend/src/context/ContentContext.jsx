@@ -3,9 +3,13 @@ import axios from "axios";
 import * as DEFAULTS from "../data/site";
 
 
+
+
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 const CACHE_KEY = "ali_site_content";
 const CACHE_TTL = 1000 * 60 * 30; // 30 minutes
+
+
 
 
 const buildDefaults = () => ({
@@ -54,6 +58,8 @@ const buildDefaults = () => ({
 });
 
 
+
+
 // Read from sessionStorage cache
 function readCache() {
   try {
@@ -69,12 +75,16 @@ function readCache() {
 }
 
 
+
+
 // Write to sessionStorage cache
 function writeCache(data) {
   try {
     sessionStorage.setItem(CACHE_KEY, JSON.stringify({ data, ts: Date.now() }));
   } catch {}
 }
+
+
 
 
 const ContentContext = createContext({
@@ -84,11 +94,15 @@ const ContentContext = createContext({
 });
 
 
+
+
 export function ContentProvider({ children }) {
   // Start with cache if available, else defaults — page renders instantly either way
   const cached = readCache();
   const [content, setContent] = useState(cached ? { ...buildDefaults(), ...cached } : buildDefaults());
   const [loaded, setLoaded] = useState(true); // always true — never block render
+
+
 
 
   const fetchContent = useCallback(async () => {
@@ -104,11 +118,20 @@ export function ContentProvider({ children }) {
   }, []);
 
 
+
+
   useEffect(() => {
-    // Defer API call 3s so page is fully interactive first
-    const timer = setTimeout(fetchContent, 3000);
+    // Refresh content after first paint without making mobile users wait 3 seconds.
+    if (typeof window !== "undefined" && "requestIdleCallback" in window) {
+      const idleId = window.requestIdleCallback(fetchContent, { timeout: 1000 });
+      return () => window.cancelIdleCallback?.(idleId);
+    }
+
+    const timer = setTimeout(fetchContent, 250);
     return () => clearTimeout(timer);
   }, [fetchContent]);
+
+
 
 
   return (
@@ -119,9 +142,13 @@ export function ContentProvider({ children }) {
 }
 
 
+
+
 export function useContent() {
   return useContext(ContentContext).content;
 }
+
+
 
 
 export function useContentMeta() {
