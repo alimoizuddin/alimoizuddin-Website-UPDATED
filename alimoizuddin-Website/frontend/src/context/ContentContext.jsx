@@ -2,18 +2,20 @@ import React, { createContext, useContext, useEffect, useState, useCallback } fr
 import axios from "axios";
 import * as DEFAULTS from "../data/site";
 
+
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 const CACHE_KEY = "ali_site_content";
 const CACHE_TTL = 1000 * 60 * 30; // 30 minutes
+
 
 const buildDefaults = () => ({
   profile: {
     ...DEFAULTS.PROFILE,
     statusPillLabel: "Available · 2 client slots",
-    heroHeadlinePrefix: "I Build Systems",
-    heroHeadlineSuffix: "That Think.",
+    heroHeadlinePrefix: "I Build AI Systems",
+    heroHeadlineSuffix: "That Reduce Manual Work.",
     heroSub:
-      "Transforming chaotic human cognition into scalable, autonomous AI infrastructure — for the operators, founders, and editorial-grade clients who can't afford generic.",
+      "Building RAG, agentic AI, n8n, OCR/BM25 search, transcription, SDR research, and workflow automation systems that turn messy information into repeatable execution.",
     brand: DEFAULTS.PROFILE.brand || "ALI MOIZUDDIN",
   },
   socials: DEFAULTS.SOCIALS,
@@ -30,9 +32,9 @@ const buildDefaults = () => ({
   about: {
     quote: "I combine literature-level understanding of humans with systems-level mastery of AI. Very few people genuinely have both.",
     paragraphs: [
-      "An MA in English Literature gave me the cognitive scaffolding — narrative theory, voice, and the architecture of meaning. AI gave me the tooling to operationalize it. Most operators have one or the other. The interdisciplinary moat is the entire point.",
-      "I've built 20+ production AI systems: RAG pipelines, agentic workflows, OCR engines that ingest decades of archives, and custom LLM architectures that eliminate generic AI output. The work compounds 40–60% overhead reductions across clients — and once won 1st Prize at the Be10x AI Hackathon.",
-      "Philosophy is simple: build systems, not tasks. Optimize for leverage over effort. Use AI to amplify authentic human insight — never to replace it. Anything less is just noise dressed up as productivity.",
+          "An MA in English Literature gave me the cognitive scaffolding — narrative theory, voice, and the architecture of meaning. AI gave me the tooling to operationalize it. Most operators have one or the other. The interdisciplinary moat is the entire point.",
+          "Since Feb 2023, I have built 20+ AI-powered systems across personal operating systems, learning infrastructure, RAG, OCR/BM25 search, transcription, SDR research, job-application automation, browser-agent workflows, and full-stack AI-assisted prototypes. Most were self-directed; some were unpaid delegated builds for friends and Radio Club team members.",
+          "The goal is simple: reduce manual repetition, structure messy inputs, and turn scattered workflows into repeatable operating infrastructure. The systems consistently target 40–60% less manual overhead while preserving human judgment, voice, and context."
     ],
   },
   contactCards: DEFAULTS.CONTACT_CARDS,
@@ -51,6 +53,7 @@ const buildDefaults = () => ({
   projects: DEFAULTS.PROJECTS,
 });
 
+
 // Read from sessionStorage cache
 function readCache() {
   try {
@@ -65,6 +68,7 @@ function readCache() {
   } catch { return null; }
 }
 
+
 // Write to sessionStorage cache
 function writeCache(data) {
   try {
@@ -72,17 +76,20 @@ function writeCache(data) {
   } catch {}
 }
 
+
 const ContentContext = createContext({
   content: buildDefaults(),
   loaded: false,
   refresh: () => {},
 });
 
+
 export function ContentProvider({ children }) {
   // Start with cache if available, else defaults — page renders instantly either way
   const cached = readCache();
   const [content, setContent] = useState(cached ? { ...buildDefaults(), ...cached } : buildDefaults());
   const [loaded, setLoaded] = useState(true); // always true — never block render
+
 
   const fetchContent = useCallback(async () => {
     try {
@@ -96,11 +103,13 @@ export function ContentProvider({ children }) {
     }
   }, []);
 
+
   useEffect(() => {
     // Defer API call 3s so page is fully interactive first
     const timer = setTimeout(fetchContent, 3000);
     return () => clearTimeout(timer);
   }, [fetchContent]);
+
 
   return (
     <ContentContext.Provider value={{ content, loaded, refresh: fetchContent }}>
@@ -109,10 +118,15 @@ export function ContentProvider({ children }) {
   );
 }
 
+
 export function useContent() {
   return useContext(ContentContext).content;
 }
 
+
 export function useContentMeta() {
   return useContext(ContentContext);
 }
+
+
+
