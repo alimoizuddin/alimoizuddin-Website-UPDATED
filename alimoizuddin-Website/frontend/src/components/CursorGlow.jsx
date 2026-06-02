@@ -1,12 +1,21 @@
 import React, { useEffect, useRef, useState } from "react";
 
+
 // Cursor glow — uses RAF throttling to avoid layout thrashing on every mousemove
 export default function CursorGlow() {
   const [visible, setVisible] = useState(false);
   const ref = useRef(null);
   const rafRef = useRef(null);
 
+
   useEffect(() => {
+    const canShowCursorGlow =
+      typeof window !== "undefined" &&
+      window.matchMedia?.("(hover: hover) and (pointer: fine)")?.matches &&
+      !window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+
+    if (!canShowCursorGlow) return;
+
     const onMove = (e) => {
       if (rafRef.current) return; // skip if RAF already pending
       rafRef.current = requestAnimationFrame(() => {
@@ -28,6 +37,7 @@ export default function CursorGlow() {
     };
   }, []);
 
+
   return (
     <div
       ref={ref}
@@ -37,3 +47,4 @@ export default function CursorGlow() {
     />
   );
 }
+
