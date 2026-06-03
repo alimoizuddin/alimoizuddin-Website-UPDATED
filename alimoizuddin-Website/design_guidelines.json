@@ -68,7 +68,7 @@
       "mobile_menu": "Full-screen overlay bg-[#0D0D0D], massive font-serif links."
     },
     "hero": {
-      "headline": "'I Build Systems That Think.' in H1 styling, text-[#F5F0E8].",
+      "headline": "'I Build AI Systems That Turn Messy Work Into Repeatable Execution.' in H1 styling, text-[#F5F0E8].",
       "buttons": {
         "primary": "bg-[#C9A84C] text-[#0D0D0D] px-8 py-4 font-mono text-sm uppercase tracking-wider hover:bg-[#F5F0E8] transition-colors",
         "secondary": "border border-[#C9A84C]/50 text-[#C9A84C] px-8 py-4 font-mono text-sm uppercase tracking-wider hover:border-[#C9A84C] hover:bg-[#C9A84C]/10 transition-colors"

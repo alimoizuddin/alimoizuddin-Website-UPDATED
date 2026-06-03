@@ -17,7 +17,7 @@ const buildDefaults = () => ({
     ...DEFAULTS.PROFILE,
     statusPillLabel: "Available · 2 client slots",
     heroHeadlinePrefix: "I Build AI Systems",
-    heroHeadlineSuffix: "That Reduce Manual Work.",
+    heroHeadlineSuffix: "That Turn Messy Work Into Repeatable Execution.",
     heroSub:
       "Building RAG, agentic AI, n8n, OCR/BM25 search, transcription, SDR research, and workflow automation systems that turn messy information into repeatable execution.",
     brand: DEFAULTS.PROFILE.brand || "ALI MOIZUDDIN",
@@ -125,6 +125,24 @@ function normalizeAbout(about, defaults) {
 
 
 
+function normalizeProfile(profile, defaults) {
+  const merged = { ...defaults, ...(profile || {}) };
+  const oldSuffixes = new Set([
+    "That Reduce Manual Work.",
+    "That Think.",
+    "That Thinks.",
+  ]);
+
+  if (!merged.heroHeadlineSuffix || oldSuffixes.has(merged.heroHeadlineSuffix)) {
+    merged.heroHeadlineSuffix = defaults.heroHeadlineSuffix;
+  }
+
+  return merged;
+}
+
+
+
+
 function normalizeExperience(experience) {
   const defaults = DEFAULTS.EXPERIENCE || [];
   if (!Array.isArray(experience)) return defaults;
@@ -151,7 +169,7 @@ function normalizeContent(data = {}) {
 
   return {
     ...data,
-    profile: { ...defaults.profile, ...(data.profile || {}) },
+    profile: normalizeProfile(data.profile, defaults.profile),
     about: normalizeAbout(data.about, defaults.about),
     socials: Array.isArray(data.socials) ? data.socials : defaults.socials,
     experience: normalizeExperience(data.experience),
