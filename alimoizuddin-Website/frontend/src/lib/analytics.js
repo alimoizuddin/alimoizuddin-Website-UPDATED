@@ -5,6 +5,15 @@ import axios from "axios";
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
+const isSameOriginApi = () => {
+  try {
+    if (typeof window === "undefined") return false;
+    return new URL(API, window.location.href).origin === window.location.origin;
+  } catch {
+    return false;
+  }
+};
+
 const send = (event, payload = {}) => {
   try {
     const body = {
@@ -13,12 +22,12 @@ const send = (event, payload = {}) => {
       source: typeof window !== "undefined" ? window.location.href : "",
     };
     // navigator.sendBeacon is more reliable than fetch on tab close.
-    if (typeof navigator !== "undefined" && navigator.sendBeacon) {
+    if (typeof navigator !== "undefined" && navigator.sendBeacon && isSameOriginApi()) {
       const blob = new Blob([JSON.stringify(body)], { type: "application/json" });
       navigator.sendBeacon(`${API}/analytics/event`, blob);
       return;
     }
-    axios.post(`${API}/analytics/event`, body).catch(() => {});
+    axios.post(`${API}/analytics/event`, body, { withCredentials: false }).catch(() => {});
   } catch {
     // non-blocking
   }
