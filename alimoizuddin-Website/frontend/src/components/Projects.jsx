@@ -98,26 +98,39 @@ export default function Projects() {
               data-testid={`project-card-${p.id}`}
               className="group relative bg-[#111116] border border-[#888880]/15 p-7 md:p-10 flex flex-col min-h-[420px] hover:border-[#C9A84C]/60 transition-colors duration-500"
             >
-              {/* abstract gradient header */}
-              <div
-                aria-hidden
-                className={`card-abstract-${p.abstract} h-32 -mx-7 -mt-7 md:-mx-10 md:-mt-10 mb-8 relative overflow-hidden`}
-              >
-                <div className="absolute inset-0 mix-blend-overlay opacity-30 noise-overlay-mini" />
-                <svg
-                  className="absolute right-4 top-4 w-10 h-10 text-[#C9A84C]/40"
-                  viewBox="0 0 40 40"
-                  fill="none"
-                  aria-hidden
-                >
-                  <path
-                    d="M2 38 L38 2 M2 2 L38 38"
-                    stroke="currentColor"
-                    strokeWidth="0.6"
+              {p.image?.src ? (
+                <div className="h-36 -mx-7 -mt-7 md:-mx-10 md:-mt-10 mb-8 relative overflow-hidden bg-[#0D0D0D]">
+                  <img
+                    src={p.image.src}
+                    alt={p.image.alt || `${p.title} interface screenshot`}
+                    loading="lazy"
+                    decoding="async"
+                    className="h-full w-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-[1.03]"
                   />
-                  <circle cx="20" cy="20" r="6" stroke="currentColor" strokeWidth="0.6" />
-                </svg>
-              </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#111116] via-[#111116]/15 to-transparent" aria-hidden />
+                  <div className="absolute inset-0 mix-blend-overlay opacity-25 noise-overlay-mini" aria-hidden />
+                </div>
+              ) : (
+                <div
+                  aria-hidden
+                  className={`card-abstract-${p.abstract} h-32 -mx-7 -mt-7 md:-mx-10 md:-mt-10 mb-8 relative overflow-hidden`}
+                >
+                  <div className="absolute inset-0 mix-blend-overlay opacity-30 noise-overlay-mini" />
+                  <svg
+                    className="absolute right-4 top-4 w-10 h-10 text-[#C9A84C]/40"
+                    viewBox="0 0 40 40"
+                    fill="none"
+                    aria-hidden
+                  >
+                    <path
+                      d="M2 38 L38 2 M2 2 L38 38"
+                      stroke="currentColor"
+                      strokeWidth="0.6"
+                    />
+                    <circle cx="20" cy="20" r="6" stroke="currentColor" strokeWidth="0.6" />
+                  </svg>
+                </div>
+              )}
 
               <div className="flex items-center gap-3 mb-4">
                 <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-[#C9A84C]">

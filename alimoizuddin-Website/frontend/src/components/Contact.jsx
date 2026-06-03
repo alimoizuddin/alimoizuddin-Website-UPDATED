@@ -23,6 +23,7 @@ export default function Contact() {
   const PROFILE = profile || {};
   const CONTACT_CARDS = contactCards || [];
   const [activeCard, setActiveCard] = useState(null);
+  const wellfoundUrl = PROFILE.wellfound || "https://wellfound.com/u/ali-moizuddin-1";
 
   const openDialog = async (card) => {
     setActiveCard(card);
@@ -188,6 +189,17 @@ export default function Contact() {
               >
                 <ExternalLink className="w-4 h-4" strokeWidth={1.5} />
                 Notion Portfolio
+              </a>
+              <a
+                href={wellfoundUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="contact-wellfound"
+                onClick={() => track("social_click", { network: "wellfound" })}
+                className="inline-flex items-center gap-2.5 px-5 py-3 border border-[#888880]/30 text-[#F5F0E8] hover:border-[#C9A84C] hover:text-[#C9A84C] transition-colors duration-500 font-mono text-[10px] uppercase tracking-[0.22em]"
+              >
+                <ExternalLink className="w-4 h-4" strokeWidth={1.5} />
+                Wellfound
               </a>
             </div>
 

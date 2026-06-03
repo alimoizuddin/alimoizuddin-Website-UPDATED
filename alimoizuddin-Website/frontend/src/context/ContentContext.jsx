@@ -60,6 +60,65 @@ const buildDefaults = () => ({
 
 
 
+function mergeProjectDetail(base, project) {
+  const baseDetail = base?.detail && typeof base.detail === "object" ? base.detail : null;
+  const projectDetail = project?.detail && typeof project.detail === "object" ? project.detail : null;
+
+  if (!baseDetail && !projectDetail) return undefined;
+  return { ...(baseDetail || {}), ...(projectDetail || {}) };
+}
+
+
+
+
+function mergeProjects(serverProjects) {
+  const defaultProjects = DEFAULTS.PROJECTS || [];
+  if (!Array.isArray(serverProjects)) return defaultProjects;
+
+  const byId = new Map(defaultProjects.map((project) => [project.id, { ...project }]));
+  const order = defaultProjects.map((project) => project.id);
+
+  serverProjects.forEach((project) => {
+    if (!project?.id) return;
+
+    const base = byId.get(project.id) || {};
+    const detail = mergeProjectDetail(base, project);
+    const merged = {
+      ...base,
+      ...project,
+      image: project.image?.src ? project.image : base.image,
+    };
+
+    if (detail) merged.detail = detail;
+    byId.set(project.id, merged);
+
+    if (!order.includes(project.id)) {
+      order.push(project.id);
+    }
+  });
+
+  return order.map((id) => byId.get(id)).filter(Boolean);
+}
+
+
+
+
+function normalizeContent(data = {}) {
+  if (!data || typeof data !== "object") return {};
+
+  const defaults = buildDefaults();
+
+  return {
+    ...data,
+    profile: { ...defaults.profile, ...(data.profile || {}) },
+    socials: Array.isArray(data.socials) ? data.socials : defaults.socials,
+    projects: mergeProjects(data.projects),
+  };
+}
+
+
+
+
 // Read from sessionStorage cache
 function readCache() {
   try {
@@ -99,7 +158,7 @@ const ContentContext = createContext({
 export function ContentProvider({ children }) {
   // Start with cache if available, else defaults — page renders instantly either way
   const cached = readCache();
-  const [content, setContent] = useState(cached ? { ...buildDefaults(), ...cached } : buildDefaults());
+  const [content, setContent] = useState(cached ? { ...buildDefaults(), ...normalizeContent(cached) } : buildDefaults());
   const [loaded, setLoaded] = useState(true); // always true — never block render
 
 
@@ -109,8 +168,9 @@ export function ContentProvider({ children }) {
     try {
       const { data } = await axios.get(`${API}/content`, { timeout: 5000 });
       if (data && typeof data === "object" && Object.keys(data).length > 0) {
-        setContent((prev) => ({ ...prev, ...data }));
-        writeCache(data); // cache for next visit
+        const normalized = normalizeContent(data);
+        setContent((prev) => ({ ...prev, ...normalized }));
+        writeCache(normalized); // cache for next visit
       }
     } catch {
       // silent — defaults already showing

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 
 // Animates a numeric value from 0 → target when the element enters the viewport.
-// Preserves any non-numeric characters in the original string (e.g. "1,000+", "40–60%").
+// Preserves any non-numeric characters in the original string (e.g. "100+", "40–60%").
 export default function AnimatedNumber({ value, duration = 1400, className = "" }) {
   const [display, setDisplay] = useState(value);
   const ref = useRef(null);

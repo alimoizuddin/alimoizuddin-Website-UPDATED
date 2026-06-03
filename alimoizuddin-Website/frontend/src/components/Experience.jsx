@@ -186,7 +186,7 @@ export default function Experience() {
                     {ed.period}
                     {ed.grade && (
                       <>
-                        <span className="mx-2 text-[#888880]">·</span>
+                        <span className="mx-2 text-[#888880]"> · </span>
                         <span className="text-[#F5F0E8]">{ed.grade}</span>
                       </>
                     )}

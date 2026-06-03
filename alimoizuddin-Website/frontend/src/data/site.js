@@ -10,7 +10,7 @@ export const PROFILE = {
   "email": "aalimoizuddin@outlook.com",
   "phone": "+91 8392006965",
   "linkedin": "https://www.linkedin.com/in/alimoizuddin",
-  "notion": "https://wellfound.com/u/ali-moizuddin-1",
+  "notion": "https://www.notion.so/Ali-Moizuddin-AI-Ghostwriter-Content-System-Specialist-32b966fa7e83801b95e7f7be1caab23e",
   "photo": "https://customer-assets.emergentagent.com/job_3e46ef77-ca74-4e8e-a719-ab3f22e4f199/artifacts/v3cmir8v_Profile%20Pic.jpg",
   "statusPillLabel": "Available · 2 client slots",
   "heroHeadlinePrefix": "I Build AI Systems",
@@ -57,6 +57,13 @@ export const SOCIALS = [
     "handle": "alimoizuddin",
     "url": "https://github.com/alimoizuddin",
     "icon": "github"
+  },
+  {
+    "id": "notion",
+    "label": "Notion",
+    "handle": "Portfolio",
+    "url": "https://www.notion.so/Ali-Moizuddin-AI-Ghostwriter-Content-System-Specialist-32b966fa7e83801b95e7f7be1caab23e",
+    "icon": "external"
   },
   {
     "id": "wellfound",
@@ -194,15 +201,55 @@ export const COMPETENCIES = [
 
 export const PROJECTS = [
   {
+    "id": "digital-twin",
+    "category": "AUTOMATION",
+    "title": "Hybrid Digital Twin & Large-Scale Knowledge Extraction Engine",
+    "description": "Python + Gradio extraction system using yt-dlp to pull subtitles from long-form YouTube assets, compressing raw media knowledge into structured mega-files for NotebookLM and digital-twin style coaching workflows.",
+    "metric": "900+ assets made queryable",
+    "abstract": 4,
+    "image": {
+      "src": "/images/projects/digital-twin.webp",
+      "alt": "Large-scale knowledge extraction engine interface with local Gradio app and terminal",
+      "caption": "YouTube scraper and knowledge extraction interface."
+    },
+    "caseStudy": true,
+    "detail": {
+      "role": "Solo build — architect",
+      "stack": [
+        "Python",
+        "Gradio",
+        "yt-dlp",
+        "NotebookLM",
+        "Gemini"
+      ],
+      "problem": "A large library of long-form media knowledge was scattered across videos, transcripts, and notes. Manual extraction was too slow, and generic summaries lost the exact frameworks.",
+      "approach": [
+        "Built a local Gradio interface to accept YouTube channel or asset inputs.",
+        "Used yt-dlp and transcript extraction to pull subtitle data at scale.",
+        "Compressed extracted material into structured mega-files for downstream retrieval and coaching workflows."
+      ],
+      "result": [
+        "900+ media assets became queryable instead of manually searchable.",
+        "Raw content turned into structured knowledge infrastructure.",
+        "Created the foundation for digital-twin style coaching and retrieval workflows."
+      ]
+    }
+  },
+  {
     "id": "sdr-ghostwriting",
     "category": "AUTOMATION",
     "title": "SDR Research & Outreach Automation Pipeline",
     "description": "Autonomous engine ingesting leads via Sheets, scraping public signals with Apify, and generating personalized outreach drafts with QA agents — turning research-heavy outreach into a review workflow.",
     "metric": "70% manual effort reduction",
     "abstract": 1,
+    "image": {
+      "src": "/images/projects/sdr-ghostwriting.webp",
+      "alt": "Autonomous SDR engine workflow next to Google Sheets outreach output",
+      "caption": "n8n SDR workflow connected to live outreach output."
+    },
     "caseStudy": true,
     "detail": {
-      "role": "Solo build · architect / operator",
+      "role": "Solo build — architect / operator",
       "stack": [
         "Apollo.io",
         "Apify",
@@ -232,7 +279,12 @@ export const PROJECTS = [
     "title": "Autonomous CI/CD Pipeline",
     "description": "n8n workflow triggered via Outlook on code commits, using an OpenAI reasoning engine + Autonomous QA Architect to sanitize payloads, evaluate code quality, and dispatch success/rejection signals.",
     "metric": "50%+ review cycle reduction",
-    "abstract": 2
+    "abstract": 2,
+    "image": {
+      "src": "/images/projects/cicd-reasoning.webp",
+      "alt": "Autonomous CI/CD n8n workflow next to automated deployment failure report",
+      "caption": "Automated QA workflow and deployment failure report."
+    }
   },
   {
     "id": "content-pipeline",
@@ -243,7 +295,7 @@ export const PROJECTS = [
     "abstract": 3,
     "caseStudy": true,
     "detail": {
-      "role": "Solo build · system + editorial architect",
+      "role": "Solo build — system + editorial architect",
       "stack": [
         "GPT-4",
         "Gemini",
@@ -256,7 +308,7 @@ export const PROJECTS = [
       "problem": "Content workflows break when raw ideas, notes, drafts, and publishing steps live in different places. The system needed to preserve voice and context while reducing the manual effort between idea and usable output.",
       "approach": [
         "Voice and context configuration: tone rules, do-not-write lists, structural templates, and guardrails.",
-        "Pipeline stages: ideation prompts → draft → tone audit → style audit → publish-ready handoff.",
+        "Pipeline stages: ideation prompts — draft — tone audit — style audit — publish-ready handoff.",
         "Each stage has its own validator — a rejection bounces back to the previous stage with a reason.",
         "Assets and rejections are logged so the system gets cleaner over repeated use."
       ],
@@ -276,7 +328,7 @@ export const PROJECTS = [
     "abstract": 4,
     "caseStudy": true,
     "detail": {
-      "role": "Solo build · system architect",
+      "role": "Solo build — system architect",
       "stack": [
         "Python",
         "Vision OCR",
@@ -307,7 +359,7 @@ export const PROJECTS = [
     "abstract": 5,
     "caseStudy": true,
     "detail": {
-      "role": "Solo build · retrieval architect",
+      "role": "Solo build — retrieval architect",
       "stack": [
         "Custom OCR",
         "BM25 ranking",
@@ -362,7 +414,7 @@ export const PROJECTS = [
     "abstract": 4,
     "caseStudy": true,
     "detail": {
-      "role": "Solo build · system + pedagogy architect",
+      "role": "Solo build — system + pedagogy architect",
       "stack": [
         "Vector retrieval",
         "LLM orchestration",
@@ -453,7 +505,7 @@ export const PROJECTS = [
     "abstract": 5,
     "caseStudy": true,
     "detail": {
-      "role": "Solo build · voice-to-asset architect",
+      "role": "Solo build — voice-to-asset architect",
       "stack": [
         "Whisper",
         "GPT-4",
@@ -480,11 +532,11 @@ export const PROJECTS = [
     "category": "CONTENT",
     "title": "6 Identity-Preserving AI Writing Systems",
     "description": "Six LLM pipelines tuned to distinct voices, worldviews, and narrative patterns — built to avoid generic AI output.",
-    "metric": "6 voices · zero generic copy",
+    "metric": "6 voices — zero generic copy",
     "abstract": 1,
     "caseStudy": true,
     "detail": {
-      "role": "Solo build · identity-system architect",
+      "role": "Solo build — identity-system architect",
       "stack": [
         "GPT-4 + Claude",
         "Bespoke prompt systems",
@@ -520,9 +572,14 @@ export const PROJECTS = [
     "description": "Full-stack financial auditing tool ingesting CSV via webhook, using GPT-4-mini to identify redundant subscriptions — visualized in a React + Tailwind dashboard.",
     "metric": "8–12 tools flagged / audit",
     "abstract": 3,
+    "image": {
+      "src": "/images/projects/phantom-spend.webp",
+      "alt": "Phantom-Spend SaaS auditor workflow next to financial audit dashboard",
+      "caption": "n8n backend paired with SaaS audit dashboard."
+    },
     "caseStudy": true,
     "detail": {
-      "role": "Solo build · architect + UI",
+      "role": "Solo build — architect + UI",
       "stack": [
         "React",
         "Tailwind CSS",
@@ -584,7 +641,7 @@ export const PROJECTS = [
     "abstract": 3,
     "caseStudy": true,
     "detail": {
-      "role": "Solo build · hackathon-winning project",
+      "role": "Solo build — hackathon-winning project",
       "stack": [
         "n8n",
         "Gemini",
@@ -601,7 +658,7 @@ export const PROJECTS = [
       ],
       "result": [
         "50+ candidates processed per run with full rationale per candidate.",
-        "Helped clinch 1st Prize at the Be10x AI Generalist Hackathon — beating IITians, PhDs, and SWEs.",
+        "Helped win the Be10x AI Generalist Hackathon — beating IITians, PhDs, and SWEs.",
         "Reviewer time per role dropped by an order of magnitude."
       ]
     }
@@ -789,7 +846,7 @@ export const EXPERIENCE = [
   {
     "role": "Academic Peer Mentor & Performance Coach",
     "org": "Salesian College · Siliguri, India",
-    "period": "Aug 2024 — Present",
+    "period": "Aug 2024 — May 2025",
     "bullets": [
       "Simplified complex academic theory (e.g. 'Ambivalence' through a breakup metaphor) — held attention of 150+ students across 10+ sessions.",
       "Deployed for Rapid Response Teaching: compressed 3–4 weeks of context into single high-density sessions before major guest speaker events.",

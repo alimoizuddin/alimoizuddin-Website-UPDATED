@@ -115,6 +115,29 @@ export default function CaseStudy() {
           {project.description}
         </motion.p>
 
+        {project.image?.src && (
+          <motion.figure
+            variants={fadeUp}
+            initial="hidden"
+            animate="show"
+            custom={3}
+            className="mt-12 overflow-hidden border border-[#C9A84C]/15 bg-[#111116]"
+          >
+            <img
+              src={project.image.src}
+              alt={project.image.alt || `${project.title} interface screenshot`}
+              loading="eager"
+              decoding="async"
+              className="w-full aspect-[16/9] object-cover"
+            />
+            {project.image.caption && (
+              <figcaption className="border-t border-[#C9A84C]/10 px-5 py-3 font-mono text-[10px] uppercase tracking-[0.18em] text-[#888880]">
+                {project.image.caption}
+              </figcaption>
+            )}
+          </motion.figure>
+        )}
+
         {/* Meta strip */}
         <motion.div
           variants={fadeUp}
