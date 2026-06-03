@@ -822,12 +822,11 @@ export const EXPERIENCE = [
     "org": "Self-Employed · Siliguri, India",
     "period": "Feb 2023 — Present",
     "bullets": [
-      "Built AI-powered systems across personal operating systems, learning infrastructure, RAG, OCR/BM25 search, transcription, SDR research, job-application automation, browser-agent workflows, and full-stack prototypes.",
-      "Designed AI operating systems for learning, planning, execution, and knowledge management — reducing repetition and improving follow-through.",
-      "Built RAG and search systems from notes, PDFs, transcripts, and media assets using OCR, BM25, transcript extraction, and long-context knowledge files.",
-      "Automated workflows with n8n, Python, LLM APIs, and browser agents for transcription, SDR research, job applications, content structuring, and operational tasks.",
-      "Since Feb 2026, expanded into content infrastructure: voice-to-asset pipelines and identity-preserving LLM systems that turn raw inputs into structured outputs.",
-      "Most systems were self-directed; some were unpaid delegated builds for friends and Radio Club team members, focused on working prototypes and practical workflow improvement."
+      "Most people think systems begin with software. Mine began with life.",
+      "Personal Operating Systems: AI-powered workflows for learning, execution, planning, and knowledge management — built to reduce repetition and improve follow-through.",
+      "RAG & Search Systems: OCR, BM25 search, transcript extraction, and long-context knowledge files built from 500+ pages of notes, 900+ media assets, and 100+ hours of audio — achieving 90 percent-plus transcription accuracy.",
+      "Automation Pipelines: n8n, Python, LLM APIs, and browser-agent workflows for transcription, SDR research, job applications, content structuring, and workflow automation — reducing manual processing time by 80 to 90 percent across each system.",
+      "Content Infrastructure: Since Feb 2026, expanded into voice-to-asset pipelines and identity-preserving LLM systems that turn raw inputs into structured outputs."
     ]
   },
   {

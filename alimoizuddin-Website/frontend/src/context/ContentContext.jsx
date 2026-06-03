@@ -37,7 +37,7 @@ const buildDefaults = () => ({
     quote: "I combine literature-level understanding of humans with systems-level mastery of AI. Very few people genuinely have both.",
     paragraphs: [
           "An MA in English Literature gave me the cognitive scaffolding — narrative theory, voice, and the architecture of meaning. AI gave me the tooling to operationalize it. Most operators have one or the other. The interdisciplinary moat is the entire point.",
-          "Since Feb 2023, I have built 20+ AI-powered systems across personal operating systems, learning infrastructure, RAG, OCR/BM25 search, transcription, SDR research, job-application automation, browser-agent workflows, and full-stack AI-assisted prototypes. Most were self-directed; some were unpaid delegated builds for friends and Radio Club team members.",
+          "Since Feb 2023, I have built 20+ AI-powered systems across personal operating systems, learning infrastructure, RAG, OCR/BM25 search, transcription, SDR research, job-application automation, browser-agent workflows, and full-stack AI-assisted prototypes. From Feb 2026, that systems work evolved into content infrastructure: voice-to-asset pipelines, identity-preserving LLMs, and publishing workflows.",
           "The goal is simple: reduce manual repetition, structure messy inputs, and turn scattered workflows into repeatable operating infrastructure. The systems consistently target 40–60% less manual overhead while preserving human judgment, voice, and context."
     ],
   },
@@ -103,6 +103,47 @@ function mergeProjects(serverProjects) {
 
 
 
+function normalizeAbout(about, defaults) {
+  const merged = { ...defaults, ...(about || {}) };
+  const paragraphs = Array.isArray(merged.paragraphs) ? merged.paragraphs : defaults.paragraphs;
+  const defaultSinceFeb = defaults.paragraphs?.[1];
+
+  merged.paragraphs = paragraphs
+    .map((paragraph) => {
+      if (typeof paragraph !== "string") return paragraph;
+      if (paragraph.includes("Since Feb 2023")) return defaultSinceFeb;
+      return paragraph;
+    })
+    .filter((paragraph) => {
+      if (typeof paragraph !== "string") return true;
+      return !/self-directed|unpaid delegated|unpaid builds/i.test(paragraph);
+    });
+
+  return merged;
+}
+
+
+
+
+function normalizeExperience(experience) {
+  const defaults = DEFAULTS.EXPERIENCE || [];
+  if (!Array.isArray(experience)) return defaults;
+
+  const systemsRole = defaults.find((entry) => entry.role === "AI Systems Architect & Automation Builder");
+
+  return experience.map((entry) => {
+    if (!systemsRole || !entry) return entry;
+    const isSystemsRole =
+      entry.role === systemsRole.role ||
+      (entry.period === "Feb 2023 — Present" && /system|architect|automation/i.test(entry.role || ""));
+
+    return isSystemsRole ? { ...entry, ...systemsRole } : entry;
+  });
+}
+
+
+
+
 function normalizeContent(data = {}) {
   if (!data || typeof data !== "object") return {};
 
@@ -111,7 +152,9 @@ function normalizeContent(data = {}) {
   return {
     ...data,
     profile: { ...defaults.profile, ...(data.profile || {}) },
+    about: normalizeAbout(data.about, defaults.about),
     socials: Array.isArray(data.socials) ? data.socials : defaults.socials,
+    experience: normalizeExperience(data.experience),
     projects: mergeProjects(data.projects),
   };
 }
