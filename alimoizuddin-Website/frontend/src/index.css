@@ -181,8 +181,28 @@ body {
 }
 
 @media (max-width: 768px) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .noise-overlay,
+  .hero-blob-1,
+  .hero-blob-2 {
+    display: none;
+  }
+
+  .hero-mesh {
+    background: #0d0d0d;
+  }
+
   .cursor-glow {
     display: none;
+  }
+
+  .marquee-track,
+  .shimmer,
+  .status-dot {
+    animation: none;
   }
 }
 
@@ -312,6 +332,17 @@ body {
 }
 .status-dot {
   animation: status-pulse 2.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 [data-debug-wrapper="true"] {

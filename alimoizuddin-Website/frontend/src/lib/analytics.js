@@ -1,9 +1,10 @@
 // Lightweight analytics helper — fire-and-forget POSTs to backend.
 // Tracks scroll depth (25/50/75/100) and section views via IntersectionObserver.
 
-import axios from "axios";
-
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const API = BACKEND_URL ? `${BACKEND_URL}/api` : "";
+const ANALYTICS_ENABLED = process.env.REACT_APP_ENABLE_ANALYTICS === "true";
+const ANALYTICS_TIMEOUT_MS = 1200;
 
 const isSameOriginApi = () => {
   try {
@@ -15,6 +16,8 @@ const isSameOriginApi = () => {
 };
 
 const send = (event, payload = {}) => {
+  if (!ANALYTICS_ENABLED || !API) return;
+
   try {
     const body = {
       event,
@@ -27,7 +30,24 @@ const send = (event, payload = {}) => {
       navigator.sendBeacon(`${API}/analytics/event`, blob);
       return;
     }
-    axios.post(`${API}/analytics/event`, body, { withCredentials: false }).catch(() => {});
+
+    const controller = typeof AbortController !== "undefined" ? new AbortController() : null;
+    const timeoutId = controller
+      ? window.setTimeout(() => controller.abort(), ANALYTICS_TIMEOUT_MS)
+      : null;
+
+    fetch(`${API}/analytics/event`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+      keepalive: true,
+      credentials: "omit",
+      signal: controller?.signal,
+    })
+      .catch(() => {})
+      .finally(() => {
+        if (timeoutId) window.clearTimeout(timeoutId);
+      });
   } catch {
     // non-blocking
   }

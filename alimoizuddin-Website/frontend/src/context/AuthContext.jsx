@@ -3,6 +3,7 @@ import axios from "axios";
 
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 const TOKEN_KEY = "ali_admin_token";
+const AUTH_TIMEOUT_MS = 1200;
 
 const AuthContext = createContext({
   user: null,
@@ -26,6 +27,7 @@ export function AuthProvider({ children }) {
     try {
       const { data } = await axios.get(`${API}/auth/me`, {
         headers: { Authorization: `Bearer ${t}` },
+        timeout: AUTH_TIMEOUT_MS,
       });
       setUser(data);
     } catch {
@@ -42,7 +44,7 @@ export function AuthProvider({ children }) {
   }, [verify, token]);
 
   const login = async (email, password) => {
-    const { data } = await axios.post(`${API}/auth/login`, { email, password });
+    const { data } = await axios.post(`${API}/auth/login`, { email, password }, { timeout: 8000 });
     localStorage.setItem(TOKEN_KEY, data.token);
     setToken(data.token);
     setUser(data.user);

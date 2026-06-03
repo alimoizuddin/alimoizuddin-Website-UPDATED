@@ -5,9 +5,12 @@ import * as DEFAULTS from "../data/site";
 
 
 
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const API = BACKEND_URL ? `${BACKEND_URL}/api` : "";
+const REMOTE_CONTENT_ENABLED = process.env.REACT_APP_ENABLE_REMOTE_CONTENT === "true";
 const CACHE_KEY = "ali_site_content";
 const CACHE_TTL = 1000 * 60 * 30; // 30 minutes
+const CONTENT_FETCH_TIMEOUT_MS = 1200;
 
 
 
@@ -218,7 +221,7 @@ const ContentContext = createContext({
 
 export function ContentProvider({ children }) {
   // Start with cache if available, else defaults — page renders instantly either way
-  const cached = readCache();
+  const cached = REMOTE_CONTENT_ENABLED ? readCache() : null;
   const [content, setContent] = useState(cached ? { ...buildDefaults(), ...normalizeContent(cached) } : buildDefaults());
   const [loaded, setLoaded] = useState(true); // always true — never block render
 
@@ -226,8 +229,10 @@ export function ContentProvider({ children }) {
 
 
   const fetchContent = useCallback(async () => {
+    if (!REMOTE_CONTENT_ENABLED || !API) return;
+
     try {
-      const { data } = await axios.get(`${API}/content`, { timeout: 5000 });
+      const { data } = await axios.get(`${API}/content`, { timeout: CONTENT_FETCH_TIMEOUT_MS });
       if (data && typeof data === "object" && Object.keys(data).length > 0) {
         const normalized = normalizeContent(data);
         setContent((prev) => ({ ...prev, ...normalized }));
