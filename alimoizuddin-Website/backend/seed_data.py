@@ -15,7 +15,7 @@ DEFAULT_PROFILE = {
     "photo": "https://customer-assets.emergentagent.com/job_3e46ef77-ca74-4e8e-a719-ab3f22e4f199/artifacts/v3cmir8v_Profile%20Pic.jpg",
     "statusPillLabel": "Available · 2 client slots",
     "heroHeadlinePrefix": "I Build AI Systems",
-    "heroHeadlineSuffix": "That Turn Messy Work Into Repeatable Execution.",
+    "heroHeadlineSuffix": "That Think.",
     "heroSub": "Building RAG, agentic AI, n8n, OCR/BM25 search, transcription, SDR research, and workflow automation systems that turn messy information into repeatable execution.",
 }
 

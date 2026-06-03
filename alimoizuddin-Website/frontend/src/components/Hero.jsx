@@ -28,7 +28,7 @@ export default function Hero() {
   };
 
 
-  const suffix = profile?.heroHeadlineSuffix || "That Turn Messy Work Into Repeatable Execution.";
+  const suffix = profile?.heroHeadlineSuffix || "That Think.";
   const suffixWords = suffix.split(" ");
   const lastWord = suffixWords[suffixWords.length - 1] || "";
   const suffixHead = suffixWords.slice(0, -1).join(" ");
