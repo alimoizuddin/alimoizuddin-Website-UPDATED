@@ -206,6 +206,7 @@ export const PROJECTS = [
     "title": "Hybrid Digital Twin & Large-Scale Knowledge Extraction Engine",
     "description": "Python + Gradio extraction system using yt-dlp to pull subtitles from long-form YouTube assets, compressing raw media knowledge into structured mega-files for NotebookLM and digital-twin style coaching workflows.",
     "metric": "900+ assets made queryable",
+    "proofUrl": "https://github.com/alimoizuddin/alimoizuddin-Website-UPDATED/tree/main/project-archives/youtube-knowledge-extractor",
     "abstract": 4,
     "image": {
       "src": "/images/projects/digital-twin.webp",
@@ -241,6 +242,7 @@ export const PROJECTS = [
     "title": "SDR Research & Outreach Automation Pipeline",
     "description": "Autonomous engine ingesting leads via Sheets, scraping public signals with Apify, and generating personalized outreach drafts with QA agents — turning research-heavy outreach into a review workflow.",
     "metric": "70% manual effort reduction",
+    "proofUrl": "https://github.com/alimoizuddin/alimoizuddin-Website-UPDATED/tree/main/project-archives/autonomous-sdr-engine",
     "abstract": 1,
     "image": {
       "src": "/images/projects/sdr-ghostwriting.webp",
@@ -279,6 +281,7 @@ export const PROJECTS = [
     "title": "Autonomous CI/CD Pipeline",
     "description": "n8n workflow triggered via Outlook on code commits, using an OpenAI reasoning engine + Autonomous QA Architect to sanitize payloads, evaluate code quality, and dispatch success/rejection signals.",
     "metric": "50%+ review cycle reduction",
+    "proofUrl": "https://github.com/alimoizuddin/alimoizuddin-Website-UPDATED/tree/main/project-archives/autonomous-ci-cd-pipeline",
     "abstract": 2,
     "image": {
       "src": "/images/projects/cicd-reasoning.webp",
@@ -571,6 +574,7 @@ export const PROJECTS = [
     "title": "Phantom-Spend SaaS Auditor",
     "description": "Full-stack financial auditing tool ingesting CSV via webhook, using GPT-4-mini to identify redundant subscriptions — visualized in a React + Tailwind dashboard.",
     "metric": "8–12 tools flagged / audit",
+    "proofUrl": "https://github.com/alimoizuddin/alimoizuddin-Website-UPDATED/tree/main/project-archives/phantom-spend-saas-auditor",
     "abstract": 3,
     "image": {
       "src": "/images/projects/phantom-spend.webp",

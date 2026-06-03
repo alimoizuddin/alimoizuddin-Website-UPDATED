@@ -1,0 +1,129 @@
+{
+  "name": "Phantom-Spend SaaS Auditor",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "REDACTED_WEBHOOK_ID",
+        "responseMode": "responseNode",
+        "options": {
+          "allowedOrigins": "*"
+        }
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "REDACTED_WEBHOOK_ID",
+      "name": "API: Ingest CSV Data"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-5-mini",
+          "mode": "list",
+          "cachedResultName": "gpt-5-mini"
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        208,
+        192
+      ],
+      "id": "REDACTED_WEBHOOK_ID",
+      "name": "Brain: gpt-5-mini"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=={{ $json.body.raw_csv_text }}",
+        "messages": {
+          "messageValues": [
+            {
+              "message": "=You are a ruthless Startup Financial Operations Auditor. Your objective is to extract recurring SaaS/software subscriptions from chaotic bank statement data and identify financial overlaps.  RULES:  Extract ONLY software/SaaS subscriptions. Ignore all non-software expenses (Uber, Starbucks, Payroll, Rent, Flights, etc.).  Analyze the core capabilities of the extracted software tools.  Identify redundancies (e.g., paying for both ChatGPT Plus and Jasper, or Zoom and Microsoft Teams).  Calculate the \"total_wasted_capital\" by summing the monthly_cost of all tools marked as \"Cancel\".  OUTPUT FORMAT: You MUST output strictly valid JSON with no markdown formatting, no code blocks (do NOT use ```json), and no conversational text. Use this exact schema: { \"audit_results\": [ { \"tool_name\": \"Name of the tool\", \"monthly_cost\": 0.00, \"is_redundant\": true, \"redundant_with\": \"Name of overlapping tool (or null)\", \"action_recommendation\": \"Cancel, Consolidate, or Keep\" } ], \"total_wasted_capital\": 0.00 } "
+            }
+          ]
+        },
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.9,
+      "position": [
+        208,
+        0
+      ],
+      "id": "REDACTED_WEBHOOK_ID",
+      "name": "AI Reasoning Engine: Audit Logic",
+      "retryOnFail": true
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.parse($json.text.replace(/```json/g, '').replace(/```/g, '').trim()) }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        560,
+        0
+      ],
+      "id": "REDACTED_WEBHOOK_ID",
+      "name": "Output: JSON Dashboard Payload"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "API: Ingest CSV Data": {
+      "main": [
+        [
+          {
+            "node": "AI Reasoning Engine: Audit Logic",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Brain: gpt-5-mini": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Reasoning Engine: Audit Logic",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Reasoning Engine: Audit Logic": {
+      "main": [
+        [
+          {
+            "node": "Output: JSON Dashboard Payload",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "REDACTED_WEBHOOK_ID",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "90272a788de96396b128cbef40873af28e38feefc860dc75412f5293ad86300b"
+  },
+  "id": "UNxeywOHxrXxJNIa",
+  "tags": []
+}

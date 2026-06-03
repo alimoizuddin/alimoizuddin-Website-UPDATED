@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowUpRight, BookOpen } from "lucide-react";
+import { ArrowUpRight, BookOpen, Github } from "lucide-react";
 import { useContent } from "../context/ContentContext";
 import { track } from "../lib/analytics";
 
@@ -157,22 +157,37 @@ export default function Projects() {
                     {p.metric}
                   </span>
                 </div>
-                {p.caseStudy ? (
-                  <Link
-                    to={`/case-studies/${p.id}`}
-                    onClick={() => track("case_study_open", { id: p.id })}
-                    data-testid={`case-link-${p.id}`}
-                    className="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.22em] text-[#C9A84C] hover:text-[#F5F0E8] transition-colors duration-500"
-                  >
-                    <BookOpen className="w-3.5 h-3.5" strokeWidth={1.5} />
-                    Case Study
-                  </Link>
-                ) : (
-                  <ArrowUpRight
-                    className="w-5 h-5 text-[#888880] group-hover:text-[#C9A84C] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-500"
-                    strokeWidth={1.25}
-                  />
-                )}
+                <div className="flex flex-wrap items-center justify-end gap-4">
+                  {p.proofUrl && (
+                    <a
+                      href={p.proofUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => track("project_proof_open", { id: p.id })}
+                      data-testid={`proof-link-${p.id}`}
+                      className="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.22em] text-[#888880] hover:text-[#C9A84C] transition-colors duration-500"
+                    >
+                      <Github className="w-3.5 h-3.5" strokeWidth={1.5} />
+                      GitHub
+                    </a>
+                  )}
+                  {p.caseStudy ? (
+                    <Link
+                      to={`/case-studies/${p.id}`}
+                      onClick={() => track("case_study_open", { id: p.id })}
+                      data-testid={`case-link-${p.id}`}
+                      className="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.22em] text-[#C9A84C] hover:text-[#F5F0E8] transition-colors duration-500"
+                    >
+                      <BookOpen className="w-3.5 h-3.5" strokeWidth={1.5} />
+                      Case Study
+                    </Link>
+                  ) : (
+                    <ArrowUpRight
+                      className="w-5 h-5 text-[#888880] group-hover:text-[#C9A84C] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-500"
+                      strokeWidth={1.25}
+                    />
+                  )}
+                </div>
               </div>
             </motion.article>
           ))}

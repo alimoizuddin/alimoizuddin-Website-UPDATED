@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Github } from "lucide-react";
 import { useContent } from "../context/ContentContext";
 import NoiseOverlay from "../components/NoiseOverlay";
 import ReadingProgress from "../components/ReadingProgress";
@@ -136,6 +136,25 @@ export default function CaseStudy() {
               </figcaption>
             )}
           </motion.figure>
+        )}
+
+        {project.proofUrl && (
+          <motion.a
+            variants={fadeUp}
+            initial="hidden"
+            animate="show"
+            custom={4}
+            href={project.proofUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => track("project_proof_open", { id: project.id })}
+            data-testid="case-proof-link"
+            className="mt-6 inline-flex items-center gap-3 border border-[#C9A84C]/30 px-5 py-3 font-mono text-[10px] uppercase tracking-[0.22em] text-[#C9A84C] hover:border-[#C9A84C] hover:text-[#F5F0E8] transition-colors duration-500"
+          >
+            <Github className="w-4 h-4" strokeWidth={1.5} />
+            View GitHub Proof Archive
+            <ArrowUpRight className="w-3.5 h-3.5" strokeWidth={1.5} />
+          </motion.a>
         )}
 
         {/* Meta strip */}
