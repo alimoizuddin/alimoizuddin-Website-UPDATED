@@ -5,14 +5,14 @@
 export const PROFILE = {
   "name": "Ali Moizuddin",
   "brand": "ALI MOIZUDDIN",
-  "tagline": "AI Automation Engineer · RAG · Agentic AI · n8n · LLM Workflow Automation",
+  "tagline": "AI Automation Engineer · RAG · Agentic AI · n8n · Be10x Hackathon Winner · Top 0.1% ChatGPT User",
   "location": "Siliguri, West Bengal, India",
   "email": "aalimoizuddin@outlook.com",
   "phone": "+91 8392006965",
   "linkedin": "https://www.linkedin.com/in/alimoizuddin",
   "notion": "https://www.notion.so/Ali-Moizuddin-AI-Ghostwriter-Content-System-Specialist-32b966fa7e83801b95e7f7be1caab23e",
   "photo": "https://customer-assets.emergentagent.com/job_3e46ef77-ca74-4e8e-a719-ab3f22e4f199/artifacts/v3cmir8v_Profile%20Pic.jpg",
-  "statusPillLabel": "Available · 2 client slots",
+  "statusPillLabel": "Open to roles · select freelance",
   "heroHeadlinePrefix": "I Build AI Systems",
   "heroHeadlineSuffix": "That Think.",
   "heroSub": "Building RAG, agentic AI, n8n, OCR/BM25 search, transcription, SDR research, and workflow automation systems that turn messy information into repeatable execution.",
@@ -728,19 +728,19 @@ export const AGENTS = [
     "method": "Chronobiology / chronotype frameworks"
   },
   {
-    "name": "Trial-Based Strength Engine",
+    "name": "Overload",
     "vertical": "HEALTH",
-    "desc": "Progressive overload programming via auto-regulated trial sets.",
+    "desc": "Progressive-overload programming via auto-regulated trial sets.",
     "method": "Auto-regulated progressive overload"
   },
   {
-    "name": "Wilderness Prep Engine",
+    "name": "Primal",
     "vertical": "HEALTH",
-    "desc": "Outdoor & survival prep — protocols for trips, weather, terrain.",
-    "method": "Outdoor risk & terrain protocols"
+    "desc": "Ancestral-health coach — paleo / hunter-gatherer eating and lifestyle reset.",
+    "method": "Paleo / hunter-gatherer frameworks"
   },
   {
-    "name": "Skin Protocol Engine",
+    "name": "Dermis",
     "vertical": "HEALTH",
     "desc": "Evidence-graded skincare routines from dermatology literature.",
     "method": "Dermatology-literature routines"
@@ -764,13 +764,13 @@ export const AGENTS = [
     "method": "Elite multi-layered prompt meta-agent"
   },
   {
-    "name": "Habit Architect",
+    "name": "Keystone",
     "vertical": "LIFESTYLE",
     "desc": "Habit design with identity-reinforcement loops + friction audit.",
     "method": "Identity-based habit design"
   },
   {
-    "name": "Style Consultant Engine",
+    "name": "Tailored",
     "vertical": "LIFESTYLE",
     "desc": "Personal style + grooming consultant calibrated to your context.",
     "method": "Color theory + wardrobe systems"
@@ -782,13 +782,13 @@ export const AGENTS = [
     "method": "Spatial optimization frameworks"
   },
   {
-    "name": "Conversation Coach Engine",
+    "name": "Wingwoman",
     "vertical": "LIFESTYLE",
-    "desc": "Reads texts, suggests tonally-correct replies. Never cringe.",
-    "method": "Conversation dynamics + tone calibration"
+    "desc": "Reads your texts and suggests tonally-on-point replies. Dating & social, female-perspective.",
+    "method": "Dating & conversation dynamics"
   },
   {
-    "name": "Accelerated Learning Engine",
+    "name": "Recall",
     "vertical": "KNOWLEDGE",
     "desc": "Active recall, spaced repetition, 80/20 distillation on tap.",
     "method": "Active recall + spaced repetition"
@@ -812,10 +812,10 @@ export const AGENTS = [
     "method": "Empire Phase aesthetic + systems"
   },
   {
-    "name": "Performance Coach Engine",
+    "name": "Ascend",
     "vertical": "KNOWLEDGE",
-    "desc": "Discipline & performance coach — exam-prep + daily routine regimen.",
-    "method": "BM25 + retrieval-based learning"
+    "desc": "Discipline, dating & social-dynamics coach for self-development.",
+    "method": "Social dynamics + performance routines"
   }
 ];
 
@@ -867,7 +867,7 @@ export const CERTIFICATIONS = [
     "icon": "trophy",
     "title": "Be10x AI Generalist Hackathon Winner",
     "year": "2026",
-    "note": "1st place — Be10x AI Generalist Hackathon, 2026"
+    "note": "1st place; outperformed IITians, tech PhDs, and software developers (verifiable)"
   },
   {
     "icon": "spark",
