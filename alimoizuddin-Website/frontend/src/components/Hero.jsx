@@ -28,7 +28,7 @@ export default function Hero() {
   };
 
 
-  const suffix = profile?.heroHeadlineSuffix || "That Think.";
+  const suffix = profile?.heroHeadlineSuffix || "That Think Before They Work.";
   const suffixWords = suffix.split(" ");
   const lastWord = suffixWords[suffixWords.length - 1] || "";
   const suffixHead = suffixWords.slice(0, -1).join(" ");
@@ -129,7 +129,7 @@ export default function Hero() {
           custom={2}
           className="mt-10 max-w-2xl font-mono text-xs sm:text-sm uppercase tracking-[0.22em] text-[#C9A84C]"
         >
-          AI Systems Architect · Certified AI Generalist · Be10x Hackathon Winner · Top 0.1% ChatGPT User
+          AI Automation Engineer · RAG · Agentic AI · n8n · Be10x Hackathon Winner · Top 0.1% ChatGPT User
         </motion.p>
 
 
