@@ -61,7 +61,24 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build": "DISABLE_ESLINT_PLUGIN=true react-app-rewired build",
+    "postbuild": "react-snap",
     "test": "react-app-rewired test"
+  },
+  "reactSnap": {
+    "source": "build",
+    "skipThirdPartyRequests": true,
+    "inlineCss": false,
+    "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"],
+    "include": [
+      "/",
+      "/about",
+      "/skills",
+      "/projects",
+      "/agents",
+      "/philosophy",
+      "/experience",
+      "/contact"
+    ]
   },
   "browserslist": {
     "production": [
@@ -80,6 +97,7 @@
     "autoprefixer": "^10.4.20",
     "customize-cra": "^1.0.0",
     "postcss": "^8.4.49",
+    "react-snap": "^1.23.0",
     "tailwindcss": "^3.4.17"
   }
 }
