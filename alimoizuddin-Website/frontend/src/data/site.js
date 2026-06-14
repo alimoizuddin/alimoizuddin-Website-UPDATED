@@ -5,7 +5,7 @@
 export const PROFILE = {
   "name": "Ali Moizuddin",
   "brand": "ALI MOIZUDDIN",
-  "tagline": "AI Systems Architect · Certified AI Generalist · RAG · Agentic AI · n8n · Top 0.1% ChatGPT User",
+  "tagline": "AI Automation Engineer · RAG · Agentic AI · n8n · LLM Workflow Automation",
   "location": "Siliguri, West Bengal, India",
   "email": "aalimoizuddin@outlook.com",
   "phone": "+91 8392006965",
@@ -412,7 +412,7 @@ export const PROJECTS = [
     "id": "rag-pipeline",
     "category": "EDTECH",
     "title": "AI-Driven RAG Pipeline",
-    "description": "Ingests transcripts, OCR PDFs, and past-year questions into a retrieval-augmented system; LLMs teach concepts using gamification + Jim Kwik retention frameworks.",
+    "description": "Ingests transcripts, OCR PDFs, and past-year questions into a retrieval-augmented system; LLMs teach concepts using gamification + active-recall retention frameworks.",
     "metric": "40% retention lift",
     "abstract": 4,
     "caseStudy": true,
@@ -421,7 +421,7 @@ export const PROJECTS = [
       "stack": [
         "Vector retrieval",
         "LLM orchestration",
-        "Jim Kwik memorization frameworks",
+        "Active recall + memorization frameworks",
         "Gamification loops"
       ],
       "problem": "Most RAG systems hand you a paragraph. That isn't teaching — that's googling. Learners read it once and forgot it within 48 hours.",
@@ -725,25 +725,25 @@ export const AGENTS = [
     "name": "Circadian",
     "vertical": "HEALTH",
     "desc": "Energy & sleep scheduling assistant tuned to your chronotype.",
-    "method": "Dr. Breus chronotypes"
+    "method": "Chronobiology / chronotype frameworks"
   },
   {
-    "name": "10X Trial-Based Strength",
+    "name": "Trial-Based Strength Engine",
     "vertical": "HEALTH",
     "desc": "Progressive overload programming via auto-regulated trial sets.",
-    "method": "Mindvalley 10X Fitness"
+    "method": "Auto-regulated progressive overload"
   },
   {
-    "name": "WildGPT",
+    "name": "Wilderness Prep Engine",
     "vertical": "HEALTH",
     "desc": "Outdoor & survival prep — protocols for trips, weather, terrain.",
-    "method": "Eric Edmeades behavioral health"
+    "method": "Outdoor risk & terrain protocols"
   },
   {
-    "name": "SkinGPT",
+    "name": "Skin Protocol Engine",
     "vertical": "HEALTH",
     "desc": "Evidence-graded skincare routines from dermatology literature.",
-    "method": "Skin Quest Masterclass"
+    "method": "Dermatology-literature routines"
   },
   {
     "name": "Task Manager (Moiz Matrix)",
@@ -764,16 +764,16 @@ export const AGENTS = [
     "method": "Elite multi-layered prompt meta-agent"
   },
   {
-    "name": "Habitatica",
+    "name": "Habit Architect",
     "vertical": "LIFESTYLE",
     "desc": "Habit design with identity-reinforcement loops + friction audit.",
-    "method": "James Clear · Atomic Habits"
+    "method": "Identity-based habit design"
   },
   {
-    "name": "TanGPT",
+    "name": "Style Consultant Engine",
     "vertical": "LIFESTYLE",
     "desc": "Personal style + grooming consultant calibrated to your context.",
-    "method": "Tan France Hollywood styling"
+    "method": "Color theory + wardrobe systems"
   },
   {
     "name": "Micro-Space Architect",
@@ -782,16 +782,16 @@ export const AGENTS = [
     "method": "Spatial optimization frameworks"
   },
   {
-    "name": "Marni: The Digital Wing Girl",
+    "name": "Conversation Coach Engine",
     "vertical": "LIFESTYLE",
     "desc": "Reads texts, suggests tonally-correct replies. Never cringe.",
-    "method": "Elite 1-on-1 coaching dynamics"
+    "method": "Conversation dynamics + tone calibration"
   },
   {
-    "name": "KwikGPT",
+    "name": "Accelerated Learning Engine",
     "vertical": "KNOWLEDGE",
     "desc": "Active recall, spaced repetition, 80/20 distillation on tap.",
-    "method": "Jim Kwik accelerated learning"
+    "method": "Active recall + spaced repetition"
   },
   {
     "name": "Universal Knowledge Architect",
@@ -808,13 +808,13 @@ export const AGENTS = [
   {
     "name": "The Architect's Studio",
     "vertical": "KNOWLEDGE",
-    "desc": "Image processing engine transforming raw imagery into cohesive Steel & Shadow / Gotham-style visual branding.",
+    "desc": "Image processing engine transforming raw imagery into cohesive Steel & Shadow / cinematic-noir visual branding.",
     "method": "Empire Phase aesthetic + systems"
   },
   {
-    "name": "KshitijGPT",
+    "name": "Performance Coach Engine",
     "vertical": "KNOWLEDGE",
-    "desc": "Iron Man Lifestyle Coach — exam-prep + performance regimen.",
+    "desc": "Discipline & performance coach — exam-prep + daily routine regimen.",
     "method": "BM25 + retrieval-based learning"
   }
 ];
@@ -822,7 +822,7 @@ export const AGENTS = [
 
 export const EXPERIENCE = [
   {
-    "role": "AI Systems Architect & Automation Builder",
+    "role": "AI Automation Engineer · RAG · n8n · Agentic Workflows",
     "org": "Self-Employed · Siliguri, India",
     "period": "Feb 2023 — Present",
     "bullets": [
@@ -854,8 +854,8 @@ export const EXPERIENCE = [
       "Simplified complex academic theory (e.g. 'Ambivalence' through a breakup metaphor) — held attention of 150+ students across 10+ sessions.",
       "Deployed for Rapid Response Teaching: compressed 3–4 weeks of context into single high-density sessions before major guest speaker events.",
       "Designed premium handcrafted slide decks (0% AI), recognized by the HOD as the best presentation output in the Master's cohort.",
-      "Ran voluntary performance workshops on active recall + spaced repetition — improved exam performance by an estimated 30% across 8 students.",
-      "Lifted writing clarity by 35% across 20+ student submissions via structured coaching and targeted feedback.",
+      "Ran voluntary performance workshops on active recall + spaced repetition — measurably improved retention in before/after testing.",
+      "Improved writing clarity across 20+ student submissions through structured coaching and targeted feedback.",
       "Converted classroom engagement into community growth — organically recruited the founding 50 Radio Club members in 6 weeks."
     ]
   }
@@ -867,7 +867,7 @@ export const CERTIFICATIONS = [
     "icon": "trophy",
     "title": "Be10x AI Generalist Hackathon Winner",
     "year": "2026",
-    "note": "1st place; outperformed IITians, tech PhDs, and software developers"
+    "note": "1st place — Be10x AI Generalist Hackathon, 2026"
   },
   {
     "icon": "spark",
@@ -939,7 +939,7 @@ export const CONTACT_CARDS = [
     "title": "Hiring / Opportunities",
     "desc": "Full-time, internship, consulting, or AI systems roles.",
     "cta": "Get In Touch",
-    "subject": "Opportunity — AI Systems Architect / AI Generalist"
+    "subject": "Opportunity — AI Automation Engineer"
   },
   {
     "id": "collab",
