@@ -11,7 +11,7 @@ import { useContent } from "../context/ContentContext";
 const SECTIONS = [
   { path: "/about", number: "01", title: "About", italic: "Identity", desc: "Background, philosophy, the interdisciplinary moat." },
   { path: "/projects", number: "02", title: "Projects", italic: "Systems", desc: "28 production systems across automation, EdTech, content, infrastructure." },
-  { path: "/agents", number: "03", title: "Agents", italic: "Ecosystem", desc: "16 domain-specific GPT agents across 4 verticals." },
+  { path: "/agents", number: "03", title: "Agents", italic: "Ecosystem", desc: "16 Custom GPTs, Gemini Gems & agentic workflows across 4 verticals." },
   { path: "/skills", number: "04", title: "Skills", italic: "Stack", desc: "Five capability stacks engineered to compose." },
   { path: "/philosophy", number: "05", title: "Philosophy", italic: "Edge", desc: "Why systems beat tasks, and why voice beats volume." },
   { path: "/experience", number: "06", title: "Experience", italic: "Record", desc: "Roles, awards, certifications, education." },

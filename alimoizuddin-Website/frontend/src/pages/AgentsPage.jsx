@@ -10,7 +10,7 @@ export default function AgentsPage() {
         kicker="§ 04 — Custom GPT Ecosystem"
         title="Agents"
         italicWord="Agents"
-        sub="Sixteen domain-specific GPT agents engineered across four verticals — each one tuned to a real cognitive job, not a generic chat."
+        sub="Sixteen domain-specific Custom GPTs, Gemini Gems, and agentic workflows engineered across four verticals — each one tuned to a real cognitive job, not a generic chat."
       />
       <Agents />
     </Layout>
