@@ -18,7 +18,7 @@ const CONTENT_FETCH_TIMEOUT_MS = 1200;
 const buildDefaults = () => ({
   profile: {
     ...DEFAULTS.PROFILE,
-    statusPillLabel: "Available · 2 client slots",
+    statusPillLabel: "Open to roles · select freelance",
     heroHeadlinePrefix: "I Build AI Systems",
     heroHeadlineSuffix: "That Think.",
     heroSub:
