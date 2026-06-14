@@ -211,7 +211,7 @@
     "id": "rag-pipeline",
     "category": "EDTECH",
     "title": "AI-Driven RAG Pipeline",
-    "description": "Ingests transcripts, OCR PDFs, and past-year questions into a retrieval-augmented system; LLMs teach concepts using gamification + Jim Kwik retention frameworks.",
+    "description": "Ingests transcripts, OCR PDFs, and past-year questions into a retrieval-augmented system; LLMs teach concepts using gamification + active-recall retention frameworks.",
     "metric": "40% retention lift",
     "abstract": 4,
     "caseStudy": true,
@@ -220,7 +220,7 @@
       "stack": [
         "Vector retrieval",
         "LLM orchestration",
-        "Jim Kwik memorization frameworks",
+        "Active recall + memorization frameworks",
         "Gamification loops"
       ],
       "problem": "Most RAG systems hand you a paragraph. That isn't teaching — that's googling. Learners read it once and forgot it within 48 hours.",
