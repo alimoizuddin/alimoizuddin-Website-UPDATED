@@ -57,8 +57,9 @@ export default function Agents() {
             viewport={{ once: true, margin: "-80px" }}
             className="lg:col-span-5 text-[#888880] text-base md:text-lg leading-[1.85] lg:pt-6"
           >
-            Sixteen domain-specific GPT agents engineered across four verticals
-            — each one tuned to a real cognitive job, not a generic chat.
+            Sixteen domain-specific Custom GPTs, Gemini Gems, and agentic
+            workflows engineered across four verticals — each tuned to a real
+            cognitive job, not a generic chat.
           </motion.p>
         </div>
 
