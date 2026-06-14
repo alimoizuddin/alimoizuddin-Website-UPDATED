@@ -20,7 +20,7 @@ const buildDefaults = () => ({
     ...DEFAULTS.PROFILE,
     statusPillLabel: "Open to roles · select freelance",
     heroHeadlinePrefix: "I Build AI Systems",
-    heroHeadlineSuffix: "That Think.",
+    heroHeadlineSuffix: "That Think Before They Work.",
     heroSub:
       "Building RAG, agentic AI, n8n, OCR/BM25 search, transcription, SDR research, and workflow automation systems that turn messy information into repeatable execution.",
     brand: DEFAULTS.PROFILE.brand || "ALI MOIZUDDIN",
@@ -150,7 +150,7 @@ function normalizeExperience(experience) {
   const defaults = DEFAULTS.EXPERIENCE || [];
   if (!Array.isArray(experience)) return defaults;
 
-  const systemsRole = defaults.find((entry) => entry.role === "AI Systems Architect & Automation Builder");
+  const systemsRole = defaults.find((entry) => entry.role === "AI Automation Engineer · RAG · n8n · Agentic Workflows");
 
   return experience.map((entry) => {
     if (!systemsRole || !entry) return entry;
