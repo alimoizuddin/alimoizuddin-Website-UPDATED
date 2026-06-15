@@ -20,7 +20,7 @@ const buildDefaults = () => ({
     ...DEFAULTS.PROFILE,
     statusPillLabel: "Open to roles · select freelance",
     heroHeadlinePrefix: "I Build AI Systems",
-    heroHeadlineSuffix: "That Think Before They Work.",
+    heroHeadlineSuffix: "That Work.",
     heroSub:
       "Building RAG, agentic AI, n8n, OCR/BM25 search, transcription, SDR research, and workflow automation systems that turn messy information into repeatable execution.",
     brand: DEFAULTS.PROFILE.brand || "ALI MOIZUDDIN",
