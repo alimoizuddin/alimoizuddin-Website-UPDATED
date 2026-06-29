@@ -4,6 +4,8 @@ Public proof archive for Ali Moizuddin's bilingual transcription system.
 
 OmniTranscriber Pro is a local-first and Google Colab-ready transcription workspace built for messy lecture audio, especially Hinglish workflows where Hindi and English switch inside the same recording.
 
+Download package: [alimoizuddin/omnitranscriber-pro](https://github.com/alimoizuddin/omnitranscriber-pro)
+
 ## The Problem
 
 The original failure was not simply "bad transcription." It was trust.
