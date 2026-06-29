@@ -79,6 +79,7 @@ export const NAV_LINKS = [
   { id: "about", label: "About" },
   { id: "skills", label: "Skills" },
   { id: "projects", label: "Projects" },
+  { id: "documentation", label: "Docs" },
   { id: "agents", label: "Agents" },
   { id: "philosophy", label: "Philosophy" },
   { id: "experience", label: "Experience" },
