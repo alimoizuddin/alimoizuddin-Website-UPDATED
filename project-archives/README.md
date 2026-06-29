@@ -8,6 +8,7 @@ These folders include screenshots, explainer docs, demo videos, and sanitized wo
 
 - [Autonomous CI/CD Pipeline](./autonomous-ci-cd-pipeline)
 - [Autonomous SDR Engine & Executive Ghostwriting Pipeline](./autonomous-sdr-engine)
+- [OmniTranscriber Pro](./omnitranscriber-pro)
 - [Phantom-Spend SaaS Auditor](./phantom-spend-saas-auditor)
 - [YouTube Knowledge Extraction Engine](./youtube-knowledge-extractor)
 

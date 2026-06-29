@@ -202,10 +202,36 @@
   {
     "id": "whisper-engine",
     "category": "EDTECH",
-    "title": "Whisper Transcription Engine",
-    "description": "Scalable bilingual (English/Hindi) transcription with 90%+ accuracy. Batch processing, Google Drive integration, 4 export formats (.txt, .srt, .vtt, .json) across 100+ hours.",
-    "metric": "90%+ accuracy",
-    "abstract": 3
+    "title": "OmniTranscriber Pro",
+    "description": "Local-first and Colab-ready transcription workspace for Hinglish and lecture audio, combining Whisper, glossary correction, confidence scoring, editable review, and export bundles.",
+    "metric": "Confidence-flagged review",
+    "proofUrl": "https://github.com/alimoizuddin/alimoizuddin-Website-UPDATED/tree/main/project-archives/omnitranscriber-pro",
+    "abstract": 3,
+    "caseStudy": true,
+    "detail": {
+      "role": "Solo build - transcription system architect",
+      "stack": [
+        "Python",
+        "FastAPI",
+        "faster-whisper",
+        "OpenAI Whisper fallback",
+        "Google Colab",
+        "SQLite",
+        "Vanilla JS"
+      ],
+      "problem": "Hinglish lecture audio broke the usual transcription promise: the model could hear the sound, but code-switching, noisy segments, and uncertain guesses made the transcript hard to trust.",
+      "approach": [
+        "Built a browser workflow for uploads, microphone recording, and URL-based jobs.",
+        "Added domain prompts and glossary replacement so names, terms, and repeated lecture vocabulary survive cleanup.",
+        "Converted model log probabilities into confidence scores and surfaced low-confidence segments in the editor.",
+        "Kept the operator in the loop with editable segments, speaker labels, and downloadable TXT, SRT, VTT, Markdown, JSON, and ZIP outputs."
+      ],
+      "result": [
+        "Bilingual lecture transcription became a review workflow instead of a blind copy-paste step.",
+        "Uncertain lines are flagged for human correction instead of hidden behind model confidence.",
+        "The same project runs locally or through a Colab GPU notebook for non-technical use."
+      ]
+    }
   },
   {
     "id": "rag-pipeline",
