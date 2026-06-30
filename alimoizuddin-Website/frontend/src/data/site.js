@@ -79,7 +79,6 @@ export const NAV_LINKS = [
   { id: "about", label: "About" },
   { id: "skills", label: "Skills" },
   { id: "projects", label: "Projects" },
-  { id: "documentation", label: "Docs" },
   { id: "agents", label: "Agents" },
   { id: "philosophy", label: "Philosophy" },
   { id: "experience", label: "Experience" },
@@ -207,7 +206,7 @@ export const PROJECTS = [
     "title": "Hybrid Digital Twin & Large-Scale Knowledge Extraction Engine",
     "description": "Python + Gradio extraction system using yt-dlp to pull subtitles from long-form YouTube assets, compressing raw media knowledge into structured mega-files for NotebookLM and digital-twin style coaching workflows.",
     "metric": "900+ assets made queryable",
-    "proofUrl": "https://github.com/alimoizuddin/alimoizuddin-Website-UPDATED/tree/main/project-archives/youtube-knowledge-extractor",
+    "proofUrl": "https://github.com/alimoizuddin/youtube-knowledge-extractor",
     "abstract": 4,
     "image": {
       "src": "/images/projects/digital-twin.webp",
@@ -238,15 +237,15 @@ export const PROJECTS = [
     }
   },
   {
-    "id": "sdr-ghostwriting",
+    "id": "sdr-research-outreach",
     "category": "AUTOMATION",
     "title": "SDR Research & Outreach Automation Pipeline",
     "description": "Autonomous engine ingesting leads via Sheets, scraping public signals with Apify, and generating personalized outreach drafts with QA agents — turning research-heavy outreach into a review workflow.",
     "metric": "70% manual effort reduction",
-    "proofUrl": "https://github.com/alimoizuddin/alimoizuddin-Website-UPDATED/tree/main/project-archives/autonomous-sdr-engine",
+    "proofUrl": "https://github.com/alimoizuddin/autonomous-sdr-engine",
     "abstract": 1,
     "image": {
-      "src": "/images/projects/sdr-ghostwriting.webp",
+      "src": "/images/projects/sdr-research-outreach.webp",
       "alt": "Autonomous SDR engine workflow next to Google Sheets outreach output",
       "caption": "n8n SDR workflow connected to live outreach output."
     },
@@ -282,7 +281,7 @@ export const PROJECTS = [
     "title": "Autonomous CI/CD Pipeline",
     "description": "n8n workflow triggered via Outlook on code commits, using an OpenAI reasoning engine + Autonomous QA Architect to sanitize payloads, evaluate code quality, and dispatch success/rejection signals.",
     "metric": "50%+ review cycle reduction",
-    "proofUrl": "https://github.com/alimoizuddin/alimoizuddin-Website-UPDATED/tree/main/project-archives/autonomous-ci-cd-pipeline",
+    "proofUrl": "https://github.com/alimoizuddin/autonomous-ci-cd-pipeline",
     "abstract": 2,
     "image": {
       "src": "/images/projects/cicd-reasoning.webp",
@@ -407,8 +406,13 @@ export const PROJECTS = [
     "title": "OmniTranscriber Pro",
     "description": "Local-first and Colab-ready transcription workspace for Hinglish and lecture audio, combining Whisper, glossary correction, confidence scoring, editable review, and export bundles.",
     "metric": "Confidence-flagged review",
-    "proofUrl": "https://github.com/alimoizuddin/alimoizuddin-Website-UPDATED/tree/main/project-archives/omnitranscriber-pro",
+    "proofUrl": "https://github.com/alimoizuddin/omnitranscriber-pro",
     "abstract": 3,
+    "image": {
+      "src": "/images/projects/omnitranscriber-pro.png",
+      "alt": "OmniTranscriber Pro transcription dashboard with waveform, confidence flags, and review layers",
+      "caption": "Confidence-first transcription workspace for Hinglish lecture audio."
+    },
     "caseStudy": true,
     "detail": {
       "role": "Solo build - transcription system architect",
@@ -601,7 +605,7 @@ export const PROJECTS = [
     "title": "Phantom-Spend SaaS Auditor",
     "description": "Full-stack financial auditing tool ingesting CSV via webhook, using GPT-4-mini to identify redundant subscriptions — visualized in a React + Tailwind dashboard.",
     "metric": "8–12 tools flagged / audit",
-    "proofUrl": "https://github.com/alimoizuddin/alimoizuddin-Website-UPDATED/tree/main/project-archives/phantom-spend-saas-auditor",
+    "proofUrl": "https://github.com/alimoizuddin/phantom-spend-saas-auditor",
     "abstract": 3,
     "image": {
       "src": "/images/projects/phantom-spend.webp",

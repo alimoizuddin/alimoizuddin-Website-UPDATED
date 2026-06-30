@@ -14,12 +14,32 @@ const fadeUp = {
   }),
 };
 
+function getProjectCompletenessRank(project) {
+  if (project?.caseStudy && project?.proofUrl) return 0;
+  if (project?.caseStudy) return 1;
+  if (project?.proofUrl) return 2;
+  return 3;
+}
+
+function sortByCompleteness(projects = []) {
+  return [...projects]
+    .map((project, index) => ({ project, index }))
+    .sort((a, b) => {
+      const rankDiff = getProjectCompletenessRank(a.project) - getProjectCompletenessRank(b.project);
+      return rankDiff || a.index - b.index;
+    })
+    .map(({ project }) => project);
+}
+
 export default function Projects() {
   const { projects, projectCategories } = useContent();
   const [filter, setFilter] = useState("ALL");
 
   const filtered = useMemo(
-    () => (filter === "ALL" ? projects || [] : (projects || []).filter((p) => p.category === filter)),
+    () => {
+      const source = filter === "ALL" ? projects || [] : (projects || []).filter((p) => p.category === filter);
+      return sortByCompleteness(source);
+    },
     [filter, projects]
   );
 

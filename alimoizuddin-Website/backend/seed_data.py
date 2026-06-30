@@ -60,7 +60,7 @@ DEFAULT_ABOUT_PARAGRAPHS = [
 DEFAULT_ABOUT_QUOTE = "I combine literature-level understanding of humans with systems-level mastery of AI. Very few people genuinely have both."
 
 DEFAULT_CONTACT_CARDS = [
-    {"id": "freelance", "title": "Freelance Inquiry", "desc": "Ghostwriting, AI content systems, automation pipelines.", "cta": "Start a Project", "subject": "Freelance Inquiry — Ghostwriting / AI Systems"},
+    {"id": "freelance", "title": "Freelance Inquiry", "desc": "AI content systems, automation pipelines, and workflow infrastructure.", "cta": "Start a Project", "subject": "Freelance Inquiry — AI Systems / Automation"},
     {"id": "hiring", "title": "Hiring / Opportunities", "desc": "Full-time, consulting, or advisory roles in AI.", "cta": "Get In Touch", "subject": "Opportunity — AI Generalist / Systems Architect Role"},
     {"id": "collab", "title": "Collaboration", "desc": "Joint ventures, partnerships, knowledge exchange.", "cta": "Let's Talk", "subject": "Collaboration — Partnership / Joint Venture"},
 ]

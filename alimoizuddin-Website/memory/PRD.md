@@ -1,7 +1,7 @@
 # Ali Moizuddin — Personal Brand Site · PRD
 
 ## Problem Statement (verbatim)
-World-class personal brand website for **Ali Moizuddin** — a Certified AI Generalist, AI Systems Architect, and Content Systems Specialist based in Siliguri, India. Goals: (1) attract high-ticket freelance / ghostwriting clients, (2) attract employers / recruiters in AI / automation / content systems, (3) establish Ali as a personal brand and thought leader, (4) function as an interactive, living portfolio. Aesthetic: Premium Editorial / Dark Luxury — Financial Times meets Wired meets a founding partner's personal site.
+World-class personal brand website for **Ali Moizuddin** — a Certified AI Generalist and AI Automation Engineer based in Siliguri, India. Goals: (1) attract serious AI automation and workflow infrastructure opportunities, (2) attract employers / recruiters in AI / automation / content systems, (3) establish Ali as a personal brand and thought leader, (4) function as an interactive, living portfolio. Aesthetic: Premium Editorial / Dark Luxury — Financial Times meets Wired meets a founding partner's personal site.
 
 ## Architecture
 - **Frontend**: React 19 + CRA + Tailwind + framer-motion + Lenis smooth scroll. Single-page editorial layout (`/app/frontend/src/pages/Home.jsx`) composed of section components in `/app/frontend/src/components/`.
@@ -10,7 +10,7 @@ World-class personal brand website for **Ali Moizuddin** — a Certified AI Gene
 - **Design system**: see `/app/design_guidelines.json` — colors (#0D0D0D bg, #F5F0E8 text, #C9A84C gold, #1F4788 navy), fonts (Cormorant Garamond / DM Sans / JetBrains Mono).
 
 ## User Personas
-1. **High-ticket freelance client** (founder/exec) — wants ghostwriting + content systems proof.
+1. **Founder / operator** — wants AI automation, content infrastructure, and workflow systems proof.
 2. **Recruiter / hiring manager in AI** — wants verifiable AI engineering depth.
 3. **Peer / collaborator** — wants partnership channel + thought-leadership signal.
 

@@ -1,3 +1,0 @@
-gradio
-yt-dlp
-webvtt-py

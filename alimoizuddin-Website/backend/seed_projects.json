@@ -5,7 +5,7 @@
     "title": "Hybrid Digital Twin & Large-Scale Knowledge Extraction Engine",
     "description": "Python + Gradio extraction system using yt-dlp to pull subtitles from long-form YouTube assets, compressing raw media knowledge into structured mega-files for NotebookLM and digital-twin style coaching workflows.",
     "metric": "900+ assets made queryable",
-    "proofUrl": "https://github.com/alimoizuddin/alimoizuddin-Website-UPDATED/tree/main/project-archives/youtube-knowledge-extractor",
+    "proofUrl": "https://github.com/alimoizuddin/youtube-knowledge-extractor",
     "abstract": 4,
     "image": {
       "src": "/images/projects/digital-twin.webp",
@@ -36,15 +36,15 @@
     }
   },
   {
-    "id": "sdr-ghostwriting",
+    "id": "sdr-research-outreach",
     "category": "AUTOMATION",
-    "title": "SDR Executive Ghostwriting Pipeline",
-    "description": "Autonomous engine ingesting Apollo leads via Sheets, scraping recent posts with Apify, deploying QA Bouncer + Pitch Architect agents to generate hyper-personalized outreach — logging directly to CRM.",
+    "title": "SDR Research & Outreach Automation Pipeline",
+    "description": "Autonomous engine ingesting Apollo leads via Sheets, scraping recent posts with Apify, deploying QA Bouncer + Pitch Architect agents to generate personalized outreach drafts — logging directly to CRM.",
     "metric": "70% manual effort reduction",
-    "proofUrl": "https://github.com/alimoizuddin/alimoizuddin-Website-UPDATED/tree/main/project-archives/autonomous-sdr-engine",
+    "proofUrl": "https://github.com/alimoizuddin/autonomous-sdr-engine",
     "abstract": 1,
     "image": {
-      "src": "/images/projects/sdr-ghostwriting.webp",
+      "src": "/images/projects/sdr-research-outreach.webp",
       "alt": "Autonomous SDR engine workflow next to Google Sheets outreach output",
       "caption": "n8n SDR workflow connected to live outreach output."
     },
@@ -80,7 +80,7 @@
     "title": "Autonomous CI/CD Pipeline",
     "description": "n8n workflow triggered via Outlook on code commits, using an OpenAI reasoning engine + Autonomous QA Architect to sanitize payloads, evaluate code quality, and dispatch success/rejection signals.",
     "metric": "50%+ review cycle reduction",
-    "proofUrl": "https://github.com/alimoizuddin/alimoizuddin-Website-UPDATED/tree/main/project-archives/autonomous-ci-cd-pipeline",
+    "proofUrl": "https://github.com/alimoizuddin/autonomous-ci-cd-pipeline",
     "abstract": 2,
     "image": {
       "src": "/images/projects/cicd-reasoning.webp",
@@ -107,7 +107,7 @@
         "Google Drive",
         "Custom validation layers"
       ],
-      "problem": "Multi-client ghostwriting hits a wall fast: each operator has their own voice, their own publishing cadence, and their own zero-tolerance failure modes. Manual context-switching destroyed quality and throughput.",
+      "problem": "Multi-voice content infrastructure hits a wall fast: each operator has their own voice, their own publishing cadence, and their own zero-tolerance failure modes. Manual context-switching destroyed quality and throughput.",
       "approach": [
         "Operator-specific config: voice rules, do-not-write list, structural templates, tone guard-rails.",
         "Pipeline stages: ideation prompts → draft → tone audit → style audit → publish-ready handoff.",
@@ -205,8 +205,13 @@
     "title": "OmniTranscriber Pro",
     "description": "Local-first and Colab-ready transcription workspace for Hinglish and lecture audio, combining Whisper, glossary correction, confidence scoring, editable review, and export bundles.",
     "metric": "Confidence-flagged review",
-    "proofUrl": "https://github.com/alimoizuddin/alimoizuddin-Website-UPDATED/tree/main/project-archives/omnitranscriber-pro",
+    "proofUrl": "https://github.com/alimoizuddin/omnitranscriber-pro",
     "abstract": 3,
+    "image": {
+      "src": "/images/projects/omnitranscriber-pro.png",
+      "alt": "OmniTranscriber Pro transcription dashboard with waveform, confidence flags, and review layers",
+      "caption": "Confidence-first transcription workspace for Hinglish lecture audio."
+    },
     "caseStudy": true,
     "detail": {
       "role": "Solo build - transcription system architect",
@@ -371,7 +376,7 @@
         "Voice fingerprint extraction",
         "Anti-AI-ese guardrails"
       ],
-      "problem": "AI ghostwriting at scale fails on the same axis every time: voice collapse. Run 10 founders through the same pipeline and the outputs converge on the median LinkedIn-thought-leader voice. That's a moat-killer for the operator.",
+      "problem": "AI writing systems at scale fail on the same axis every time: voice collapse. Run 10 founders through the same pipeline and the outputs converge on the median LinkedIn-thought-leader voice. That's a moat-killer for the operator.",
       "approach": [
         "For each founder, extract a voice fingerprint: sentence rhythm, idiom set, contrarian beats, recurring metaphors, taboo phrases.",
         "Build a per-founder prompt system — not just a style guide, an entire constrained-generation regime.",
@@ -399,7 +404,7 @@
     "title": "Phantom-Spend SaaS Auditor",
     "description": "Full-stack financial auditing tool ingesting CSV via webhook, using GPT-4-mini to identify redundant subscriptions — visualized in a React + Tailwind dashboard.",
     "metric": "8–12 tools flagged / audit",
-    "proofUrl": "https://github.com/alimoizuddin/alimoizuddin-Website-UPDATED/tree/main/project-archives/phantom-spend-saas-auditor",
+    "proofUrl": "https://github.com/alimoizuddin/phantom-spend-saas-auditor",
     "abstract": 3,
     "image": {
       "src": "/images/projects/phantom-spend.webp",
