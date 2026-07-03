@@ -322,12 +322,36 @@
     "abstract": 3
   },
   {
-    "id": "audio-bat",
+    "id": "media-intake-one-tool",
     "category": "EDTECH",
-    "title": "Drag-and-Drop Audio Engineering",
-    "description": "A .bat script autonomously extracting audio from 3-hour+ video lectures in under 30 seconds — processing 100+ hours of content.",
-    "metric": "<30s per 3h lecture",
-    "abstract": 4
+    "title": "Media Intake One Tool",
+    "description": "Windows drag-and-drop FFmpeg utility that turns .ts, .mkv, .mov, and long lecture files into clean MP4 video, MP3 audio, and 16 kHz mono FLAC for transcription.",
+    "metric": "TS -> MP4 + MP3",
+    "proofUrl": "https://github.com/alimoizuddin/media-intake-one-tool",
+    "abstract": 4,
+    "caseStudy": true,
+    "detail": {
+      "role": "Solo build - automation cleanup",
+      "stack": [
+        "Windows BAT",
+        "FFmpeg",
+        "FFprobe",
+        "MP3",
+        "FLAC",
+        "H.264/AAC MP4"
+      ],
+      "problem": "Lecture and cohort media were being handled by several overlapping BAT files, each optimized for a slightly different split, extract, or Colab-prep workflow.",
+      "approach": [
+        "Consolidated audio extraction, transcription audio prep, TS-to-MP4 conversion, and optional chunking into one drag-and-drop script.",
+        "Kept the main FFmpeg settings editable at the top so the workflow can switch outputs without code changes.",
+        "Added dated output folders, FFmpeg logs, and automatic MP3 splitting for large uploads."
+      ],
+      "result": [
+        "One BAT now replaces the scattered extractor and splitter scripts.",
+        "Each source can produce MP3, 16 kHz mono FLAC, and clean MP4 in a single run.",
+        "Oversized MP3s are split into upload-friendly parts automatically."
+      ]
+    }
   },
   {
     "id": "voice-memo",
