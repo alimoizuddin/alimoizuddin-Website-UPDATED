@@ -1,5 +1,43 @@
 [
   {
+    "id": "linkedin-lead-engine",
+    "category": "AUTOMATION",
+    "title": "LinkedIn Lead Engine",
+    "description": "Two-stage n8n pipeline that sources LinkedIn prospects, reads each one's latest post, and drafts a personalised public comment and connection note. Every output is written to Google Sheets as a draft; the system never posts or sends anything.",
+    "metric": "8 silent defects closed pre-launch",
+    "abstract": 2,
+    "image": {
+      "src": "/images/projects/linkedin-lead-engine.webp",
+      "alt": "Architecture diagram of the LinkedIn Lead Engine showing sourcing, enrichment, dual-model generation, and a human review gate",
+      "caption": "Two scheduled stages coordinated through a single Google Sheet."
+    },
+    "caseStudy": true,
+    "detail": {
+      "role": "Solo build · architect",
+      "stack": [
+        "n8n",
+        "Apify",
+        "OpenAI",
+        "Google Sheets",
+        "JavaScript"
+      ],
+      "problem": "A working outreach pipeline was silently re-processing the same leads every day and producing connection notes that read as obvious templates. The reported symptom was duplicate leads; the real cause was a row-update expression pinned to the first item in the batch, so only one lead was ever marked complete and every other lead stayed queued forever.",
+      "approach": [
+        "Audited the workflow node by node and traced the duplication to a .first() expression that never advanced between loop iterations.",
+        "Rebuilt state handling so each iteration updates its own row, sourcing deduplicates on profile URL, and failed scrapes are stamped rather than retried indefinitely.",
+        "Split one overloaded prompt into two model calls after the single prompt kept leaking product language into public comments; the comment model is never given product context, so it cannot mention one.",
+        "Ran three adversarial audit passes over the finished workflow, which surfaced a Wait node silently pausing 30 hours per lead because n8n defaults that unit to hours.",
+        "Constrained the generator to offer one of five real documents instead of inventing a resource per lead, and kept a human review gate before anything is sent."
+      ],
+      "result": [
+        "Duplicate processing eliminated; every lead now reaches a terminal state exactly once.",
+        "Eight defects closed before launch, including three that produced no error output at all.",
+        "Output moved from templated boilerplate to notes built from each prospect's actual post.",
+        "Pipeline drafts only, keeping platform risk and message quality under human control."
+      ]
+    }
+  },
+  {
     "id": "digital-twin",
     "category": "AUTOMATION",
     "title": "Hybrid Digital Twin & Large-Scale Knowledge Extraction Engine",
