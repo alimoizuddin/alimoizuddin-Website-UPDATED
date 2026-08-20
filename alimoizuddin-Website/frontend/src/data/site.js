@@ -278,8 +278,8 @@ export const PROJECTS = [
     "id": "sdr-research-outreach",
     "category": "AUTOMATION",
     "title": "SDR Research & Outreach Automation Pipeline",
-    "description": "Autonomous engine ingesting leads via Sheets, scraping public signals with Apify, and generating personalized outreach drafts with QA agents — turning research-heavy outreach into a review workflow.",
-    "metric": "70% manual effort reduction",
+    "description": "Autonomous engine that ingests leads via Sheets, scrapes public signals with Apify, and drafts personalized outreach behind QA agents, turning heavy prospect research into a review workflow.",
+    "metric": "15 min per lead, automated",
     "proofUrl": "https://github.com/alimoizuddin/autonomous-sdr-engine",
     "abstract": 1,
     "image": {
@@ -289,27 +289,28 @@ export const PROJECTS = [
     },
     "caseStudy": true,
     "detail": {
-      "role": "Solo build — architect / operator",
+      "role": "Solo build, architect and operator",
       "stack": [
         "Apollo.io",
         "Apify",
         "n8n",
-        "OpenAI (multi-agent)",
+        "OpenAI Agents",
         "Google Sheets",
         "CRM webhook"
       ],
-      "problem": "Personalized outreach breaks down when research, filtering, and drafting are done manually. The system needed to preserve context without turning every prospect into a multi-hour task.",
+      "problem": "Personalized outreach breaks down when research, filtering, and drafting are done by hand. Each lead took roughly 15 minutes to source, read, and write to, so a batch of 20 consumed about 5 hours before a single message went out.",
       "approach": [
-        "Ingest Apollo leads into a Sheet — single source of truth.",
-        "Trigger Apify post-scraper per prospect to grab recent public signal.",
-        "QA Bouncer agent screens the lead: title fit, post quality, recency.",
-        "Pitch Architect agent drafts a personalized outreach opener referencing the actual public signal.",
-        "Approved outputs ship to the workflow with rationale + retry hooks."
+        "Ingest Apollo leads into a Google Sheet that acts as the single source of truth.",
+        "Trigger an Apify scraper per prospect to pull recent public posts and news.",
+        "A QA Bouncer agent screens each lead on title fit, post quality, and recency.",
+        "A Pitch Architect agent drafts a personalized opener that must reference a real, specific signal.",
+        "Approved drafts ship to a CRM review step over webhook, carrying rationale and retry hooks."
       ],
       "result": [
-        "70% manual SDR research and drafting effort eliminated in prototype workflows.",
-        "Each draft references public prospect signal instead of relying on generic templates.",
-        "Operator becomes a reviewer, not a researcher."
+        "Manual research and drafting ran about 15 minutes per lead, roughly 5 hours for a batch of 20. The pipeline runs that same sequence unattended.",
+        "The only manual step left is copying the approved draft to the prospect, so time saved scales with lead volume.",
+        "A hard rule blocks any message that does not cite a real signal, so personalization held as volume grew.",
+        "In this prototype the operator becomes a reviewer instead of a researcher."
       ]
     }
   },

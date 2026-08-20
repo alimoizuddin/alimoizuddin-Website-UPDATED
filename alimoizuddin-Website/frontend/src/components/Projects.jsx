@@ -118,6 +118,18 @@ export default function Projects() {
               data-testid={`project-card-${p.id}`}
               className="group relative bg-[#111116] border border-[#888880]/15 p-7 md:p-10 flex flex-col min-h-[420px] hover:border-[#C9A84C]/60 transition-colors duration-500"
             >
+              {p.caseStudy && (
+                <Link
+                  to={`/case-studies/${p.id}`}
+                  onClick={() => track("case_study_open", { id: p.id })}
+                  aria-label={`Open the ${p.title} case study`}
+                  data-testid={`card-link-${p.id}`}
+                  className="absolute inset-0 z-10 focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-2 focus-visible:outline-[#C9A84C]"
+                >
+                  <span className="sr-only">{p.title} case study</span>
+                </Link>
+              )}
+
               {p.image?.src ? (
                 <div className="h-36 -mx-7 -mt-7 md:-mx-10 md:-mt-10 mb-8 relative overflow-hidden bg-[#0D0D0D]">
                   <img
@@ -170,7 +182,7 @@ export default function Projects() {
                 {p.description}
               </p>
 
-              <div className="mt-8 flex items-end justify-between gap-4">
+              <div className="relative z-20 mt-8 flex items-end justify-between gap-4">
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 border border-[#C9A84C]/30 text-[#C9A84C]">
                   <span className="block w-1 h-1 rounded-full bg-[#C9A84C]" aria-hidden />
                   <span className="font-mono text-[10px] uppercase tracking-[0.18em]">

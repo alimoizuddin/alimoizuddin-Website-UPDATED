@@ -34,7 +34,7 @@ export default function CaseStudy() {
       <main className="relative min-h-screen bg-[#0D0D0D] text-[#F5F0E8] flex items-center justify-center px-6">
         <NoiseOverlay />
         <div className="text-center max-w-md">
-          <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-[#C9A84C] mb-4">
+          <div className="font-mono text-[12px] uppercase tracking-[0.26em] text-[#C9A84C] mb-4">
             404 · Not Found
           </div>
           <h1 className="font-serif text-4xl md:text-5xl text-[#F5F0E8] mb-6 leading-tight">
@@ -43,7 +43,7 @@ export default function CaseStudy() {
           <Link
             to="/"
             data-testid="case-back-home"
-            className="inline-flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.22em] text-[#C9A84C] hover:text-[#F5F0E8] transition-colors"
+            className="inline-flex items-center gap-3 font-mono text-[13px] uppercase tracking-[0.22em] text-[#C9A84C] hover:text-[#F5F0E8] transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to portfolio
@@ -65,7 +65,7 @@ export default function CaseStudy() {
         <div className="max-w-5xl mx-auto px-6 md:px-10 lg:px-16 py-5 flex items-center justify-between">
           <Link
             to="/projects"
-            className="inline-flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.22em] text-[#888880] hover:text-[#C9A84C] transition-colors"
+            className="inline-flex items-center gap-3 font-mono text-[12px] uppercase tracking-[0.22em] text-[#888880] hover:text-[#C9A84C] transition-colors"
             data-testid="case-nav-back"
           >
             <ArrowLeft className="w-4 h-4" />
@@ -89,7 +89,7 @@ export default function CaseStudy() {
           className="flex items-center gap-4 mb-10"
         >
           <span className="block w-12 h-px bg-[#C9A84C]" />
-          <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-[#C9A84C]">
+          <span className="font-mono text-[13px] uppercase tracking-[0.3em] text-[#C9A84C]">
             Case Study · {project.category}
           </span>
         </motion.div>
@@ -131,7 +131,7 @@ export default function CaseStudy() {
               className="w-full aspect-[16/9] object-cover"
             />
             {project.image.caption && (
-              <figcaption className="border-t border-[#C9A84C]/10 px-5 py-3 font-mono text-[10px] uppercase tracking-[0.18em] text-[#888880]">
+              <figcaption className="border-t border-[#C9A84C]/10 px-5 py-3 font-mono text-[12px] uppercase tracking-[0.18em] text-[#888880]">
                 {project.image.caption}
               </figcaption>
             )}
@@ -149,7 +149,7 @@ export default function CaseStudy() {
             rel="noopener noreferrer"
             onClick={() => track("project_proof_open", { id: project.id })}
             data-testid="case-proof-link"
-            className="mt-6 inline-flex items-center gap-3 border border-[#C9A84C]/30 px-5 py-3 font-mono text-[10px] uppercase tracking-[0.22em] text-[#C9A84C] hover:border-[#C9A84C] hover:text-[#F5F0E8] transition-colors duration-500"
+            className="mt-6 inline-flex items-center gap-3 border border-[#C9A84C]/30 px-5 py-3 font-mono text-[12px] uppercase tracking-[0.22em] text-[#C9A84C] hover:border-[#C9A84C] hover:text-[#F5F0E8] transition-colors duration-500"
           >
             <Github className="w-4 h-4" strokeWidth={1.5} />
             View GitHub Proof Archive
@@ -166,7 +166,7 @@ export default function CaseStudy() {
           className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-0 border-t border-[#C9A84C]/20"
         >
           <div className="py-6 md:border-r border-[#C9A84C]/15 md:pr-8">
-            <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-[#C9A84C]">
+            <div className="font-mono text-[12px] uppercase tracking-[0.22em] text-[#C9A84C]">
               Headline Metric
             </div>
             <div className="mt-2 font-serif text-2xl md:text-3xl text-[#F5F0E8]">
@@ -174,7 +174,7 @@ export default function CaseStudy() {
             </div>
           </div>
           <div className="py-6 md:border-r border-[#C9A84C]/15 md:px-8">
-            <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-[#C9A84C]">
+            <div className="font-mono text-[12px] uppercase tracking-[0.22em] text-[#C9A84C]">
               Role
             </div>
             <div className="mt-2 text-[#F5F0E8] text-base leading-snug">
@@ -182,7 +182,7 @@ export default function CaseStudy() {
             </div>
           </div>
           <div className="py-6 md:pl-8">
-            <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-[#C9A84C]">
+            <div className="font-mono text-[12px] uppercase tracking-[0.22em] text-[#C9A84C]">
               Category
             </div>
             <div className="mt-2 text-[#F5F0E8] text-base">{project.category}</div>
@@ -198,14 +198,14 @@ export default function CaseStudy() {
             viewport={{ once: true }}
             className="mt-20"
           >
-            <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-[#C9A84C] mb-5">
+            <div className="font-mono text-[12px] uppercase tracking-[0.26em] text-[#C9A84C] mb-5">
               Stack
             </div>
             <div className="flex flex-wrap gap-2.5">
               {d.stack.map((s) => (
                 <span
                   key={s}
-                  className="px-4 py-2 rounded-full border border-[#888880]/25 text-[12px] font-mono uppercase tracking-[0.12em] text-[#F5F0E8]"
+                  className="px-4 py-2 rounded-full border border-[#888880]/25 text-[13px] font-mono uppercase tracking-[0.12em] text-[#F5F0E8]"
                 >
                   {s}
                 </span>
@@ -223,7 +223,7 @@ export default function CaseStudy() {
             viewport={{ once: true }}
             className="mt-20"
           >
-            <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-[#C9A84C] mb-5">
+            <div className="font-mono text-[12px] uppercase tracking-[0.26em] text-[#C9A84C] mb-5">
               Problem
             </div>
             <p className="font-serif text-[#F5F0E8] text-2xl md:text-3xl leading-[1.35] max-w-3xl">
@@ -241,13 +241,13 @@ export default function CaseStudy() {
             viewport={{ once: true }}
             className="mt-20"
           >
-            <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-[#C9A84C] mb-5">
+            <div className="font-mono text-[12px] uppercase tracking-[0.26em] text-[#C9A84C] mb-5">
               Approach
             </div>
             <ol className="space-y-5 max-w-3xl">
               {d.approach.map((step, i) => (
                 <li key={i} className="flex gap-5">
-                  <span className="font-mono text-[#C9A84C] text-[11px] uppercase tracking-[0.22em] mt-2 flex-shrink-0 w-10">
+                  <span className="font-mono text-[#C9A84C] text-[13px] uppercase tracking-[0.22em] mt-2 flex-shrink-0 w-10">
                     /{String(i + 1).padStart(2, "0")}
                   </span>
                   <span className="text-[#F5F0E8] text-[17px] leading-[1.7]">
@@ -268,7 +268,7 @@ export default function CaseStudy() {
             viewport={{ once: true }}
             className="mt-20"
           >
-            <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-[#C9A84C] mb-5">
+            <div className="font-mono text-[12px] uppercase tracking-[0.26em] text-[#C9A84C] mb-5">
               Result
             </div>
             <ul className="space-y-4 max-w-3xl">
@@ -293,17 +293,17 @@ export default function CaseStudy() {
           className="mt-24 pt-12 border-t border-[#C9A84C]/20 flex flex-col md:flex-row items-start md:items-center justify-between gap-6"
         >
           <div>
-            <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-[#C9A84C] mb-2">
+            <div className="font-mono text-[12px] uppercase tracking-[0.26em] text-[#C9A84C] mb-2">
               Want one built like this?
             </div>
             <p className="font-serif text-[#F5F0E8] text-2xl md:text-3xl tracking-tight max-w-xl leading-tight">
-              Pick a lane in Contact — I&rsquo;ll reply within one working day.
+              Pick a lane in Contact and I&rsquo;ll reply within one working day.
             </p>
           </div>
           <Link
             to="/contact"
             data-testid="case-cta"
-            className="group inline-flex items-center gap-3 px-7 py-4 bg-[#C9A84C] text-[#0D0D0D] font-mono text-[11px] uppercase tracking-[0.22em] hover:bg-[#F5F0E8] transition-colors duration-500"
+            className="group inline-flex items-center gap-3 px-7 py-4 bg-[#C9A84C] text-[#0D0D0D] font-mono text-[13px] uppercase tracking-[0.22em] hover:bg-[#F5F0E8] transition-colors duration-500"
           >
             Work With Me
             <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
