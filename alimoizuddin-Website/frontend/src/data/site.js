@@ -699,6 +699,37 @@ export const PROJECTS = [
     }
   },
   {
+    "id": "media-intake",
+    "category": "INFRASTRUCTURE",
+    "title": "Media Intake 2.0",
+    "description": "A local drag-and-drop FFmpeg utility for lecture media. It produces shareable audio, a transcription-ready track, and a clean MP4 without the upload failures and manual file splitting of a cloud converter.",
+    "metric": "~75 min → ~40 sec audio extraction",
+    "proofUrl": "https://github.com/alimoizuddin/media-intake-one-tool",
+    "abstract": 5,
+    "caseStudy": true,
+    "detail": {
+      "role": "Solo build — workflow design + automation",
+      "stack": [
+        "Windows Batch",
+        "FFmpeg",
+        "FFprobe",
+        "PowerShell"
+      ],
+      "problem": "A paid cloud converter added roughly 75 to 80 minutes of turnaround to each three-hour lecture: upload, conversion, download, and manual splitting when a downstream upload limit was exceeded. Failed transfers also needed attention.",
+      "approach": [
+        "Replaced cloud conversion with local audio extraction, so source files never need to leave the machine.",
+        "Generated a 192 kbps MP3 for listening and a 16 kHz mono, loudness-normalized FLAC for transcription in the same run.",
+        "Added automatic 199 MB MP3 splitting, per-file output folders, visible FFmpeg progress, and a run log for troubleshooting.",
+        "Hardened batch processing for multiple dropped files, invalid numeric settings, missing tools, and codec-safe stream-copy archives."
+      ],
+      "result": [
+        "Audio extraction for a documented three-hour lecture fell from roughly 75 minutes of turnaround to about 40 seconds. The optional clean-MP4 re-encode still takes real processing time.",
+        "Removed a 999 INR/year converter license, failed cloud transfers, and the manual file-splitting step.",
+        "At the documented volume of 30 lectures a month, the estimate is about 460 hours of annual pipeline turnaround removed - waiting and transfer handling, not active labor."
+      ]
+    }
+  },
+  {
     "id": "professor-invictus",
     "category": "INFRASTRUCTURE",
     "title": "Professor Invictus Alter-Ego System",
