@@ -473,6 +473,11 @@
     "metric": "~75 min to ~40 sec",
     "proofUrl": "https://github.com/alimoizuddin/media-intake-one-tool",
     "abstract": 5,
+    "image": {
+      "src": "/images/projects/audio-extractor-v3.png",
+      "alt": "Windows workstation with an audio extraction command and MP3 and FLAC outputs",
+      "caption": "Audio Extractor running locally on a Windows workstation."
+    },
     "caseStudy": true,
     "detail": {
       "role": "Solo build, workflow design and automation",
