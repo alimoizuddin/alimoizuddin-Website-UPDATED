@@ -224,6 +224,7 @@ export const PROJECTS = [
       ],
       "problem": "A working outreach pipeline was silently re-processing the same leads every day and producing connection notes that read as obvious templates. The reported symptom was duplicate leads; the real cause was a row-update expression pinned to the first item in the batch, so only one lead was ever marked complete and every other lead stayed queued forever.",
       "approach": [
+        "Connected a Telegram voice memo to audio download, transcription, and a private Google Docs handoff so the raw idea arrives intact before editorial shaping begins.",
         "Audited the workflow node by node and traced the duplication to a .first() expression that never advanced between loop iterations.",
         "Rebuilt state handling so each iteration updates its own row, sourcing deduplicates on profile URL, and failed scrapes are stamped rather than retried indefinitely.",
         "Split one overloaded prompt into two model calls after the single prompt kept leaking product language into public comments; the comment model is never given product context, so it cannot mention one.",
@@ -329,13 +330,11 @@ export const PROJECTS = [
     }
   },
   {
-    "id": "linkedin-engine-factory",
+    "id": "content-pipeline",
     "category": "AUTOMATION",
-    "title": "LinkedIn Engine Factory",
+    "title": "End-to-End Content Infrastructure System",
     "description": "A two-level content system paired with a 3 AM voice-memo intake: transcribe the raw thought, then let the LinkedIn engine derive the angle, protect the facts, and shape what deserves to ship.",
-    "metric": "9x–28x faster engine builds",
-    "proofUrl": "https://github.com/alimoizuddin/linkedin-engine-factory",
-    "proofLabel": "Private repository",
+    "metric": "50% faster publishing cycles",
     "abstract": 3,
     "image": {
       "src": "/images/projects/linkedin-engine-factory-hero.png",
@@ -344,29 +343,27 @@ export const PROJECTS = [
     },
     "caseStudy": true,
     "detail": {
-      "role": "Solo build · system + editorial architect",
+      "role": "Solo build — system + editorial architect",
       "stack": [
-        "Claude Projects",
-        "Prompt architecture",
-        "Voice extraction",
-        "Google Drive",
+        "GPT-4",
+        "Gemini",
+        "n8n",
+        "Python",
         "Notion",
-        "ReportLab",
-        "QA guardrails"
+        "Google Drive",
+        "Custom validation layers"
       ],
-      "problem": "High-quality LinkedIn content took 30–60 minutes per post, and every new subject meant rebuilding positioning, voice rules, fact boundaries, platform mechanics, and delivery structure from a blank page. The system also needed to show an information gap instead of filling it with a plausible fabrication.",
+      "problem": "Content workflows break when raw ideas, notes, drafts, and publishing steps live in different places. The system needed to preserve voice and context while reducing the manual effort between idea and usable output.",
       "approach": [
-        "Connected a Telegram voice memo to audio download, transcription, and a private Google Docs handoff so the raw idea arrives intact before editorial shaping begins.",
-        "Separated a portable chassis—setup, order of operations, delivery contract, honesty framework, and QA—from the person-specific payload of voice, facts, positioning, keywords, calendar, and brand.",
-        "Made diagnosis and voice extraction explicit gates so a human can override the load-bearing assumptions before downstream sections are trusted.",
-        "Added verified-fact tables, banned-inflation pairs, inline OPEN SLOT markers, and domain-specific guardrails for sensitive material.",
-        "Tested the factory across five unrelated domains, four cities, and two entity types while keeping the output self-contained for each subject."
+        "Voice and context configuration: tone rules, do-not-write lists, structural templates, and guardrails.",
+        "Pipeline stages: ideation prompts — draft — tone audit — style audit — publish-ready handoff.",
+        "Each stage has its own validator — a rejection bounces back to the previous stage with a reason.",
+        "Assets and rejections are logged so the system gets cleaner over repeated use."
       ],
       "result": [
-        "Reported engine build time fell from 14 hours to 30–90 minutes, a 9x–28x reduction in setup time.",
-        "Reported quarterly content production fell from approximately 25 hours to 1 hour under the case study’s stated assumptions.",
-        "Five engines shipped and all five subjects were publishing from them; the case study records adoption and qualitative feedback but no before-and-after audience baseline.",
-        "The honesty layer caught and corrected an unverifiable claim before publication instead of allowing a smooth guess to ship."
+        "50% faster publishing cycles in prototype workflows.",
+        "Output consistency improves because voice, structure, and quality checks are systematized.",
+        "The operator becomes editor-in-chief, not staff writer."
       ]
     }
   },

@@ -152,7 +152,7 @@ export default function CaseStudy() {
             className="mt-6 inline-flex items-center gap-3 border border-[#C9A84C]/30 px-5 py-3 font-mono text-[12px] uppercase tracking-[0.22em] text-[#C9A84C] hover:border-[#C9A84C] hover:text-[#F5F0E8] transition-colors duration-500"
           >
             <Github className="w-4 h-4" strokeWidth={1.5} />
-            {project.proofLabel || "View GitHub Proof Archive"}
+            View GitHub Proof Archive
             <ArrowUpRight className="w-3.5 h-3.5" strokeWidth={1.5} />
           </motion.a>
         )}

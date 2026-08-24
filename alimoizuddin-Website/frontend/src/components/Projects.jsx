@@ -200,7 +200,7 @@ export default function Projects() {
                       className="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.22em] text-[#888880] hover:text-[#C9A84C] transition-colors duration-500"
                     >
                       <Github className="w-3.5 h-3.5" strokeWidth={1.5} />
-                      {p.proofLabel || "GitHub"}
+                      GitHub
                     </a>
                   )}
                   {p.caseStudy ? (
