@@ -131,11 +131,16 @@
     "id": "linkedin-engine-factory",
     "category": "AUTOMATION",
     "title": "LinkedIn Engine Factory",
-    "description": "A two-level content system that turns a person’s profile, post archive, and brief into a self-contained LinkedIn engine with derived voice, verified facts, content calendar, and domain guardrails.",
+    "description": "A two-level content system paired with a 3 AM voice-memo intake: transcribe the raw thought, then let the LinkedIn engine derive the angle, protect the facts, and shape what deserves to ship.",
     "metric": "9x–28x faster engine builds",
     "proofUrl": "https://github.com/alimoizuddin/linkedin-engine-factory",
     "proofLabel": "Private repository",
     "abstract": 3,
+    "image": {
+      "src": "/images/projects/linkedin-engine-factory-hero.png",
+      "alt": "A 3 AM voice memo moving through transcription, a red refusal gate, and a LinkedIn content engine producing a post and carousel",
+      "caption": "The pipeline transcribes the thought. The content engine decides what deserves to ship."
+    },
     "caseStudy": true,
     "detail": {
       "role": "Solo build · system + editorial architect",
@@ -150,6 +155,7 @@
       ],
       "problem": "High-quality LinkedIn content took 30–60 minutes per post, and every new subject meant rebuilding positioning, voice rules, fact boundaries, platform mechanics, and delivery structure from a blank page. The system also needed to show an information gap instead of filling it with a plausible fabrication.",
       "approach": [
+        "Connected a Telegram voice memo to audio download, transcription, and a private Google Docs handoff so the raw idea arrives intact before editorial shaping begins.",
         "Separated a portable chassis—setup, order of operations, delivery contract, honesty framework, and QA—from the person-specific payload of voice, facts, positioning, keywords, calendar, and brand.",
         "Made diagnosis and voice extraction explicit gates so a human can override the load-bearing assumptions before downstream sections are trusted.",
         "Added verified-fact tables, banned-inflation pairs, inline OPEN SLOT markers, and domain-specific guardrails for sensitive material.",
