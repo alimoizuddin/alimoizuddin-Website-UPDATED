@@ -329,35 +329,38 @@ export const PROJECTS = [
     }
   },
   {
-    "id": "content-pipeline",
+    "id": "linkedin-engine-factory",
     "category": "AUTOMATION",
-    "title": "End-to-End Content Infrastructure System",
-    "description": "Full-stack engine automating ideation, drafting, editing, and publishing workflows with structured prompts and multi-layer validation.",
-    "metric": "50% faster publishing cycles",
+    "title": "LinkedIn Engine Factory",
+    "description": "A two-level content system that turns a person’s profile, post archive, and brief into a self-contained LinkedIn engine with derived voice, verified facts, content calendar, and domain guardrails.",
+    "metric": "9x–28x faster engine builds",
+    "proofUrl": "https://github.com/alimoizuddin/linkedin-engine-factory",
+    "proofLabel": "Private repository",
     "abstract": 3,
     "caseStudy": true,
     "detail": {
-      "role": "Solo build — system + editorial architect",
+      "role": "Solo build · system + editorial architect",
       "stack": [
-        "GPT-4",
-        "Gemini",
-        "n8n",
-        "Python",
-        "Notion",
+        "Claude Projects",
+        "Prompt architecture",
+        "Voice extraction",
         "Google Drive",
-        "Custom validation layers"
+        "Notion",
+        "ReportLab",
+        "QA guardrails"
       ],
-      "problem": "Content workflows break when raw ideas, notes, drafts, and publishing steps live in different places. The system needed to preserve voice and context while reducing the manual effort between idea and usable output.",
+      "problem": "High-quality LinkedIn content took 30–60 minutes per post, and every new subject meant rebuilding positioning, voice rules, fact boundaries, platform mechanics, and delivery structure from a blank page. The system also needed to show an information gap instead of filling it with a plausible fabrication.",
       "approach": [
-        "Voice and context configuration: tone rules, do-not-write lists, structural templates, and guardrails.",
-        "Pipeline stages: ideation prompts — draft — tone audit — style audit — publish-ready handoff.",
-        "Each stage has its own validator — a rejection bounces back to the previous stage with a reason.",
-        "Assets and rejections are logged so the system gets cleaner over repeated use."
+        "Separated a portable chassis—setup, order of operations, delivery contract, honesty framework, and QA—from the person-specific payload of voice, facts, positioning, keywords, calendar, and brand.",
+        "Made diagnosis and voice extraction explicit gates so a human can override the load-bearing assumptions before downstream sections are trusted.",
+        "Added verified-fact tables, banned-inflation pairs, inline OPEN SLOT markers, and domain-specific guardrails for sensitive material.",
+        "Tested the factory across five unrelated domains, four cities, and two entity types while keeping the output self-contained for each subject."
       ],
       "result": [
-        "50% faster publishing cycles in prototype workflows.",
-        "Output consistency improves because voice, structure, and quality checks are systematized.",
-        "The operator becomes editor-in-chief, not staff writer."
+        "Reported engine build time fell from 14 hours to 30–90 minutes, a 9x–28x reduction in setup time.",
+        "Reported quarterly content production fell from approximately 25 hours to 1 hour under the case study’s stated assumptions.",
+        "Five engines shipped and all five subjects were publishing from them; the case study records adoption and qualitative feedback but no before-and-after audience baseline.",
+        "The honesty layer caught and corrected an unverifiable claim before publication instead of allowing a smooth guess to ship."
       ]
     }
   },

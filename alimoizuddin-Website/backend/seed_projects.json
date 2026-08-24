@@ -128,35 +128,38 @@
     }
   },
   {
-    "id": "content-pipeline",
+    "id": "linkedin-engine-factory",
     "category": "AUTOMATION",
-    "title": "End-to-End Content Automation System",
-    "description": "Full-stack engine automating ideation, drafting, editing, and publishing for 5+ active clients with structured prompts and multi-layer validation.",
-    "metric": "5+ clients in production",
+    "title": "LinkedIn Engine Factory",
+    "description": "A two-level content system that turns a person’s profile, post archive, and brief into a self-contained LinkedIn engine with derived voice, verified facts, content calendar, and domain guardrails.",
+    "metric": "9x–28x faster engine builds",
+    "proofUrl": "https://github.com/alimoizuddin/linkedin-engine-factory",
+    "proofLabel": "Private repository",
     "abstract": 3,
     "caseStudy": true,
     "detail": {
       "role": "Solo build · system + editorial architect",
       "stack": [
-        "GPT-4",
-        "Gemini",
-        "n8n",
-        "Python",
-        "Notion",
+        "Claude Projects",
+        "Prompt architecture",
+        "Voice extraction",
         "Google Drive",
-        "Custom validation layers"
+        "Notion",
+        "ReportLab",
+        "QA guardrails"
       ],
-      "problem": "Multi-voice content infrastructure hits a wall fast: each operator has their own voice, their own publishing cadence, and their own zero-tolerance failure modes. Manual context-switching destroyed quality and throughput.",
+      "problem": "High-quality LinkedIn content took 30–60 minutes per post, and every new subject meant rebuilding positioning, voice rules, fact boundaries, platform mechanics, and delivery structure from a blank page. The system also needed to show an information gap instead of filling it with a plausible fabrication.",
       "approach": [
-        "Operator-specific config: voice rules, do-not-write list, structural templates, tone guard-rails.",
-        "Pipeline stages: ideation prompts → draft → tone audit → style audit → publish-ready handoff.",
-        "Each stage has its own validator — a rejection bounces back to the previous stage with a reason.",
-        "All assets versioned, all rejections logged so the system learns what fails per client."
+        "Separated a portable chassis—setup, order of operations, delivery contract, honesty framework, and QA—from the person-specific payload of voice, facts, positioning, keywords, calendar, and brand.",
+        "Made diagnosis and voice extraction explicit gates so a human can override the load-bearing assumptions before downstream sections are trusted.",
+        "Added verified-fact tables, banned-inflation pairs, inline OPEN SLOT markers, and domain-specific guardrails for sensitive material.",
+        "Tested the factory across five unrelated domains, four cities, and two entity types while keeping the output self-contained for each subject."
       ],
       "result": [
-        "Production-ready for 5+ active clients in parallel.",
-        "Output consistency holds even with sub-2-hour turnarounds.",
-        "Operator becomes editor-in-chief, not staff writer."
+        "Reported engine build time fell from 14 hours to 30–90 minutes, a 9x–28x reduction in setup time.",
+        "Reported quarterly content production fell from approximately 25 hours to 1 hour under the case study’s stated assumptions.",
+        "Five engines shipped and all five subjects were publishing from them; the case study records adoption and qualitative feedback but no before-and-after audience baseline.",
+        "The honesty layer caught and corrected an unverifiable claim before publication instead of allowing a smooth guess to ship."
       ]
     }
   },
