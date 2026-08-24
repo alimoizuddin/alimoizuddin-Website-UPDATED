@@ -32,14 +32,14 @@ const buildDefaults = () => ({
       "Build systems, not tasks.",
       "Optimize for leverage over effort.",
       "Convert information into execution.",
-      "Use AI to amplify authentic human insight — not replace it.",
+      "Use AI to amplify authentic human insight - not replace it.",
     ],
-    body: "My edge is rare: literature-level understanding of human cognition, communication, and behavior — fused with systems-level mastery of AI architecture and automation. This combination is the foundation of every system I build.",
+    body: "My edge is rare: literature-level understanding of human cognition, communication, and behavior - fused with systems-level mastery of AI architecture and automation. This combination is the foundation of every system I build.",
   },
   about: {
     quote: "I combine literature-level understanding of humans with systems-level mastery of AI. Very few people genuinely have both.",
     paragraphs: [
-          "An MA in English Literature gave me the cognitive scaffolding — narrative theory, voice, and the architecture of meaning. AI gave me the tooling to operationalize it. Most operators have one or the other. The interdisciplinary moat is the entire point.",
+          "An MA in English Literature gave me the cognitive scaffolding - narrative theory, voice, and the architecture of meaning. AI gave me the tooling to operationalize it. Most operators have one or the other. The interdisciplinary moat is the entire point.",
           "Since Feb 2023, I have built 20+ AI-powered systems across personal operating systems, learning infrastructure, RAG, OCR/BM25 search, transcription, SDR research, job-application automation, browser-agent workflows, and full-stack AI-assisted prototypes. From Feb 2026, that systems work evolved into content infrastructure: voice-to-asset pipelines, identity-preserving LLMs, and publishing workflows.",
           "The goal is simple: reduce manual repetition, structure messy inputs, and turn scattered workflows into repeatable operating infrastructure. The systems consistently target 40–60% less manual overhead while preserving human judgment, voice, and context."
     ],
@@ -156,7 +156,7 @@ function normalizeExperience(experience) {
     if (!systemsRole || !entry) return entry;
     const isSystemsRole =
       entry.role === systemsRole.role ||
-      (entry.period === "Feb 2023 — Present" && /system|architect|automation/i.test(entry.role || ""));
+      (entry.period === "Feb 2023 - Present" && /system|architect|automation/i.test(entry.role || ""));
 
     return isSystemsRole ? { ...entry, ...systemsRole } : entry;
   });
@@ -220,10 +220,10 @@ const ContentContext = createContext({
 
 
 export function ContentProvider({ children }) {
-  // Start with cache if available, else defaults — page renders instantly either way
+  // Start with cache if available, else defaults - page renders instantly either way
   const cached = REMOTE_CONTENT_ENABLED ? readCache() : null;
   const [content, setContent] = useState(cached ? { ...buildDefaults(), ...normalizeContent(cached) } : buildDefaults());
-  const [loaded, setLoaded] = useState(true); // always true — never block render
+  const [loaded, setLoaded] = useState(true); // always true - never block render
 
 
 
@@ -239,7 +239,7 @@ export function ContentProvider({ children }) {
         writeCache(normalized); // cache for next visit
       }
     } catch {
-      // silent — defaults already showing
+      // silent - defaults already showing
     }
   }, []);
 

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Linkedin, ExternalLink, Mail, ArrowUpRight, Phone } from "lucide-react";
+import { Linkedin, Mail, ArrowUpRight, Phone } from "lucide-react";
 import axios from "axios";
 import { useContent } from "../context/ContentContext";
 import Socials from "./Socials";
@@ -23,7 +23,6 @@ export default function Contact() {
   const PROFILE = profile || {};
   const CONTACT_CARDS = contactCards || [];
   const [activeCard, setActiveCard] = useState(null);
-  const wellfoundUrl = PROFILE.wellfound || "https://wellfound.com/u/ali-moizuddin-1";
 
   const openDialog = async (card) => {
     setActiveCard(card);
@@ -62,7 +61,7 @@ export default function Contact() {
           className="flex items-center gap-4 mb-10"
         >
           <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-[#C9A84C]">
-            § 07 — Contact
+            § 07 - Contact
           </span>
           <span className="block flex-1 h-px bg-[#C9A84C]/20" />
         </motion.div>
@@ -87,7 +86,7 @@ export default function Contact() {
           className="mt-8 max-w-2xl text-[#888880] text-base md:text-lg leading-[1.85]"
         >
           Pick the lane. I&rsquo;ll reply within one working day with a clear next
-          step — not a discovery questionnaire.
+          step - not a discovery questionnaire.
         </motion.p>
 
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-7">
@@ -178,28 +177,6 @@ export default function Contact() {
               >
                 <Linkedin className="w-4 h-4" strokeWidth={1.5} />
                 LinkedIn
-              </a>
-              <a
-                href={PROFILE.notion}
-                target="_blank"
-                rel="noopener noreferrer"
-                data-testid="contact-notion"
-                onClick={() => track("social_click", { network: "notion" })}
-                className="inline-flex items-center gap-2.5 px-5 py-3 border border-[#888880]/30 text-[#F5F0E8] hover:border-[#C9A84C] hover:text-[#C9A84C] transition-colors duration-500 font-mono text-[10px] uppercase tracking-[0.22em]"
-              >
-                <ExternalLink className="w-4 h-4" strokeWidth={1.5} />
-                Notion Portfolio
-              </a>
-              <a
-                href={wellfoundUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                data-testid="contact-wellfound"
-                onClick={() => track("social_click", { network: "wellfound" })}
-                className="inline-flex items-center gap-2.5 px-5 py-3 border border-[#888880]/30 text-[#F5F0E8] hover:border-[#C9A84C] hover:text-[#C9A84C] transition-colors duration-500 font-mono text-[10px] uppercase tracking-[0.22em]"
-              >
-                <ExternalLink className="w-4 h-4" strokeWidth={1.5} />
-                Wellfound
               </a>
             </div>
 

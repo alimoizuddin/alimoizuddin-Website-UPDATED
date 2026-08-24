@@ -32,7 +32,7 @@ export default function Experience() {
           className="flex items-center gap-4 mb-10"
         >
           <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-[#C9A84C]">
-            § 06 — Track Record
+            § 06 - Track Record
           </span>
           <span className="block flex-1 h-px bg-[#C9A84C]/20" />
         </motion.div>

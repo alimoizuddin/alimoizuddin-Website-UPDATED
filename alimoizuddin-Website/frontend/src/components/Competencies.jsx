@@ -36,7 +36,7 @@ export default function Competencies() {
           className="flex items-center gap-4 mb-10"
         >
           <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-[#C9A84C]">
-            § 02 — Competencies
+            § 02 - Competencies
           </span>
           <span className="block flex-1 h-px bg-[#C9A84C]/20" />
         </motion.div>
@@ -58,7 +58,7 @@ export default function Competencies() {
             viewport={{ once: true, margin: "-80px" }}
             className="lg:col-span-5 text-[#888880] text-base md:text-lg leading-[1.85] lg:pt-6"
           >
-            Five capability stacks — engineered to compose. Filter the grid to see
+            Five capability stacks - engineered to compose. Filter the grid to see
             the building blocks behind every system shipped on this page.
           </motion.p>
         </div>

@@ -16,17 +16,8 @@ const ICONS = {
 };
 
 export default function Socials({ variant = "row", className = "" }) {
-  const { socials, profile } = useContent();
-  const profileLinks = [
-    { id: "notion", label: "Notion", handle: "Portfolio", url: profile?.notion, icon: "external" },
-    { id: "wellfound", label: "Wellfound", handle: "ali-moizuddin-1", url: profile?.wellfound, icon: "external" },
-  ];
+  const { socials } = useContent();
   const merged = [...(socials || [])];
-  profileLinks.forEach((link) => {
-    if (link.url && !merged.some((s) => s?.id === link.id || s?.url === link.url)) {
-      merged.push(link);
-    }
-  });
   const active = merged.filter((s) => s && s.url && s.url.length > 0);
   if (active.length === 0) return null;
 

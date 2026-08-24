@@ -1,5 +1,5 @@
 // Centralized content data for the site. Edit here to update everything.
-// Last updated: June 2026 — synced with Profile.pdf source of truth
+// Last updated: June 2026 - synced with Profile.pdf source of truth
 
 
 export const PROFILE = {
@@ -10,18 +10,16 @@ export const PROFILE = {
   "email": "aalimoizuddin@outlook.com",
   "phone": "+91 8392006965",
   "linkedin": "https://www.linkedin.com/in/alimoizuddin",
-  "notion": "https://www.notion.so/Ali-Moizuddin-AI-Ghostwriter-Content-System-Specialist-32b966fa7e83801b95e7f7be1caab23e",
   "photo": "https://customer-assets.emergentagent.com/job_3e46ef77-ca74-4e8e-a719-ab3f22e4f199/artifacts/v3cmir8v_Profile%20Pic.jpg",
   "statusPillLabel": "Open to roles · select freelance",
   "heroHeadlinePrefix": "I Build AI Systems",
   "heroHeadlineSuffix": "That Work.",
   "heroSub": "Building RAG, agentic AI, n8n, OCR/BM25 search, transcription, SDR research, and workflow automation systems that turn messy information into repeatable execution.",
   "shortName": "Ali Moizuddin",
-  "wellfound": "https://wellfound.com/u/ali-moizuddin-1"
 };
 
 
-// Social handles — drop your URLs in here. Set to null/empty to hide.
+// Social handles - drop your URLs in here. Set to null/empty to hide.
 export const SOCIALS = [
   {
     "id": "linkedin",
@@ -58,20 +56,6 @@ export const SOCIALS = [
     "url": "https://github.com/alimoizuddin",
     "icon": "github"
   },
-  {
-    "id": "notion",
-    "label": "Notion",
-    "handle": "Portfolio",
-    "url": "https://www.notion.so/Ali-Moizuddin-AI-Ghostwriter-Content-System-Specialist-32b966fa7e83801b95e7f7be1caab23e",
-    "icon": "external"
-  },
-  {
-    "id": "wellfound",
-    "label": "Wellfound",
-    "handle": "ali-moizuddin-1",
-    "url": "https://wellfound.com/u/ali-moizuddin-1",
-    "icon": "external"
-  }
 ];
 
 
@@ -208,7 +192,7 @@ export const PROJECTS = [
     "metric": "8 silent defects closed pre-launch",
     "abstract": 2,
     "image": {
-      "src": "/images/projects/linkedin-lead-engine.webp",
+      "src": "/images/projects/linkedin-lead-engine-realistic.png",
       "alt": "Architecture diagram of the LinkedIn Lead Engine showing sourcing, enrichment, dual-model generation, and a human review gate",
       "caption": "Two scheduled stages coordinated through a single Google Sheet."
     },
@@ -254,7 +238,7 @@ export const PROJECTS = [
     },
     "caseStudy": true,
     "detail": {
-      "role": "Solo build — architect",
+      "role": "Solo build - architect",
       "stack": [
         "Python",
         "Gradio",
@@ -332,32 +316,34 @@ export const PROJECTS = [
   {
     "id": "content-pipeline",
     "category": "AUTOMATION",
-    "title": "End-to-End Content Infrastructure System",
-    "description": "A two-level content system paired with a 3 AM voice-memo intake: transcribe the raw thought, then let the LinkedIn engine derive the angle, protect the facts, and shape what deserves to ship.",
-    "metric": "50% faster publishing cycles",
+    "title": "LinkedIn Engine Factory",
+    "description": "A two-level content system that derives a person-specific LinkedIn engine from their real voice, verified facts, post archive, and publishing constraints.",
+    "metric": "9x to 28x faster engine builds",
+    "proofUrl": "https://github.com/alimoizuddin/linkedin-engine-factory",
+    "proofLabel": "Private repository",
     "abstract": 3,
     "image": {
-      "src": "/images/projects/linkedin-engine-factory-hero.png",
+      "src": "/images/projects/content-system-realistic.png",
       "alt": "A 3 AM voice memo moving through transcription, a red refusal gate, and a LinkedIn content engine producing a post and carousel",
       "caption": "The pipeline transcribes the thought. The content engine decides what deserves to ship."
     },
     "caseStudy": true,
     "detail": {
-      "role": "Solo build — system + editorial architect",
+      "role": "Solo build - system + editorial architect",
       "stack": [
         "GPT-4",
         "Gemini",
         "n8n",
         "Python",
-        "Notion",
+        "Document workspace",
         "Google Drive",
         "Custom validation layers"
       ],
       "problem": "Content workflows break when raw ideas, notes, drafts, and publishing steps live in different places. The system needed to preserve voice and context while reducing the manual effort between idea and usable output.",
       "approach": [
         "Voice and context configuration: tone rules, do-not-write lists, structural templates, and guardrails.",
-        "Pipeline stages: ideation prompts — draft — tone audit — style audit — publish-ready handoff.",
-        "Each stage has its own validator — a rejection bounces back to the previous stage with a reason.",
+        "Pipeline stages: ideation prompts - draft - tone audit - style audit - publish-ready handoff.",
+        "Each stage has its own validator - a rejection bounces back to the previous stage with a reason.",
         "Assets and rejections are logged so the system gets cleaner over repeated use."
       ],
       "result": [
@@ -374,9 +360,14 @@ export const PROJECTS = [
     "description": "Full document lifecycle for 100+ page PDFs: ingestion, preprocessing, OCR, structuring, searchable PDF export, DOCX, LaTeX math, handwriting + table extraction, and QA reporting.",
     "metric": "90% time reduction",
     "abstract": 4,
+    "image": {
+      "src": "/images/projects/ocr-engine-realistic.png",
+      "alt": "Realistic working screenshot for ocr engine",
+      "caption": "Practical evidence from the working system."
+    },
     "caseStudy": true,
     "detail": {
-      "role": "Solo build — system architect",
+      "role": "Solo build - system architect",
       "stack": [
         "Python",
         "Vision OCR",
@@ -388,7 +379,7 @@ export const PROJECTS = [
       "approach": [
         "Built an ingestion-first OCR pipeline that handles 100+ page documents without choking.",
         "Layered handwriting extraction + LaTeX math extraction + table structuring on top of base OCR.",
-        "Resumable processing with manifest tracking — never re-process what already succeeded.",
+        "Resumable processing with manifest tracking - never re-process what already succeeded.",
         "Output formats: searchable PDF, DOCX, plain text, structured JSON for downstream RAG."
       ],
       "result": [
@@ -402,12 +393,17 @@ export const PROJECTS = [
     "id": "bm25-search",
     "category": "EDTECH",
     "title": "Custom BM25 Search Engine",
-    "description": "Proprietary OCR + BM25 retrieval over 500+ pages of digitized notes and 20+ years of UGC NET past year questions — manual search reduced from hours to seconds.",
+    "description": "Proprietary OCR + BM25 retrieval over 500+ pages of digitized notes and 20+ years of UGC NET past year questions - manual search reduced from hours to seconds.",
     "metric": "500+ pages indexed",
     "abstract": 5,
+    "image": {
+      "src": "/images/projects/bm25-search-realistic.png",
+      "alt": "Realistic working screenshot for bm25 search",
+      "caption": "Practical evidence from the working system."
+    },
     "caseStudy": true,
     "detail": {
-      "role": "Solo build — retrieval architect",
+      "role": "Solo build - retrieval architect",
       "stack": [
         "Custom OCR",
         "BM25 ranking",
@@ -415,10 +411,10 @@ export const PROJECTS = [
         "Manifest-tracked indexing",
         "Query deduplication"
       ],
-      "problem": "Modern vector search is overkill for tightly-scoped exam corpora — and it costs both money and latency. The right tool for 20+ years of UGC NET questions is ranked term retrieval. The problem: nobody wanted to build it.",
+      "problem": "Modern vector search is overkill for tightly-scoped exam corpora - and it costs both money and latency. The right tool for 20+ years of UGC NET questions is ranked term retrieval. The problem: nobody wanted to build it.",
       "approach": [
         "Digitize 500+ pages of handwritten + printed notes via custom OCR pipeline.",
-        "Tokenize, stem, normalize — then index with classical BM25 ranking.",
+        "Tokenize, stem, normalize - then index with classical BM25 ranking.",
         "Deduplicate near-identical questions across years; tag by topic + year.",
         "Surface ranked matches sub-second on a laptop, no API costs."
       ],
@@ -435,15 +431,25 @@ export const PROJECTS = [
     "title": "End-to-End Educational Intelligence Pipeline",
     "description": "Comprehensive pipeline transforming raw lectures into searchable knowledge systems via OCR, Whisper, BM25 retrieval, structured filtering, and AI-assisted concept reinforcement.",
     "metric": "Full lecture → knowledge graph",
-    "abstract": 1
+    "abstract": 1,
+    "image": {
+      "src": "/images/projects/edu-intelligence-realistic.png",
+      "alt": "Realistic working screenshot for edu intelligence",
+      "caption": "Practical evidence from the working system."
+    },
   },
   {
     "id": "fault-tolerant",
     "category": "EDTECH",
     "title": "Fault-Tolerant Automation Infrastructure",
-    "description": "Resumable processing, manifest tracking, QA layers, and large-scale document handling baked into every EdTech pipeline — production failure becomes a retry, not a restart.",
+    "description": "Resumable processing, manifest tracking, QA layers, and large-scale document handling baked into every EdTech pipeline - production failure becomes a retry, not a restart.",
     "metric": "0% data loss on retry",
-    "abstract": 2
+    "abstract": 2,
+    "image": {
+      "src": "/images/projects/fault-tolerant-realistic.png",
+      "alt": "Realistic working screenshot for fault tolerant",
+      "caption": "Practical evidence from the working system."
+    },
   },
   {
     "id": "whisper-engine",
@@ -454,7 +460,7 @@ export const PROJECTS = [
     "proofUrl": "https://github.com/alimoizuddin/omnitranscriber-pro",
     "abstract": 3,
     "image": {
-      "src": "/images/projects/omnitranscriber-pro.png",
+      "src": "/images/projects/omnitranscriber-pro-realistic.png",
       "alt": "OmniTranscriber Pro transcription dashboard with waveform, confidence flags, and review layers",
       "caption": "Confidence-first transcription workspace for Hinglish lecture audio."
     },
@@ -491,20 +497,25 @@ export const PROJECTS = [
     "description": "Ingests transcripts, OCR PDFs, and past-year questions into a retrieval-augmented system; LLMs teach concepts using gamification + active-recall retention frameworks.",
     "metric": "40% retention lift",
     "abstract": 4,
+    "image": {
+      "src": "/images/projects/rag-pipeline-realistic.png",
+      "alt": "Realistic working screenshot for rag pipeline",
+      "caption": "Practical evidence from the working system."
+    },
     "caseStudy": true,
     "detail": {
-      "role": "Solo build — system + pedagogy architect",
+      "role": "Solo build - system + pedagogy architect",
       "stack": [
         "Vector retrieval",
         "LLM orchestration",
         "Active recall + memorization frameworks",
         "Gamification loops"
       ],
-      "problem": "Most RAG systems hand you a paragraph. That isn't teaching — that's googling. Learners read it once and forgot it within 48 hours.",
+      "problem": "Most RAG systems hand you a paragraph. That isn't teaching - that's googling. Learners read it once and forgot it within 48 hours.",
       "approach": [
         "Ingest the full corpus: lecture transcripts, OCR PDFs, past-year questions.",
         "Retrieve context, then direct the LLM to teach using active recall + spaced repetition prompts.",
-        "Gamify the loop — points for correct recall, friction for skim-and-skip behavior.",
+        "Gamify the loop - points for correct recall, friction for skim-and-skip behavior.",
         "Surface weak topics back to the learner automatically."
       ],
       "result": [
@@ -517,25 +528,40 @@ export const PROJECTS = [
     "id": "transcript-bm25",
     "category": "EDTECH",
     "title": "Transcript-to-BM25 Workflow",
-    "description": "Multi-step pipeline converting raw transcripts into optimized search queries — automated filtering, deduplication, and formatting across 500+ exam-ready questions.",
+    "description": "Multi-step pipeline converting raw transcripts into optimized search queries - automated filtering, deduplication, and formatting across 500+ exam-ready questions.",
     "metric": "500+ questions structured",
-    "abstract": 5
+    "abstract": 5,
+    "image": {
+      "src": "/images/projects/transcript-bm25-realistic.png",
+      "alt": "Realistic working screenshot for transcript bm25",
+      "caption": "Practical evidence from the working system."
+    },
   },
   {
     "id": "exam-prep-engine",
     "category": "EDTECH",
     "title": "Automated Competitive Exam Prep Engine",
-    "description": "Keyword-driven past-year question extractor with data-driven filtering — surfaces the top 20% high-yield questions covering 80% of exam patterns.",
+    "description": "Keyword-driven past-year question extractor with data-driven filtering - surfaces the top 20% high-yield questions covering 80% of exam patterns.",
     "metric": "80/20 yield surfaced",
-    "abstract": 1
+    "abstract": 1,
+    "image": {
+      "src": "/images/projects/exam-prep-engine-realistic.png",
+      "alt": "Realistic working screenshot for exam prep engine",
+      "caption": "Practical evidence from the working system."
+    },
   },
   {
     "id": "galactus",
     "category": "EDTECH",
     "title": "Galactus Learning Metasystem",
-    "description": "Implementation-first learning system using retrieval practice, spaced repetition, compression, and behavioral activation — with a 7-minute daily execution protocol.",
+    "description": "Implementation-first learning system using retrieval practice, spaced repetition, compression, and behavioral activation - with a 7-minute daily execution protocol.",
     "metric": "5+ active learners",
     "abstract": 2,
+    "image": {
+      "src": "/images/projects/galactus-realistic.png",
+      "alt": "Realistic working screenshot for galactus",
+      "caption": "Practical evidence from the working system."
+    },
     "caseStudy": true,
     "detail": {
       "role": "Founder / curriculum architect",
@@ -546,11 +572,11 @@ export const PROJECTS = [
         "Anki",
         "Custom protocols"
       ],
-      "problem": "Smart learners kept consuming content and producing nothing. The bottleneck wasn't information — it was the gap between knowing and doing.",
+      "problem": "Smart learners kept consuming content and producing nothing. The bottleneck wasn't information - it was the gap between knowing and doing.",
       "approach": [
         "Compress source material into 80/20 distillations.",
         "Convert distillations into Anki + retrieval prompts.",
-        "Wrap a 7-minute daily execution protocol around the loop — behavioral activation built in.",
+        "Wrap a 7-minute daily execution protocol around the loop - behavioral activation built in.",
         "Track adherence + retention, not study hours."
       ],
       "result": [
@@ -563,26 +589,36 @@ export const PROJECTS = [
     "id": "anki-automation",
     "category": "EDTECH",
     "title": "Retention Automation Pipeline",
-    "description": "Automated extraction of distilled notes into Anki for spaced-repetition scheduling — 100+ flashcard entries with minimal manual formatting.",
+    "description": "Automated extraction of distilled notes into Anki for spaced-repetition scheduling - 100+ flashcard entries with minimal manual formatting.",
     "metric": "100+ cards shipped",
-    "abstract": 3
+    "abstract": 3,
+    "image": {
+      "src": "/images/projects/anki-automation-realistic.png",
+      "alt": "Realistic working screenshot for anki automation",
+      "caption": "Practical evidence from the working system."
+    },
   },
   {
     "id": "voice-memo",
     "category": "CONTENT",
     "title": "3 AM Voice Memo Pipeline",
-    "description": "End-to-end system converting voice notes into structured content assets via transcription, structuring, and polishing — idea to usable output.",
+    "description": "End-to-end system converting voice notes into structured content assets via transcription, structuring, and polishing - idea to usable output.",
     "metric": "2 days → <2 hours",
     "abstract": 5,
+    "image": {
+      "src": "/images/projects/voice-memo-realistic.png",
+      "alt": "Realistic working screenshot for voice memo",
+      "caption": "Practical evidence from the working system."
+    },
     "caseStudy": true,
     "detail": {
-      "role": "Solo build — voice-to-asset architect",
+      "role": "Solo build - voice-to-asset architect",
       "stack": [
         "Whisper",
         "GPT-4",
         "Python",
         "n8n",
-        "Notion API"
+        "Document workspace API"
       ],
       "problem": "Useful ideas often arrive as voice notes, scattered fragments, or late-night thoughts. By the time they are manually cleaned, the original context and voice can disappear.",
       "approach": [
@@ -602,12 +638,17 @@ export const PROJECTS = [
     "id": "voice-writing",
     "category": "CONTENT",
     "title": "6 Identity-Preserving AI Writing Systems",
-    "description": "Six LLM pipelines tuned to distinct voices, worldviews, and narrative patterns — built to avoid generic AI output.",
-    "metric": "6 voices — zero generic copy",
+    "description": "Six LLM pipelines tuned to distinct voices, worldviews, and narrative patterns - built to avoid generic AI output.",
+    "metric": "6 voices - zero generic copy",
     "abstract": 1,
+    "image": {
+      "src": "/images/projects/voice-writing-realistic.png",
+      "alt": "Realistic working screenshot for voice writing",
+      "caption": "Practical evidence from the working system."
+    },
     "caseStudy": true,
     "detail": {
-      "role": "Solo build — identity-system architect",
+      "role": "Solo build - identity-system architect",
       "stack": [
         "GPT-4 + Claude",
         "Bespoke prompt systems",
@@ -617,7 +658,7 @@ export const PROJECTS = [
       "problem": "AI writing systems fail on the same axis every time: voice collapse. Run multiple people through the same pipeline and the outputs converge on the same generic tone.",
       "approach": [
         "For each voice, extract a fingerprint: sentence rhythm, idiom set, contrarian beats, recurring metaphors, and taboo phrases.",
-        "Build a per-voice prompt system — not just a style guide, a constrained-generation regime.",
+        "Build a per-voice prompt system - not just a style guide, a constrained-generation regime.",
         "Layer an anti-AI-ese guardrail so weak phrases are rejected automatically.",
         "QA pass compares output against the reference voice for cadence drift."
       ],
@@ -634,13 +675,18 @@ export const PROJECTS = [
     "title": "Whisper-Based Transcription Pipeline",
     "description": "Cuts transcription cleanup overhead by 80% and feeds structured transcripts directly into writing, learning, or automation workflows.",
     "metric": "80% time reduction",
-    "abstract": 2
+    "abstract": 2,
+    "image": {
+      "src": "/images/projects/whisper-client-realistic.png",
+      "alt": "Realistic working screenshot for whisper client",
+      "caption": "Practical evidence from the working system."
+    },
   },
   {
     "id": "phantom-spend",
     "category": "INFRASTRUCTURE",
     "title": "Phantom-Spend SaaS Auditor",
-    "description": "Full-stack financial auditing tool ingesting CSV via webhook, using GPT-4-mini to identify redundant subscriptions — visualized in a React + Tailwind dashboard.",
+    "description": "Full-stack financial auditing tool ingesting CSV via webhook, using GPT-4-mini to identify redundant subscriptions - visualized in a React + Tailwind dashboard.",
     "metric": "8–12 tools flagged / audit",
     "proofUrl": "https://github.com/alimoizuddin/phantom-spend-saas-auditor",
     "abstract": 3,
@@ -651,7 +697,7 @@ export const PROJECTS = [
     },
     "caseStudy": true,
     "detail": {
-      "role": "Solo build — architect + UI",
+      "role": "Solo build - architect + UI",
       "stack": [
         "React",
         "Tailwind CSS",
@@ -664,7 +710,7 @@ export const PROJECTS = [
         "Drop a CSV of subscription data into the auditor.",
         "GPT-4-mini classifies tools, clusters by capability, and identifies overlap.",
         "Custom React + Tailwind dashboard visualizes redundancy + estimated waste.",
-        "Operator decides what to cut — system never auto-cancels."
+        "Operator decides what to cut - system never auto-cancels."
       ],
       "result": [
         "8–12 redundant tools identified per audit on average.",
@@ -713,17 +759,27 @@ export const PROJECTS = [
     "id": "professor-invictus",
     "category": "INFRASTRUCTURE",
     "title": "Professor Invictus Alter-Ego System",
-    "description": "Cognitive performance activation framework using behavioral triggers, visualization, identity priming, and state conditioning — applied across 3+ daily deep-work sessions.",
+    "description": "Cognitive performance activation framework using behavioral triggers, visualization, identity priming, and state conditioning - applied across 3+ daily deep-work sessions.",
     "metric": "Deep-work on demand",
-    "abstract": 4
+    "abstract": 4,
+    "image": {
+      "src": "/images/projects/professor-invictus-realistic.png",
+      "alt": "Realistic working screenshot for professor invictus",
+      "caption": "Practical evidence from the working system."
+    },
   },
   {
     "id": "batch-utilities",
     "category": "INFRASTRUCTURE",
     "title": "Batch Processing Utilities",
-    "description": "Automation scripts for video merging, audio extraction, and bulk file handling — 500+ media files, drop-folder → walk-away workflow.",
+    "description": "Automation scripts for video merging, audio extraction, and bulk file handling - 500+ media files, drop-folder → walk-away workflow.",
     "metric": "85% time reduction",
-    "abstract": 5
+    "abstract": 5,
+    "image": {
+      "src": "/images/projects/batch-utilities-realistic.png",
+      "alt": "Realistic working screenshot for batch utilities",
+      "caption": "Practical evidence from the working system."
+    },
   },
   {
     "id": "minimax",
@@ -731,7 +787,12 @@ export const PROJECTS = [
     "title": "Minimax AI Educational Pipeline",
     "description": "Prompt-optimized pipeline using a Minimax AI agent + raw course transcripts to conceptualize and generate a Python-focused educational comic book.",
     "metric": "End-to-end automated",
-    "abstract": 1
+    "abstract": 1,
+    "image": {
+      "src": "/images/projects/minimax-realistic.png",
+      "alt": "Realistic working screenshot for minimax",
+      "caption": "Practical evidence from the working system."
+    },
   },
   {
     "id": "exec-escalation",
@@ -739,18 +800,28 @@ export const PROJECTS = [
     "title": "Executive Escalation & Crisis Resolution",
     "description": "High-visibility, targeted escalation via LinkedIn + Twitter to bypass support tiers and resolve complex subscription blockers directly with MiniMax executive leadership.",
     "metric": "Tier-1 bypass executed",
-    "abstract": 2
+    "abstract": 2,
+    "image": {
+      "src": "/images/projects/exec-escalation-realistic.png",
+      "alt": "Realistic working screenshot for exec escalation",
+      "caption": "Practical evidence from the working system."
+    },
   },
   {
     "id": "ai-hr",
     "category": "BE10X COHORT",
     "title": "AI HR Recruiter",
-    "description": "n8n + Gemini + Google Sheets pipeline autonomously screening and scoring candidate resumes against JDs — structured scoring output.",
+    "description": "n8n + Gemini + Google Sheets pipeline autonomously screening and scoring candidate resumes against JDs - structured scoring output.",
     "metric": "50+ candidates / run",
     "abstract": 3,
+    "image": {
+      "src": "/images/projects/ai-hr-realistic.png",
+      "alt": "Realistic working screenshot for ai hr",
+      "caption": "Practical evidence from the working system."
+    },
     "caseStudy": true,
     "detail": {
-      "role": "Solo build — hackathon-winning project",
+      "role": "Solo build - hackathon-winning project",
       "stack": [
         "n8n",
         "Gemini",
@@ -758,16 +829,16 @@ export const PROJECTS = [
         "Webhook triggers",
         "Structured scoring rubric"
       ],
-      "problem": "HR teams drown in resumes. 50+ submissions per role becomes a coin-flip exercise — high-quality candidates get filtered out by keyword density rather than substance. The cost: hiring mistakes that take 6 months to fix.",
+      "problem": "HR teams drown in resumes. 50+ submissions per role becomes a coin-flip exercise - high-quality candidates get filtered out by keyword density rather than substance. The cost: hiring mistakes that take 6 months to fix.",
       "approach": [
         "Resumes ingested via Google Sheets → trigger n8n workflow per row.",
         "Gemini scores each resume against the JD on a structured rubric (experience match, skill depth, signal strength, red flags).",
-        "Each score comes with a written rationale — not a black-box number.",
+        "Each score comes with a written rationale - not a black-box number.",
         "Output written back to the sheet, sorted by score, ready for the human reviewer."
       ],
       "result": [
         "50+ candidates processed per run with full rationale per candidate.",
-        "Helped win the Be10x AI Generalist Hackathon — beating IITians, PhDs, and SWEs.",
+        "Helped win the Be10x AI Generalist Hackathon - beating IITians, PhDs, and SWEs.",
         "Reviewer time per role dropped by an order of magnitude."
       ]
     }
@@ -778,7 +849,12 @@ export const PROJECTS = [
     "title": "Zwigato Customer Support Agent",
     "description": "Pinecone-backed RAG support bot processing restaurant orders, querying internal policies, and updating inventory databases.",
     "metric": "60% resolution-time cut",
-    "abstract": 4
+    "abstract": 4,
+    "image": {
+      "src": "/images/projects/zwigato-realistic.png",
+      "alt": "Realistic working screenshot for zwigato",
+      "caption": "Practical evidence from the working system."
+    },
   },
   {
     "id": "expense-tracker",
@@ -786,31 +862,51 @@ export const PROJECTS = [
     "title": "Expense Tracker System",
     "description": "n8n automation for logging financial transactions, maintaining running balances, and segregating data via conversational inputs across 100+ categories.",
     "metric": "100+ categories handled",
-    "abstract": 5
+    "abstract": 5,
+    "image": {
+      "src": "/images/projects/expense-tracker-realistic.png",
+      "alt": "Realistic working screenshot for expense tracker",
+      "caption": "Practical evidence from the working system."
+    },
   },
   {
     "id": "habit-tracker",
     "category": "BE10X COHORT",
     "title": "Habit Tracker Web App",
-    "description": "Fully functional MVP using AI-Assisted Full-Stack Prototyping (Vibe Coding) on Lovable.dev + Firebase — full frontend + backend without traditional coding.",
+    "description": "Fully functional MVP using AI-Assisted Full-Stack Prototyping (Vibe Coding) on Lovable.dev + Firebase - full frontend + backend without traditional coding.",
     "metric": "Shipped in 48 hours",
-    "abstract": 1
+    "abstract": 1,
+    "image": {
+      "src": "/images/projects/habit-tracker-realistic.png",
+      "alt": "Realistic working screenshot for habit tracker",
+      "caption": "Practical evidence from the working system."
+    },
   },
   {
     "id": "amazon-dashboard",
     "category": "BE10X COHORT",
     "title": "Amazon Sales Dashboard",
-    "description": "End-to-end data visualization with Power BI, ETL, and DAX — tracking 10+ KPIs across product categories and sales regions.",
+    "description": "End-to-end data visualization with Power BI, ETL, and DAX - tracking 10+ KPIs across product categories and sales regions.",
     "metric": "10+ KPIs surfaced",
-    "abstract": 2
+    "abstract": 2,
+    "image": {
+      "src": "/images/projects/amazon-dashboard-realistic.png",
+      "alt": "Realistic working screenshot for amazon dashboard",
+      "caption": "Practical evidence from the working system."
+    },
   },
   {
     "id": "synthetic-media",
     "category": "BE10X COHORT",
     "title": "Synthetic Media Pipelines",
-    "description": "HeyGen + ElevenLabs workflows producing professional-grade, multilingual video and voice clones — 20+ assets across 2 languages.",
+    "description": "HeyGen + ElevenLabs workflows producing professional-grade, multilingual video and voice clones - 20+ assets across 2 languages.",
     "metric": "20+ assets, 2 languages",
-    "abstract": 3
+    "abstract": 3,
+    "image": {
+      "src": "/images/projects/synthetic-media-realistic.png",
+      "alt": "Realistic working screenshot for synthetic media",
+      "caption": "Practical evidence from the working system."
+    },
   }
 ];
 
@@ -841,7 +937,7 @@ export const AGENTS = [
   {
     "name": "Primal",
     "vertical": "HEALTH",
-    "desc": "Ancestral-health coach — paleo / hunter-gatherer eating and lifestyle reset.",
+    "desc": "Ancestral-health coach - paleo / hunter-gatherer eating and lifestyle reset.",
     "method": "Paleo / hunter-gatherer frameworks"
   },
   {
@@ -865,7 +961,7 @@ export const AGENTS = [
   {
     "name": "Apex Prompt Architect",
     "vertical": "PRODUCTIVITY",
-    "desc": "Builds the next prompt you need — from a half-formed instinct.",
+    "desc": "Builds the next prompt you need - from a half-formed instinct.",
     "method": "Elite multi-layered prompt meta-agent"
   },
   {
@@ -929,24 +1025,24 @@ export const EXPERIENCE = [
   {
     "role": "AI Automation Engineer · RAG · n8n · Agentic Workflows",
     "org": "Self-Employed · Siliguri, India",
-    "period": "Feb 2023 — Present",
+    "period": "Feb 2023 - Present",
     "bullets": [
       "Most people think systems begin with software. Mine began with life.",
-      "Personal Operating Systems: AI-powered workflows for learning, execution, planning, and knowledge management — built to reduce repetition and improve follow-through.",
-      "RAG & Search Systems: OCR, BM25 search, transcript extraction, and long-context knowledge files built from 500+ pages of notes, 900+ media assets, and 100+ hours of audio — achieving 90 percent-plus transcription accuracy.",
-      "Automation Pipelines: n8n, Python, LLM APIs, and browser-agent workflows for transcription, SDR research, job applications, content structuring, and workflow automation — reducing manual processing time by 80 to 90 percent across each system.",
+      "Personal Operating Systems: AI-powered workflows for learning, execution, planning, and knowledge management - built to reduce repetition and improve follow-through.",
+      "RAG & Search Systems: OCR, BM25 search, transcript extraction, and long-context knowledge files built from 500+ pages of notes, 900+ media assets, and 100+ hours of audio - achieving 90 percent-plus transcription accuracy.",
+      "Automation Pipelines: n8n, Python, LLM APIs, and browser-agent workflows for transcription, SDR research, job applications, content structuring, and workflow automation - reducing manual processing time by 80 to 90 percent across each system.",
       "Content Infrastructure: Since Feb 2026, expanded into voice-to-asset pipelines and identity-preserving LLM systems that turn raw inputs into structured outputs."
     ]
   },
   {
     "role": "Co-Founder & Head of Brand Strategy",
     "org": "Radio Club · Siliguri, India",
-    "period": "Dec 2024 — Mar 2026",
+    "period": "Dec 2024 - Mar 2026",
     "bullets": [
       "Scaled a campus startup from 0 → 200+ members in under 4 months via organic, value-driven content distribution.",
-      "Orchestrated Feb 13 assembly messaging — copywriting clarity triggered the first viral wave, driving 80+ sign-ups in 48 hours.",
+      "Orchestrated Feb 13 assembly messaging - copywriting clarity triggered the first viral wave, driving 80+ sign-ups in 48 hours.",
       "Built a content engine automating ideation → drafting → editing → publishing, cutting editorial overhead by 40% with a 2-person team shipping 15+ pieces/week.",
-      "Designed SOPs, templates, and cross-functional workflows — reducing editorial errors by 25% across a 10-member content team.",
+      "Designed SOPs, templates, and cross-functional workflows - reducing editorial errors by 25% across a 10-member content team.",
       "Personally interviewed the first 50+ members, translating intuition into scalable recruitment + onboarding systems.",
       "Built community-led media infrastructure combining storytelling, recruitment funnels, editorial systems, and operational SOPs."
     ]
@@ -954,14 +1050,14 @@ export const EXPERIENCE = [
   {
     "role": "Academic Peer Mentor & Performance Coach",
     "org": "Salesian College · Siliguri, India",
-    "period": "Aug 2024 — May 2025",
+    "period": "Aug 2024 - May 2025",
     "bullets": [
-      "Simplified complex academic theory (e.g. 'Ambivalence' through a breakup metaphor) — held attention of 150+ students across 10+ sessions.",
+      "Simplified complex academic theory (e.g. 'Ambivalence' through a breakup metaphor) - held attention of 150+ students across 10+ sessions.",
       "Deployed for Rapid Response Teaching: compressed 3–4 weeks of context into single high-density sessions before major guest speaker events.",
       "Designed premium handcrafted slide decks (0% AI), recognized by the HOD as the best presentation output in the Master's cohort.",
-      "Ran voluntary performance workshops on active recall + spaced repetition — measurably improved retention in before/after testing.",
+      "Ran voluntary performance workshops on active recall + spaced repetition - measurably improved retention in before/after testing.",
       "Improved writing clarity across 20+ student submissions through structured coaching and targeted feedback.",
-      "Converted classroom engagement into community growth — organically recruited the founding 50 Radio Club members in 6 weeks."
+      "Converted classroom engagement into community growth - organically recruited the founding 50 Radio Club members in 6 weeks."
     ]
   }
 ];
@@ -976,7 +1072,7 @@ export const CERTIFICATIONS = [
   },
   {
     "icon": "spark",
-    "title": "Certified AI Generalist — Be10x AI Career Accelerator",
+    "title": "Certified AI Generalist - Be10x AI Career Accelerator",
     "year": "2026",
     "note": "Agents · Branding · Fundamentals · Career Readiness"
   },
@@ -994,7 +1090,7 @@ export const CERTIFICATIONS = [
   },
   {
     "icon": "spark",
-    "title": "Certificate of Achievement — Radio Club",
+    "title": "Certificate of Achievement - Radio Club",
     "year": "Jan 2025",
     "note": "Leadership + ops scaling a 200+ member org"
   },
@@ -1017,14 +1113,14 @@ export const EDUCATION = [
   {
     degree: "MA English Language & Literature",
     school: "Salesian College, Siliguri",
-    period: "Aug 2023 — Jun 2025",
+    period: "Aug 2023 - Jun 2025",
     grade: "7.2 / 10",
-    note: "Original research: \"The Ethics of Friendship in Klara and The Sun: Friendship in the Time of Artificial Companions\" — selected among the top departmental presentations.",
+    note: "Original research: \"The Ethics of Friendship in Klara and The Sun: Friendship in the Time of Artificial Companions\" - selected among the top departmental presentations.",
   },
   {
     degree: "BA English",
     school: "Munshi Premchand Mahavidyalaya, Siliguri",
-    period: "Jul 2021 — Jun 2023",
+    period: "Jul 2021 - Jun 2023",
     grade: "",
     note: "",
   },
@@ -1044,13 +1140,13 @@ export const CONTACT_CARDS = [
     "title": "Hiring / Opportunities",
     "desc": "Full-time, internship, consulting, or AI systems roles.",
     "cta": "Get In Touch",
-    "subject": "Opportunity — AI Automation Engineer"
+    "subject": "Opportunity - AI Automation Engineer"
   },
   {
     "id": "collab",
     "title": "Collaboration",
     "desc": "Research, campus systems, partnerships, knowledge workflows, or practical AI builds.",
     "cta": "Let's Talk",
-    "subject": "Collaboration — AI Systems / Knowledge Workflows"
+    "subject": "Collaboration - AI Systems / Knowledge Workflows"
   }
 ];

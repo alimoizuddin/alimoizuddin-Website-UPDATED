@@ -43,7 +43,7 @@ export default function Hero() {
       className="relative min-h-screen flex items-center hero-mesh overflow-hidden"
       data-testid="hero-section"
     >
-      {/* Decorative meshes — hidden on mobile for performance */}
+      {/* Decorative meshes - hidden on mobile for performance */}
       <div
         aria-hidden
         className="hero-blob-1 absolute -top-32 -left-32 w-[40rem] h-[40rem] rounded-full bg-[#1F4788] opacity-25 blur-[120px]"

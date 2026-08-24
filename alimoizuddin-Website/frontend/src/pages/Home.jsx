@@ -102,7 +102,7 @@ export default function Home() {
                   Currently
                 </div>
                 <p className="font-serif text-[#F5F0E8] text-2xl md:text-3xl leading-snug">
-                  Designing and deploying production AI systems — and selectively taking
+                  Designing and deploying production AI systems - and selectively taking
                   <span className="italic text-[#C9A84C]"> {profile?.statusPillLabel?.split("·")[1]?.trim() || "2 new client slots"}</span> this quarter.
                 </p>
               </div>
@@ -111,7 +111,7 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Closing tile — fills the 9th grid cell with intentional content */}
+            {/* Closing tile - fills the 9th grid cell with intentional content */}
             <Link
               to="/contact"
               data-testid="home-section-cta-tile"
@@ -120,7 +120,7 @@ export default function Home() {
               <div>
                 <div className="flex items-center justify-between mb-10">
                   <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-[#C9A84C]">
-                    § 08 — Open Lane
+                    § 08 - Open Lane
                   </span>
                   <ArrowUpRight
                     className="w-5 h-5 text-[#888880] group-hover:text-[#C9A84C] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-500"
@@ -133,7 +133,7 @@ export default function Home() {
                   <span className="italic text-[#C9A84C]">something impossible.</span>
                 </h3>
                 <p className="mt-6 text-[#888880] text-[15px] leading-[1.7]">
-                  Freelance, hiring, or collaboration — three lanes, one reply within a working day.
+                  Freelance, hiring, or collaboration - three lanes, one reply within a working day.
                 </p>
               </div>
               <span className="mt-8 inline-flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.22em] text-[#C9A84C]">

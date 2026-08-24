@@ -8,7 +8,7 @@ const SECTION_DEFS = [
   { key: "profile", label: "Profile", kind: "object" },
   { key: "socials", label: "Social Links", kind: "list" },
   { key: "stats", label: "Headline Stats", kind: "list" },
-  { key: "about", label: "About — Quote + Paragraphs", kind: "object" },
+  { key: "about", label: "About - Quote + Paragraphs", kind: "object" },
   { key: "philosophy", label: "Philosophy", kind: "object" },
   { key: "competencies", label: "Skills", kind: "list" },
   { key: "projects", label: "Projects", kind: "list" },
@@ -88,7 +88,7 @@ function SectionPanel({ section, value, onSave, onCancel, busy }) {
 
       <p className="text-[#888880] text-sm mb-4">
         Edit the JSON below. The site reads from here on next refresh. Add, remove, or reorder
-        items freely. Be careful with quotes — JSON requires double quotes around strings.
+        items freely. Be careful with quotes - JSON requires double quotes around strings.
       </p>
 
       <JSONEditor value={localValue} onChange={setLocalValue} />
@@ -452,12 +452,12 @@ export default function AdminDashboard() {
   const summarize = (section) => {
     const v = content?.[section.key];
     if (section.kind === "list" || section.kind === "stringList") {
-      return Array.isArray(v) ? `${v.length} items` : "—";
+      return Array.isArray(v) ? `${v.length} items` : "-";
     }
     if (section.kind === "object" && v && typeof v === "object") {
       return Object.keys(v).slice(0, 3).join(" · ");
     }
-    return "—";
+    return "-";
   };
 
   return (

@@ -5,7 +5,7 @@ const TESTIMONIALS = [
   {
     id: "anand",
     quote:
-      "Ali isn't just a creative; he is a ruthless operator. When we co-founded Radio Club, the biggest risk was the platform collapsing under its own weight as we grew. Ali stepped in and built the 'unsexy' operational backbone — the workflows, SOPs, and AI-assisted pipelines — that allowed us to scale from 0 to over 200 active members smoothly. He doesn't just manage content; he builds expressive infrastructure. Any Founder looking to scale their voice and operations without losing their human touch needs Ali in their corner.",
+      "Ali isn't just a creative; he is a ruthless operator. When we co-founded Radio Club, the biggest risk was the platform collapsing under its own weight as we grew. Ali stepped in and built the 'unsexy' operational backbone - the workflows, SOPs, and AI-assisted pipelines - that allowed us to scale from 0 to over 200 active members smoothly. He doesn't just manage content; he builds expressive infrastructure. Any Founder looking to scale their voice and operations without losing their human touch needs Ali in their corner.",
     name: "Anand Kumar",
     title: "Founder, Radio Club · Salesian College Siliguri",
     date: "March 2026",
@@ -48,7 +48,7 @@ export default function Testimonials() {
           className="flex items-center gap-4 mb-16"
         >
           <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-[#C9A84C]">
-            § 08 — Testimonials
+            § 08 - Testimonials
           </span>
           <span className="block flex-1 h-px bg-[#C9A84C]/20" />
         </motion.div>

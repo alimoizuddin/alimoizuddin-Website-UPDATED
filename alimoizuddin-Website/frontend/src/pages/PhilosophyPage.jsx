@@ -7,7 +7,7 @@ export default function PhilosophyPage() {
   return (
     <Layout>
       <PageHeader
-        kicker="§ 05 — Philosophy"
+        kicker="§ 05 - Philosophy"
         title="Philosophy"
         italicWord="Philosophy"
         sub="Why systems beat tasks. Why voice beats volume. Why amplifying human insight beats replacing it."

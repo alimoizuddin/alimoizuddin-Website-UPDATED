@@ -40,7 +40,7 @@ export default function Philosophy() {
         >
           <span className="block w-12 h-px bg-[#C9A84C]/50" />
           <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-[#C9A84C]">
-            § 05 — Philosophy
+            § 05 - Philosophy
           </span>
           <span className="block w-12 h-px bg-[#C9A84C]/50" />
         </motion.div>

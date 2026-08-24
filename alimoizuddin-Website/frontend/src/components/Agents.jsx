@@ -35,7 +35,7 @@ export default function Agents() {
           className="flex items-center gap-4 mb-10"
         >
           <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-[#C9A84C]">
-            § 04 — Custom GPT Ecosystem
+            § 04 - Custom GPT Ecosystem
           </span>
           <span className="block flex-1 h-px bg-[#C9A84C]/20" />
         </motion.div>
@@ -58,7 +58,7 @@ export default function Agents() {
             className="lg:col-span-5 text-[#888880] text-base md:text-lg leading-[1.85] lg:pt-6"
           >
             Sixteen domain-specific Custom GPTs, Gemini Gems, and agentic
-            workflows engineered across four verticals — each tuned to a real
+            workflows engineered across four verticals - each tuned to a real
             cognitive job, not a generic chat.
           </motion.p>
         </div>

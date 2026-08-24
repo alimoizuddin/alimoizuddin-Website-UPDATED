@@ -1,4 +1,4 @@
-// Lightweight analytics helper — fire-and-forget POSTs to backend.
+// Lightweight analytics helper - fire-and-forget POSTs to backend.
 // Tracks scroll depth (25/50/75/100) and section views via IntersectionObserver.
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;

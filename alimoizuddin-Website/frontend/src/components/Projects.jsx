@@ -60,7 +60,7 @@ export default function Projects() {
           className="flex items-center gap-4 mb-10"
         >
           <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-[#C9A84C]">
-            § 03 — Selected Work
+            § 03 - Selected Work
           </span>
           <span className="block flex-1 h-px bg-[#C9A84C]/20" />
         </motion.div>
@@ -200,7 +200,7 @@ export default function Projects() {
                       className="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.22em] text-[#888880] hover:text-[#C9A84C] transition-colors duration-500"
                     >
                       <Github className="w-3.5 h-3.5" strokeWidth={1.5} />
-                      GitHub
+                      {p.proofLabel || "GitHub"}
                     </a>
                   )}
                   {p.caseStudy ? (

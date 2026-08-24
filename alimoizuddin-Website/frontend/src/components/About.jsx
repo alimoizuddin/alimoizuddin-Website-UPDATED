@@ -29,7 +29,7 @@ export default function About() {
           className="flex items-center gap-4 mb-16"
         >
           <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-[#C9A84C]">
-            § 01 — Identity
+            § 01 - Identity
           </span>
           <span className="block flex-1 h-px bg-[#C9A84C]/20" />
         </motion.div>

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 
 
-// Cursor glow — uses RAF throttling to avoid layout thrashing on every mousemove
+// Cursor glow - uses RAF throttling to avoid layout thrashing on every mousemove
 export default function CursorGlow() {
   const [visible, setVisible] = useState(false);
   const ref = useRef(null);

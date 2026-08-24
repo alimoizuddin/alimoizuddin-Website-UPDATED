@@ -39,7 +39,7 @@ client = AsyncIOMotorClient(mongo_url)
 db = client[os.environ["DB_NAME"]]
 
 
-app = FastAPI(title="Ali Moizuddin — Personal Brand API")
+app = FastAPI(title="Ali Moizuddin - Personal Brand API")
 api_router = APIRouter(prefix="/api")
 
 
@@ -193,7 +193,7 @@ class ContentSectionUpdate(BaseModel):
 # ---------------- Public endpoints ----------------
 @api_router.get("/")
 async def root():
-    return {"message": "Ali Moizuddin — Personal Brand API", "status": "ok"}
+    return {"message": "Ali Moizuddin - Personal Brand API", "status": "ok"}
 
 
 
@@ -412,7 +412,7 @@ async def update_content_section(
 
 @api_router.get("/admin/content")
 async def admin_get_content(user: dict = Depends(get_current_admin)):
-    """Same as public /content but explicit admin route — used by dashboard."""
+    """Same as public /content but explicit admin route - used by dashboard."""
     doc = await db.site_content.find_one({"_id": "current"}) or {}
     doc.pop("_id", None)
     return doc

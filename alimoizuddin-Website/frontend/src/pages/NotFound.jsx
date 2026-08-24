@@ -42,7 +42,7 @@ export default function NotFound() {
         </h1>
 
         <p className="mt-10 text-[#888880] text-lg leading-relaxed max-w-md mx-auto">
-          The page you&rsquo;re looking for doesn&rsquo;t exist — or perhaps it was a
+          The page you&rsquo;re looking for doesn&rsquo;t exist - or perhaps it was a
           system that didn&rsquo;t survive its first draft.
         </p>
 

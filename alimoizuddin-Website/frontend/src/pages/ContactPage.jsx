@@ -7,10 +7,10 @@ export default function ContactPage() {
   return (
     <Layout>
       <PageHeader
-        kicker="§ 07 — Contact"
+        kicker="§ 07 - Contact"
         title="Contact"
         italicWord="Contact"
-        sub="Pick the lane. I'll reply within one working day with a clear next step — not a discovery questionnaire."
+        sub="Pick the lane. I'll reply within one working day with a clear next step - not a discovery questionnaire."
       />
       <Contact />
     </Layout>

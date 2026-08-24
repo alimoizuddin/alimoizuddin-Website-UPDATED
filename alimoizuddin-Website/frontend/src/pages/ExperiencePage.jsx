@@ -7,7 +7,7 @@ export default function ExperiencePage() {
   return (
     <Layout>
       <PageHeader
-        kicker="§ 06 — Track Record"
+        kicker="§ 06 - Track Record"
         title="Experience"
         italicWord="Experience"
         sub="Roles, certifications, and education. The receipts."

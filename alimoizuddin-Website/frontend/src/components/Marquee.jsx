@@ -1,7 +1,7 @@
 import React from "react";
 import { useContent } from "../context/ContentContext";
 
-// A slow, silent editorial marquee — credibility surface area without sounding loud.
+// A slow, silent editorial marquee - credibility surface area without sounding loud.
 export default function Marquee() {
   const { stackMarquee } = useContent();
   const STACK = stackMarquee || [];

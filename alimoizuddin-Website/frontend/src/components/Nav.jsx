@@ -51,7 +51,7 @@ export default function Nav() {
             to="/"
             className="flex items-center gap-3 group"
             data-testid="nav-brand"
-            aria-label={`${profile?.brand || "Ali Moizuddin"} — Home`}
+            aria-label={`${profile?.brand || "Ali Moizuddin"} - Home`}
           >
             {profile?.photo && (
               <span className="hidden sm:inline-block w-8 h-8 rounded-full overflow-hidden ring-1 ring-[#C9A84C]/40">

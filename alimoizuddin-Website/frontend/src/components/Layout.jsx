@@ -10,7 +10,7 @@ export default function Layout({ children }) {
   const location = useLocation();
 
   useEffect(() => {
-    // Use native scrolling — CSS scroll-behavior: smooth handles smoothness without
+    // Use native scrolling - CSS scroll-behavior: smooth handles smoothness without
     // hijacking the wheel events that desktop users expect.
     const cleanupAnalytics = initAnalytics([
       "hero", "about", "skills", "projects", "agents", "philosophy", "experience", "contact",
