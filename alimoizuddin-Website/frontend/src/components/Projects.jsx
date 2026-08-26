@@ -14,6 +14,19 @@ const fadeUp = {
   }),
 };
 
+const featuredProjectOrder = [
+  "linkedin-engine-factory",
+  "digital-twin",
+  "sdr-research-outreach",
+  "media-intake",
+  "cicd-reasoning",
+];
+
+function getFeaturedRank(project) {
+  const rank = featuredProjectOrder.indexOf(project?.id);
+  return rank === -1 ? featuredProjectOrder.length : rank;
+}
+
 function getProjectCompletenessRank(project) {
   if (project?.caseStudy && project?.proofUrl) return 0;
   if (project?.caseStudy) return 1;
@@ -25,6 +38,8 @@ function sortByCompleteness(projects = []) {
   return [...projects]
     .map((project, index) => ({ project, index }))
     .sort((a, b) => {
+      const featuredDiff = getFeaturedRank(a.project) - getFeaturedRank(b.project);
+      if (featuredDiff) return featuredDiff;
       const rankDiff = getProjectCompletenessRank(a.project) - getProjectCompletenessRank(b.project);
       return rankDiff || a.index - b.index;
     })

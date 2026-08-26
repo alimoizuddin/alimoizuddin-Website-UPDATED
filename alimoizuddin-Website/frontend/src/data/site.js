@@ -342,14 +342,38 @@ export const PROJECTS = [
     "id": "cicd-reasoning",
     "category": "AUTOMATION",
     "title": "Autonomous CI/CD Pipeline",
-    "description": "n8n workflow triggered via Outlook on code commits, using an OpenAI reasoning engine + Autonomous QA Architect to sanitize payloads, evaluate code quality, and dispatch success/rejection signals.",
-    "metric": "50%+ review cycle reduction",
+    "description": "An n8n workflow that checks emailed code submissions, routes structured AI review results, and sends either a pass message or a rejection with suggested code.",
+    "metric": "10 node automated QA workflow",
     "proofUrl": "https://github.com/alimoizuddin/autonomous-ci-cd-pipeline",
     "abstract": 2,
     "image": {
       "src": "/images/projects/cicd-reasoning.webp",
       "alt": "Autonomous CI/CD n8n workflow next to automated deployment failure report",
       "caption": "Automated QA workflow and deployment failure report."
+    },
+    "caseStudy": true,
+    "detail": {
+      "role": "Solo workflow design and automation",
+      "stack": [
+        "n8n",
+        "Microsoft Outlook",
+        "OpenAI",
+        "Gmail",
+        "JSON Schema",
+        "HTTP request"
+      ],
+      "problem": "Code submitted through email still needs a reliable first check. Raw email HTML can add noise, and an unstructured AI response is hard for an automation to route safely.",
+      "approach": [
+        "Watches unread Outlook messages whose subject contains Code Submission, then processes them in batches.",
+        "Extracts clean text from the email body before sending it to the review step.",
+        "Requires the AI reviewer to return structured JSON: detected language, pass or reject status, reason, and corrected code.",
+        "Routes a pass to a success email and a rejection to a report that includes the reason and suggested code."
+      ],
+      "result": [
+        "The active ten node workflow polls for new submissions every minute and records a clear pass or reject decision for each item.",
+        "The public repository contains the sanitized workflow export, screenshots, architecture notes, and a demonstration recording.",
+        "The current deployment request posts to a test endpoint. A real production release would still need authenticated deployment, automated tests, and human approval."
+      ]
     }
   },
   {
