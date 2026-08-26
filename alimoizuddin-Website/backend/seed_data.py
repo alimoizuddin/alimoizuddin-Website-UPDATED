@@ -115,7 +115,7 @@ DEFAULT_EDUCATION = [
 
 DEFAULT_PROJECT_CATEGORIES = ["ALL", "AUTOMATION", "EDTECH", "CONTENT", "INFRASTRUCTURE", "BE10X COHORT"]
 
-DEFAULT_STACK_MARQUEE = ["GPT-4", "Gemini", "Claude", "Whisper", "n8n", "Apollo.io", "Apify", "Pinecone", "ElevenLabs", "HeyGen", "VAPI.ai", "Lovable.dev", "React", "Tailwind", "Firebase", "Python", "Power BI", "DAX", "BM25", "RAG", "OCR", "Anki"]
+DEFAULT_STACK_MARQUEE = ["OpenAI", "Gemini", "Claude", "Whisper", "n8n", "Apollo.io", "Apify", "Pinecone", "ElevenLabs", "HeyGen", "VAPI.ai", "Lovable.dev", "React", "Tailwind", "Firebase", "Python", "Power BI", "DAX", "BM25", "RAG", "OCR", "Anki"]
 
 # Projects with optional case study detail. Long, but it's a one-time seed.
 DEFAULT_PROJECTS = []  # populated from JSON to keep this file manageable

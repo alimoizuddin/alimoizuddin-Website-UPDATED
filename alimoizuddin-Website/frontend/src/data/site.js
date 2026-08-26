@@ -324,8 +324,8 @@ export const PROJECTS = [
     "abstract": 3,
     "image": {
       "src": "/images/projects/linkedin-engine-factory.webp",
-      "alt": "Diagram of the LinkedIn Engine Factory showing the chassis and payload split feeding an eight stage build pipeline",
-      "caption": "One chassis held constant. Payload derived fresh for every subject."
+      "alt": "Five shipped engines listed by domain and city, each sharing one gold chassis bar and a different payload pattern",
+      "caption": "Five engines, five domains, one chassis. The payload is different every time."
     },
     "caseStudy": true,
     "detail": {
@@ -626,7 +626,7 @@ export const PROJECTS = [
       "role": "Solo build - voice-to-asset architect",
       "stack": [
         "Whisper",
-        "GPT-4",
+        "OpenAI",
         "Python",
         "n8n",
         "Document workspace API"
@@ -661,7 +661,7 @@ export const PROJECTS = [
     "detail": {
       "role": "Solo build - identity-system architect",
       "stack": [
-        "GPT-4 + Claude",
+        "OpenAI + Claude",
         "Bespoke prompt systems",
         "Voice fingerprint extraction",
         "Anti-AI-ese guardrails"
@@ -697,7 +697,7 @@ export const PROJECTS = [
     "id": "phantom-spend",
     "category": "INFRASTRUCTURE",
     "title": "Phantom-Spend SaaS Auditor",
-    "description": "Full-stack financial auditing tool ingesting CSV via webhook, using GPT-4-mini to identify redundant subscriptions - visualized in a React + Tailwind dashboard.",
+    "description": "Full-stack financial auditing tool ingesting CSV via webhook, using an OpenAI model to identify redundant subscriptions - visualized in a React + Tailwind dashboard.",
     "metric": "8 to 12 tools flagged / audit",
     "proofUrl": "https://github.com/alimoizuddin/phantom-spend-saas-auditor",
     "abstract": 3,
@@ -712,14 +712,14 @@ export const PROJECTS = [
       "stack": [
         "React",
         "Tailwind CSS",
-        "GPT-4-mini",
+        "OpenAI model",
         "Webhook ingestion",
         "CSV parsing"
       ],
       "problem": "Most operators have no idea how much they spend on duplicate SaaS. Their bookkeeping shows the cost. It doesn't show the redundancy.",
       "approach": [
         "Drop a CSV of subscription data into the auditor.",
-        "GPT-4-mini classifies tools, clusters by capability, and identifies overlap.",
+        "An OpenAI model classifies tools, clusters by capability, and identifies overlap.",
         "Custom React + Tailwind dashboard visualizes redundancy + estimated waste.",
         "Operator decides what to cut - system never auto-cancels."
       ],

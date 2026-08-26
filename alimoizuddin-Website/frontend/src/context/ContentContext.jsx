@@ -52,7 +52,7 @@ const buildDefaults = () => ({
   education: DEFAULTS.EDUCATION,
   projectCategories: DEFAULTS.PROJECT_CATEGORIES,
   stackMarquee: [
-    "GPT-4", "Gemini", "Claude", "Whisper", "n8n", "Apollo.io", "Apify",
+    "OpenAI", "Gemini", "Claude", "Whisper", "n8n", "Apollo.io", "Apify",
     "Pinecone", "ElevenLabs", "HeyGen", "VAPI.ai", "Lovable.dev",
     "React", "Tailwind", "Firebase", "Python", "Power BI", "DAX",
     "BM25", "RAG", "OCR", "Anki",
