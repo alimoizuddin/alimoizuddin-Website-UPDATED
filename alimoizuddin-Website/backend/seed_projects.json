@@ -42,8 +42,8 @@
     "id": "linkedin-engine-factory",
     "category": "AUTOMATION",
     "title": "LinkedIn Engine Factory",
-    "description": "A content system factory that derives a self contained LinkedIn engine from verified facts, voice evidence, and a real asset calendar, then produces review ready posts, comment plans, and carousels.",
-    "metric": "14 hrs to 30 to 90 min",
+    "description": "Turns verified facts, voice rules, and an asset calendar into a LinkedIn content engine that produces review ready posts, comment plans, and carousels.",
+    "metric": "First build: 14 hours. Later builds: 30 to 90 minutes.",
     "proofUrl": "https://github.com/alimoizuddin/linkedin-engine-factory",
     "proofLabel": "Private repository",
     "abstract": 1,
@@ -70,9 +70,9 @@
         "Made fixed visual specifications and preview checks part of the system, then produced each post, engagement plan, and carousel as one review-ready package."
       ],
       "result": [
-        "Documented engine setup time fell from 14 hours for the first hand built version to 30 to 90 minutes for later factory builds.",
+        "Documented engine setup time fell from 14 hours for the initial manual build to 30 to 90 minutes for later factory builds.",
         "Five documented engine builds covered AI automation, student media, health coaching, HR, and brand strategy while keeping the payload specific to each subject.",
-        "The attached Row 13 package demonstrates the output: a finished LinkedIn post, comment plan, and seven slide carousel built around a verified refusal guardrail.",
+        "A saved Row 13 package shows the output: a finished LinkedIn post, comment plan, and seven slide carousel built around a verified refusal guardrail.",
         "This remains an unpaid portfolio system. Audience baselines were not captured, so the case study does not claim growth or revenue results."
       ]
     }
