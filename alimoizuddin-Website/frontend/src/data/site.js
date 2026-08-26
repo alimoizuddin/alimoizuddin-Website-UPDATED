@@ -229,6 +229,8 @@ export const PROJECTS = [
     "title": "LinkedIn Engine Factory",
     "description": "A content system factory that derives a self contained LinkedIn engine from verified facts, voice evidence, and a real asset calendar, then produces review ready posts, comment plans, and carousels.",
     "metric": "14 hrs to 30 to 90 min",
+    "proofUrl": "https://github.com/alimoizuddin/linkedin-engine-factory",
+    "proofLabel": "Private repository",
     "abstract": 1,
     "image": {
       "src": "/images/projects/linkedin-engine-factory.png",
@@ -348,57 +350,6 @@ export const PROJECTS = [
       "src": "/images/projects/cicd-reasoning.webp",
       "alt": "Autonomous CI/CD n8n workflow next to automated deployment failure report",
       "caption": "Automated QA workflow and deployment failure report."
-    }
-  },
-  {
-    "id": "linkedin-engine-factory",
-    "category": "CONTENT",
-    "title": "LinkedIn Engine Factory",
-    "description": "A two-level system that builds content systems. It takes one person's LinkedIn profile, post archive and brief, then emits a complete, self-contained content engine that person runs themselves.",
-    "metric": "14 hours to 90 minutes per engine",
-    "proofUrl": "https://github.com/alimoizuddin/linkedin-engine-factory",
-    "proofLabel": "Private repository",
-    "abstract": 3,
-    "image": {
-      "src": "/images/projects/linkedin-engine-factory.webp",
-      "alt": "Five shipped engines listed by domain and city, each sharing one gold chassis bar and a different payload pattern",
-      "caption": "Five engines, five domains, one chassis. The payload is different every time."
-    },
-    "caseStudy": true,
-    "detail": {
-      "role": "Solo build, architect and first subject",
-      "stack": [
-        "Claude Projects",
-        "Web search",
-        "Code execution",
-        "Notion",
-        "Google Drive",
-        "Markdown"
-      ],
-      "problem": "Producing high-quality LinkedIn content for one person took 30 to 60 minutes per post, and every new person meant starting from a blank page. The bottleneck was not writing speed. All the reusable thinking, meaning positioning, voice rules, honesty guardrails and platform mechanics, lived in my head and got rebuilt by hand every time. The first engine took 14 hours.",
-      "approach": [
-        "Built the first engine by hand on myself, across six documented versions, so I could be wrong in public at no cost to a client.",
-        "Diagnosed why it took 14 hours and found that most of the work was not personal at all. Section architecture, order of operations, honesty framework, delivery contract and QA checklist were a chassis I had been hand-forging every time.",
-        "Formalised a chassis and payload split. Chassis is copied intact. Voice, wedge, fact table, keyword bank, brand palette, pillars and calendar are derived fresh from that person's intake and nothing else.",
-        "Encoded the split as an eight-stage pipeline: intake inventory, diagnosis, voice extraction, fact table and honesty tuning, keyword bank, pillars and calendar, config, assembly, and a self-audit that emits a gap register.",
-        "Made diagnosis and voice extraction stated gates at the top of the output, so a human can override them before anything downstream is trusted. Every voice fingerprint needs a verbatim quote from the subject's real posts as evidence. No quote, no fingerprint.",
-        "Built an anti-fabrication layer: verified-fact tables that pair each claim with the inflated version the system is banned from writing, inline OPEN SLOT markers naming the exact question that fills each gap, and per-domain guardrails for regulated territory.",
-        "Turned the recurring polish failures into specified constants. Exact hex values sampled from each subject's real banner and profile image, fixed slide dimensions with a mandatory rendered preview, and formatting bans derived per person rather than inherited."
-      ],
-      "result": [
-        "Engine build time fell from 14 hours to between 30 and 90 minutes, a 9x to 28x reduction in setup cost.",
-        "Content production fell from roughly 25 hours per quarter to one hour, about a 96 percent reduction, measured against the most conservative prior rate of 30 minutes per post.",
-        "Five engines shipped across five unrelated domains, four cities and two entity types, four individuals and one organisation, totalling roughly 45,000 words of operational documentation. All five subjects are publishing from them.",
-        "The honesty layer earned itself. A client-supplied membership figure failed verification against her own backend records and the system caught it before publication.",
-        "A 22,500 follower subject had publicly asked her audience why her impressions had dropped. The platform pass traced it to four mechanics LinkedIn now demotes: comment-gates, external links in the post body, do you agree as a call to action, and a ten-post templated series. She adopted the finding the same day."
-      ],
-      "limitations": [
-        "No baseline metrics were captured. All five subjects are publishing, but there is no before-and-after impression, engagement or follower data, which is weaker evidence than a chart. Every engine from here ships with a 30-day baseline recorded before the first post.",
-        "Everything so far has been unpaid. Five engines, zero revenue. A deliberate portfolio decision, but it means the system has never been tested against a client who is paying and therefore demanding.",
-        "Quality problems were solved late. Fonts, dimensions, palette and em dashes were caught by iteration for several builds before they became specified constants. That should have been the first move, not the fourth.",
-        "Some early outputs were factually wrong. The verified-fact table and OPEN SLOT layer exist because that failure happened first.",
-        "The version history is not clean. Six artifacts for the first subject, a duplicated file, one misnumbered gap list. The output is disciplined. The workshop is not yet."
-      ]
     }
   },
   {
