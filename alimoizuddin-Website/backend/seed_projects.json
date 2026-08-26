@@ -176,7 +176,8 @@
         "Some early outputs were factually wrong. The verified-fact table and OPEN SLOT layer exist because that failure happened first.",
         "The version history is not clean. Six artifacts for the first subject, a duplicated file, one misnumbered gap list. The output is disciplined. The workshop is not yet."
       ]
-    }
+    },
+    "proofLabel": "Private repository"
   },
   {
     "id": "ocr-engine",

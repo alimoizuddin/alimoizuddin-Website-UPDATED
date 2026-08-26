@@ -320,6 +320,7 @@ export const PROJECTS = [
     "description": "A two-level system that builds content systems. It takes one person's LinkedIn profile, post archive and brief, then emits a complete, self-contained content engine that person runs themselves.",
     "metric": "14 hours to 90 minutes per engine",
     "proofUrl": "https://github.com/alimoizuddin/linkedin-engine-factory",
+    "proofLabel": "Private repository",
     "abstract": 3,
     "image": {
       "src": "/images/projects/linkedin-engine-factory.webp",
