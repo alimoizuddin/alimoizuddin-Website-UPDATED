@@ -8,8 +8,8 @@
     "abstract": 2,
     "image": {
       "src": "/images/projects/linkedin-lead-engine-realistic.png",
-      "alt": "Realistic working screenshot for LinkedIn Lead Engine",
-      "caption": "Practical evidence from the working system."
+      "alt": "Architecture diagram of the LinkedIn Lead Engine showing sourcing, enrichment, dual-model generation, and a human review gate",
+      "caption": "Two scheduled stages coordinated through a single Google Sheet."
     },
     "caseStudy": true,
     "detail": {
@@ -48,12 +48,12 @@
     "abstract": 4,
     "image": {
       "src": "/images/projects/digital-twin.webp",
-      "alt": "Realistic working screenshot for Hybrid Digital Twin & Large-Scale Knowledge Extraction Engine",
-      "caption": "Practical evidence from the working system."
+      "alt": "Large-scale knowledge extraction engine interface with local Gradio app and terminal",
+      "caption": "YouTube scraper and knowledge extraction interface."
     },
     "caseStudy": true,
     "detail": {
-      "role": "Solo build · architect",
+      "role": "Solo build - architect",
       "stack": [
         "Python",
         "Gradio",
@@ -84,8 +84,8 @@
     "abstract": 1,
     "image": {
       "src": "/images/projects/sdr-research-outreach.webp",
-      "alt": "Realistic working screenshot for SDR Research & Outreach Automation Pipeline",
-      "caption": "Practical evidence from the working system."
+      "alt": "Autonomous SDR engine workflow next to Google Sheets outreach output",
+      "caption": "n8n SDR workflow connected to live outreach output."
     },
     "caseStudy": true,
     "detail": {
@@ -124,47 +124,57 @@
     "abstract": 2,
     "image": {
       "src": "/images/projects/cicd-reasoning.webp",
-      "alt": "Realistic working screenshot for Autonomous CI/CD Pipeline",
-      "caption": "Practical evidence from the working system."
+      "alt": "Autonomous CI/CD n8n workflow next to automated deployment failure report",
+      "caption": "Automated QA workflow and deployment failure report."
     }
   },
   {
-    "id": "content-pipeline",
-    "category": "AUTOMATION",
+    "id": "linkedin-engine-factory",
+    "category": "CONTENT",
     "title": "LinkedIn Engine Factory",
-    "description": "A two-level content system that derives a person-specific LinkedIn engine from their real voice, verified facts, post archive, and publishing constraints.",
-    "metric": "9x to 28x faster engine builds",
+    "description": "A two-level system that builds content systems. It takes one person's LinkedIn profile, post archive and brief, then emits a complete, self-contained content engine that person runs themselves.",
+    "metric": "14 hours to 90 minutes per engine",
     "proofUrl": "https://github.com/alimoizuddin/linkedin-engine-factory",
-    "proofLabel": "Private repository",
     "abstract": 3,
     "image": {
-      "src": "/images/projects/content-system-realistic.png",
-      "alt": "Realistic working screenshot for LinkedIn Engine Factory",
-      "caption": "Practical evidence from the working system."
+      "src": "/images/projects/linkedin-engine-factory.webp",
+      "alt": "Diagram of the LinkedIn Engine Factory showing the chassis and payload split feeding an eight stage build pipeline",
+      "caption": "One chassis held constant. Payload derived fresh for every subject."
     },
     "caseStudy": true,
     "detail": {
-      "role": "Solo build · system + editorial architect",
+      "role": "Solo build, architect and first subject",
       "stack": [
-        "GPT-4",
-        "Gemini",
-        "n8n",
-        "Python",
-        "Document workspace",
+        "Claude Projects",
+        "Web search",
+        "Code execution",
+        "Notion",
         "Google Drive",
-        "Custom validation layers"
+        "Markdown"
       ],
-      "problem": "Multi-voice content infrastructure hits a wall fast: each operator has their own voice, their own publishing cadence, and their own zero-tolerance failure modes. Manual context-switching destroyed quality and throughput.",
+      "problem": "Producing high-quality LinkedIn content for one person took 30 to 60 minutes per post, and every new person meant starting from a blank page. The bottleneck was not writing speed. All the reusable thinking, meaning positioning, voice rules, honesty guardrails and platform mechanics, lived in my head and got rebuilt by hand every time. The first engine took 14 hours.",
       "approach": [
-        "Operator-specific config: voice rules, do-not-write list, structural templates, tone guard-rails.",
-        "Pipeline stages: ideation prompts → draft → tone audit → style audit → publish-ready handoff.",
-        "Each stage has its own validator - a rejection bounces back to the previous stage with a reason.",
-        "All assets versioned, all rejections logged so the system learns what fails per client."
+        "Built the first engine by hand on myself, across six documented versions, so I could be wrong in public at no cost to a client.",
+        "Diagnosed why it took 14 hours and found that most of the work was not personal at all. Section architecture, order of operations, honesty framework, delivery contract and QA checklist were a chassis I had been hand-forging every time.",
+        "Formalised a chassis and payload split. Chassis is copied intact. Voice, wedge, fact table, keyword bank, brand palette, pillars and calendar are derived fresh from that person's intake and nothing else.",
+        "Encoded the split as an eight-stage pipeline: intake inventory, diagnosis, voice extraction, fact table and honesty tuning, keyword bank, pillars and calendar, config, assembly, and a self-audit that emits a gap register.",
+        "Made diagnosis and voice extraction stated gates at the top of the output, so a human can override them before anything downstream is trusted. Every voice fingerprint needs a verbatim quote from the subject's real posts as evidence. No quote, no fingerprint.",
+        "Built an anti-fabrication layer: verified-fact tables that pair each claim with the inflated version the system is banned from writing, inline OPEN SLOT markers naming the exact question that fills each gap, and per-domain guardrails for regulated territory.",
+        "Turned the recurring polish failures into specified constants. Exact hex values sampled from each subject's real banner and profile image, fixed slide dimensions with a mandatory rendered preview, and formatting bans derived per person rather than inherited."
       ],
       "result": [
-        "Production-ready for 5+ active clients in parallel.",
-        "Output consistency holds even with sub-2-hour turnarounds.",
-        "Operator becomes editor-in-chief, not staff writer."
+        "Engine build time fell from 14 hours to between 30 and 90 minutes, a 9x to 28x reduction in setup cost.",
+        "Content production fell from roughly 25 hours per quarter to one hour, about a 96 percent reduction, measured against the most conservative prior rate of 30 minutes per post.",
+        "Five engines shipped across five unrelated domains, four cities and two entity types, four individuals and one organisation, totalling roughly 45,000 words of operational documentation. All five subjects are publishing from them.",
+        "The honesty layer earned itself. A client-supplied membership figure failed verification against her own backend records and the system caught it before publication.",
+        "A 22,500 follower subject had publicly asked her audience why her impressions had dropped. The platform pass traced it to four mechanics LinkedIn now demotes: comment-gates, external links in the post body, do you agree as a call to action, and a ten-post templated series. She adopted the finding the same day."
+      ],
+      "limitations": [
+        "No baseline metrics were captured. All five subjects are publishing, but there is no before-and-after impression, engagement or follower data, which is weaker evidence than a chart. Every engine from here ships with a 30-day baseline recorded before the first post.",
+        "Everything so far has been unpaid. Five engines, zero revenue. A deliberate portfolio decision, but it means the system has never been tested against a client who is paying and therefore demanding.",
+        "Quality problems were solved late. Fonts, dimensions, palette and em dashes were caught by iteration for several builds before they became specified constants. That should have been the first move, not the fourth.",
+        "Some early outputs were factually wrong. The verified-fact table and OPEN SLOT layer exist because that failure happened first.",
+        "The version history is not clean. Six artifacts for the first subject, a duplicated file, one misnumbered gap list. The output is disciplined. The workshop is not yet."
       ]
     }
   },
@@ -177,7 +187,7 @@
     "abstract": 4,
     "caseStudy": true,
     "detail": {
-      "role": "Solo build · system architect",
+      "role": "Solo build - system architect",
       "stack": [
         "Python",
         "Vision OCR",
@@ -200,7 +210,7 @@
     },
     "image": {
       "src": "/images/projects/ocr-engine-realistic.png",
-      "alt": "Realistic working screenshot for Industrial-Grade Vision-OCR Engine",
+      "alt": "Realistic working screenshot for ocr engine",
       "caption": "Practical evidence from the working system."
     }
   },
@@ -213,7 +223,7 @@
     "abstract": 5,
     "caseStudy": true,
     "detail": {
-      "role": "Solo build · retrieval architect",
+      "role": "Solo build - retrieval architect",
       "stack": [
         "Custom OCR",
         "BM25 ranking",
@@ -236,7 +246,7 @@
     },
     "image": {
       "src": "/images/projects/bm25-search-realistic.png",
-      "alt": "Realistic working screenshot for Custom BM25 Search Engine",
+      "alt": "Realistic working screenshot for bm25 search",
       "caption": "Practical evidence from the working system."
     }
   },
@@ -249,7 +259,7 @@
     "abstract": 1,
     "image": {
       "src": "/images/projects/edu-intelligence-realistic.png",
-      "alt": "Realistic working screenshot for End-to-End Educational Intelligence Pipeline",
+      "alt": "Realistic working screenshot for edu intelligence",
       "caption": "Practical evidence from the working system."
     }
   },
@@ -262,7 +272,7 @@
     "abstract": 2,
     "image": {
       "src": "/images/projects/fault-tolerant-realistic.png",
-      "alt": "Realistic working screenshot for Fault-Tolerant Automation Infrastructure",
+      "alt": "Realistic working screenshot for fault tolerant",
       "caption": "Practical evidence from the working system."
     }
   },
@@ -276,8 +286,8 @@
     "abstract": 3,
     "image": {
       "src": "/images/projects/omnitranscriber-pro-realistic.png",
-      "alt": "Realistic working screenshot for OmniTranscriber Pro",
-      "caption": "Practical evidence from the working system."
+      "alt": "OmniTranscriber Pro transcription dashboard with waveform, confidence flags, and review layers",
+      "caption": "Confidence-first transcription workspace for Hinglish lecture audio."
     },
     "caseStudy": true,
     "detail": {
@@ -314,7 +324,7 @@
     "abstract": 4,
     "caseStudy": true,
     "detail": {
-      "role": "Solo build · system + pedagogy architect",
+      "role": "Solo build - system + pedagogy architect",
       "stack": [
         "Vector retrieval",
         "LLM orchestration",
@@ -330,12 +340,12 @@
       ],
       "result": [
         "Estimated 40% retention improvement over baseline RAG.",
-        "Used by 5+ active learners through the Galactus Metasystem."
+        "Used in self-directed and friend learning workflows through the Galactus Metasystem."
       ]
     },
     "image": {
       "src": "/images/projects/rag-pipeline-realistic.png",
-      "alt": "Realistic working screenshot for AI-Driven RAG Pipeline",
+      "alt": "Realistic working screenshot for rag pipeline",
       "caption": "Practical evidence from the working system."
     }
   },
@@ -348,7 +358,7 @@
     "abstract": 5,
     "image": {
       "src": "/images/projects/transcript-bm25-realistic.png",
-      "alt": "Realistic working screenshot for Transcript-to-BM25 Workflow",
+      "alt": "Realistic working screenshot for transcript bm25",
       "caption": "Practical evidence from the working system."
     }
   },
@@ -361,7 +371,7 @@
     "abstract": 1,
     "image": {
       "src": "/images/projects/exam-prep-engine-realistic.png",
-      "alt": "Realistic working screenshot for Automated Competitive Exam Prep Engine",
+      "alt": "Realistic working screenshot for exam prep engine",
       "caption": "Practical evidence from the working system."
     }
   },
@@ -396,7 +406,7 @@
     },
     "image": {
       "src": "/images/projects/galactus-realistic.png",
-      "alt": "Realistic working screenshot for Galactus Learning Metasystem",
+      "alt": "Realistic working screenshot for galactus",
       "caption": "Practical evidence from the working system."
     }
   },
@@ -409,7 +419,7 @@
     "abstract": 3,
     "image": {
       "src": "/images/projects/anki-automation-realistic.png",
-      "alt": "Realistic working screenshot for Retention Automation Pipeline",
+      "alt": "Realistic working screenshot for anki automation",
       "caption": "Practical evidence from the working system."
     }
   },
@@ -417,83 +427,83 @@
     "id": "voice-memo",
     "category": "CONTENT",
     "title": "3 AM Voice Memo Pipeline",
-    "description": "End-to-end system converting voice notes into structured content via multi-stage processing (transcription, structuring, polishing) - idea to publication.",
+    "description": "End-to-end system converting voice notes into structured content assets via transcription, structuring, and polishing - idea to usable output.",
     "metric": "2 days → <2 hours",
     "abstract": 5,
     "caseStudy": true,
     "detail": {
-      "role": "Solo build · founder-tool architect",
+      "role": "Solo build - voice-to-asset architect",
       "stack": [
         "Whisper",
         "GPT-4",
         "Python",
         "n8n",
-        "Document workspace"
+        "Document workspace API"
       ],
-      "problem": "Founders have their best ideas at 3 AM. By 9 AM they're already dressed up as somebody else's framework. The window from raw insight → publish-ready post is brutal and most pipelines lose the voice in between.",
+      "problem": "Useful ideas often arrive as voice notes, scattered fragments, or late-night thoughts. By the time they are manually cleaned, the original context and voice can disappear.",
       "approach": [
-        "Founder records a voice memo, drops it in a watched folder.",
-        "Whisper transcribes; transcript is structured into thesis + evidence + payoff.",
-        "An in-voice writing system polishes - keeping their cadence, idioms, contrarian beats.",
-        "Output handed back for a final 30-second review."
+        "Record a voice memo and drop it into a watched workflow.",
+        "Whisper transcribes; transcript is structured into thesis, evidence, and payoff.",
+        "An identity-aware writing system polishes the output while preserving cadence and intent.",
+        "Output is handed back ready for review, reuse, or publishing."
       ],
       "result": [
-        "Idea-to-publication turnaround: 2 days → under 2 hours.",
-        "Voice fidelity preserved (zero generic AI-ese).",
-        "Operators stop losing their best ideas to friction."
+        "Idea-to-output turnaround: 2 days → under 2 hours.",
+        "Voice fidelity preserved with less generic AI phrasing.",
+        "Raw ideas stop getting lost to friction."
       ]
     },
     "image": {
       "src": "/images/projects/voice-memo-realistic.png",
-      "alt": "Realistic working screenshot for 3 AM Voice Memo Pipeline",
+      "alt": "Realistic working screenshot for voice memo",
       "caption": "Practical evidence from the working system."
     }
   },
   {
     "id": "voice-writing",
     "category": "CONTENT",
-    "title": "6 Voice-Specific AI Writing Systems",
-    "description": "Identity-preserving founder voice replication. Each system tuned to a specific operator's cadence, worldview, and narrative stylistic integrity.",
-    "metric": "6 voices · zero generic copy",
+    "title": "6 Identity-Preserving AI Writing Systems",
+    "description": "Six LLM pipelines tuned to distinct voices, worldviews, and narrative patterns - built to avoid generic AI output.",
+    "metric": "6 voices - zero generic copy",
     "abstract": 1,
     "caseStudy": true,
     "detail": {
-      "role": "Solo build · voice architect for 6 founders",
+      "role": "Solo build - identity-system architect",
       "stack": [
         "GPT-4 + Claude",
         "Bespoke prompt systems",
         "Voice fingerprint extraction",
         "Anti-AI-ese guardrails"
       ],
-      "problem": "AI writing systems at scale fail on the same axis every time: voice collapse. Run 10 founders through the same pipeline and the outputs converge on the median LinkedIn-thought-leader voice. That's a moat-killer for the operator.",
+      "problem": "AI writing systems fail on the same axis every time: voice collapse. Run multiple people through the same pipeline and the outputs converge on the same generic tone.",
       "approach": [
-        "For each founder, extract a voice fingerprint: sentence rhythm, idiom set, contrarian beats, recurring metaphors, taboo phrases.",
-        "Build a per-founder prompt system - not just a style guide, an entire constrained-generation regime.",
-        "Layer an anti-AI-ese guardrail: phrases like 'leverage', 'unlock', 'in today's world' are auto-rejected.",
-        "QA pass compares output to their last 30 published pieces for cadence drift."
+        "For each voice, extract a fingerprint: sentence rhythm, idiom set, contrarian beats, recurring metaphors, and taboo phrases.",
+        "Build a per-voice prompt system - not just a style guide, a constrained-generation regime.",
+        "Layer an anti-AI-ese guardrail so weak phrases are rejected automatically.",
+        "QA pass compares output against the reference voice for cadence drift."
       ],
       "result": [
-        "6 voices, zero generic copy.",
-        "Each founder retains a distinct narrative identity at scale.",
-        "Output is indistinguishable from their hand-written posts - by them and by their audience."
+        "6 distinct voices, zero generic copy.",
+        "Each voice retains a distinct narrative identity at scale.",
+        "Outputs preserve the person behind the words instead of flattening them into generic AI text."
       ]
     },
     "image": {
       "src": "/images/projects/voice-writing-realistic.png",
-      "alt": "Realistic working screenshot for 6 Voice-Specific AI Writing Systems",
+      "alt": "Realistic working screenshot for voice writing",
       "caption": "Practical evidence from the working system."
     }
   },
   {
     "id": "whisper-client",
     "category": "CONTENT",
-    "title": "Whisper-Based Client Transcription Pipeline",
-    "description": "Cuts client transcription overhead by 80% - feeds directly into writing pipelines without manual cleanup.",
+    "title": "Whisper-Based Transcription Pipeline",
+    "description": "Cuts transcription cleanup overhead by 80% and feeds structured transcripts directly into writing, learning, or automation workflows.",
     "metric": "80% time reduction",
     "abstract": 2,
     "image": {
       "src": "/images/projects/whisper-client-realistic.png",
-      "alt": "Realistic working screenshot for Whisper-Based Client Transcription Pipeline",
+      "alt": "Realistic working screenshot for whisper client",
       "caption": "Practical evidence from the working system."
     }
   },
@@ -502,17 +512,17 @@
     "category": "INFRASTRUCTURE",
     "title": "Phantom-Spend SaaS Auditor",
     "description": "Full-stack financial auditing tool ingesting CSV via webhook, using GPT-4-mini to identify redundant subscriptions - visualized in a React + Tailwind dashboard.",
-    "metric": "8–12 tools flagged / audit",
+    "metric": "8 to 12 tools flagged / audit",
     "proofUrl": "https://github.com/alimoizuddin/phantom-spend-saas-auditor",
     "abstract": 3,
     "image": {
       "src": "/images/projects/phantom-spend.webp",
-      "alt": "Realistic working screenshot for Phantom-Spend SaaS Auditor",
-      "caption": "Practical evidence from the working system."
+      "alt": "Phantom-Spend SaaS auditor workflow next to financial audit dashboard",
+      "caption": "n8n backend paired with SaaS audit dashboard."
     },
     "caseStudy": true,
     "detail": {
-      "role": "Solo build · architect + UI",
+      "role": "Solo build - architect + UI",
       "stack": [
         "React",
         "Tailwind CSS",
@@ -528,7 +538,7 @@
         "Operator decides what to cut - system never auto-cancels."
       ],
       "result": [
-        "8–12 redundant tools identified per audit on average.",
+        "8 to 12 redundant tools identified per audit on average.",
         "Converts opaque AP statements into a one-glance kill-list."
       ]
     }
@@ -543,8 +553,8 @@
     "abstract": 5,
     "image": {
       "src": "/images/projects/audio-extractor-v3.png",
-      "alt": "Realistic working screenshot for Audio Extractor 3.0",
-      "caption": "Practical evidence from the working system."
+      "alt": "Windows workstation with an audio extraction command and MP3 and FLAC outputs",
+      "caption": "Audio Extractor running locally on a Windows workstation."
     },
     "caseStudy": true,
     "detail": {
@@ -579,7 +589,7 @@
     "abstract": 4,
     "image": {
       "src": "/images/projects/professor-invictus-realistic.png",
-      "alt": "Realistic working screenshot for Professor Invictus Alter-Ego System",
+      "alt": "Realistic working screenshot for professor invictus",
       "caption": "Practical evidence from the working system."
     }
   },
@@ -592,7 +602,7 @@
     "abstract": 5,
     "image": {
       "src": "/images/projects/batch-utilities-realistic.png",
-      "alt": "Realistic working screenshot for Batch Processing Utilities",
+      "alt": "Realistic working screenshot for batch utilities",
       "caption": "Practical evidence from the working system."
     }
   },
@@ -605,7 +615,7 @@
     "abstract": 1,
     "image": {
       "src": "/images/projects/minimax-realistic.png",
-      "alt": "Realistic working screenshot for Minimax AI Educational Pipeline",
+      "alt": "Realistic working screenshot for minimax",
       "caption": "Practical evidence from the working system."
     }
   },
@@ -618,7 +628,7 @@
     "abstract": 2,
     "image": {
       "src": "/images/projects/exec-escalation-realistic.png",
-      "alt": "Realistic working screenshot for Executive Escalation & Crisis Resolution",
+      "alt": "Realistic working screenshot for exec escalation",
       "caption": "Practical evidence from the working system."
     }
   },
@@ -631,7 +641,7 @@
     "abstract": 3,
     "caseStudy": true,
     "detail": {
-      "role": "Solo build · hackathon-winning project",
+      "role": "Solo build - hackathon-winning project",
       "stack": [
         "n8n",
         "Gemini",
@@ -654,7 +664,7 @@
     },
     "image": {
       "src": "/images/projects/ai-hr-realistic.png",
-      "alt": "Realistic working screenshot for AI HR Recruiter",
+      "alt": "Realistic working screenshot for ai hr",
       "caption": "Practical evidence from the working system."
     }
   },
@@ -667,7 +677,7 @@
     "abstract": 4,
     "image": {
       "src": "/images/projects/zwigato-realistic.png",
-      "alt": "Realistic working screenshot for Zwigato Customer Support Agent",
+      "alt": "Realistic working screenshot for zwigato",
       "caption": "Practical evidence from the working system."
     }
   },
@@ -680,7 +690,7 @@
     "abstract": 5,
     "image": {
       "src": "/images/projects/expense-tracker-realistic.png",
-      "alt": "Realistic working screenshot for Expense Tracker System",
+      "alt": "Realistic working screenshot for expense tracker",
       "caption": "Practical evidence from the working system."
     }
   },
@@ -693,7 +703,7 @@
     "abstract": 1,
     "image": {
       "src": "/images/projects/habit-tracker-realistic.png",
-      "alt": "Realistic working screenshot for Habit Tracker Web App",
+      "alt": "Realistic working screenshot for habit tracker",
       "caption": "Practical evidence from the working system."
     }
   },
@@ -706,7 +716,7 @@
     "abstract": 2,
     "image": {
       "src": "/images/projects/amazon-dashboard-realistic.png",
-      "alt": "Realistic working screenshot for Amazon Sales Dashboard",
+      "alt": "Realistic working screenshot for amazon dashboard",
       "caption": "Practical evidence from the working system."
     }
   },
@@ -719,7 +729,7 @@
     "abstract": 3,
     "image": {
       "src": "/images/projects/synthetic-media-realistic.png",
-      "alt": "Realistic working screenshot for Synthetic Media Pipelines",
+      "alt": "Realistic working screenshot for synthetic media",
       "caption": "Practical evidence from the working system."
     }
   }

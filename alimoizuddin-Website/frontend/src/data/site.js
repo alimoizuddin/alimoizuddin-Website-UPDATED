@@ -76,7 +76,7 @@ export const STATS = [
     "label": "AI Systems Built"
   },
   {
-    "value": "40–60%",
+    "value": "40 to 60%",
     "label": "Avg. Overhead Reduction"
   },
   {
@@ -314,42 +314,52 @@ export const PROJECTS = [
     }
   },
   {
-    "id": "content-pipeline",
-    "category": "AUTOMATION",
+    "id": "linkedin-engine-factory",
+    "category": "CONTENT",
     "title": "LinkedIn Engine Factory",
-    "description": "A two-level content system that derives a person-specific LinkedIn engine from their real voice, verified facts, post archive, and publishing constraints.",
-    "metric": "9x to 28x faster engine builds",
+    "description": "A two-level system that builds content systems. It takes one person's LinkedIn profile, post archive and brief, then emits a complete, self-contained content engine that person runs themselves.",
+    "metric": "14 hours to 90 minutes per engine",
     "proofUrl": "https://github.com/alimoizuddin/linkedin-engine-factory",
-    "proofLabel": "Private repository",
     "abstract": 3,
     "image": {
-      "src": "/images/projects/content-system-realistic.png",
-      "alt": "A 3 AM voice memo moving through transcription, a red refusal gate, and a LinkedIn content engine producing a post and carousel",
-      "caption": "The pipeline transcribes the thought. The content engine decides what deserves to ship."
+      "src": "/images/projects/linkedin-engine-factory.webp",
+      "alt": "Diagram of the LinkedIn Engine Factory showing the chassis and payload split feeding an eight stage build pipeline",
+      "caption": "One chassis held constant. Payload derived fresh for every subject."
     },
     "caseStudy": true,
     "detail": {
-      "role": "Solo build - system + editorial architect",
+      "role": "Solo build, architect and first subject",
       "stack": [
-        "GPT-4",
-        "Gemini",
-        "n8n",
-        "Python",
-        "Document workspace",
+        "Claude Projects",
+        "Web search",
+        "Code execution",
+        "Notion",
         "Google Drive",
-        "Custom validation layers"
+        "Markdown"
       ],
-      "problem": "Content workflows break when raw ideas, notes, drafts, and publishing steps live in different places. The system needed to preserve voice and context while reducing the manual effort between idea and usable output.",
+      "problem": "Producing high-quality LinkedIn content for one person took 30 to 60 minutes per post, and every new person meant starting from a blank page. The bottleneck was not writing speed. All the reusable thinking, meaning positioning, voice rules, honesty guardrails and platform mechanics, lived in my head and got rebuilt by hand every time. The first engine took 14 hours.",
       "approach": [
-        "Voice and context configuration: tone rules, do-not-write lists, structural templates, and guardrails.",
-        "Pipeline stages: ideation prompts - draft - tone audit - style audit - publish-ready handoff.",
-        "Each stage has its own validator - a rejection bounces back to the previous stage with a reason.",
-        "Assets and rejections are logged so the system gets cleaner over repeated use."
+        "Built the first engine by hand on myself, across six documented versions, so I could be wrong in public at no cost to a client.",
+        "Diagnosed why it took 14 hours and found that most of the work was not personal at all. Section architecture, order of operations, honesty framework, delivery contract and QA checklist were a chassis I had been hand-forging every time.",
+        "Formalised a chassis and payload split. Chassis is copied intact. Voice, wedge, fact table, keyword bank, brand palette, pillars and calendar are derived fresh from that person's intake and nothing else.",
+        "Encoded the split as an eight-stage pipeline: intake inventory, diagnosis, voice extraction, fact table and honesty tuning, keyword bank, pillars and calendar, config, assembly, and a self-audit that emits a gap register.",
+        "Made diagnosis and voice extraction stated gates at the top of the output, so a human can override them before anything downstream is trusted. Every voice fingerprint needs a verbatim quote from the subject's real posts as evidence. No quote, no fingerprint.",
+        "Built an anti-fabrication layer: verified-fact tables that pair each claim with the inflated version the system is banned from writing, inline OPEN SLOT markers naming the exact question that fills each gap, and per-domain guardrails for regulated territory.",
+        "Turned the recurring polish failures into specified constants. Exact hex values sampled from each subject's real banner and profile image, fixed slide dimensions with a mandatory rendered preview, and formatting bans derived per person rather than inherited."
       ],
       "result": [
-        "50% faster publishing cycles in prototype workflows.",
-        "Output consistency improves because voice, structure, and quality checks are systematized.",
-        "The operator becomes editor-in-chief, not staff writer."
+        "Engine build time fell from 14 hours to between 30 and 90 minutes, a 9x to 28x reduction in setup cost.",
+        "Content production fell from roughly 25 hours per quarter to one hour, about a 96 percent reduction, measured against the most conservative prior rate of 30 minutes per post.",
+        "Five engines shipped across five unrelated domains, four cities and two entity types, four individuals and one organisation, totalling roughly 45,000 words of operational documentation. All five subjects are publishing from them.",
+        "The honesty layer earned itself. A client-supplied membership figure failed verification against her own backend records and the system caught it before publication.",
+        "A 22,500 follower subject had publicly asked her audience why her impressions had dropped. The platform pass traced it to four mechanics LinkedIn now demotes: comment-gates, external links in the post body, do you agree as a call to action, and a ten-post templated series. She adopted the finding the same day."
+      ],
+      "limitations": [
+        "No baseline metrics were captured. All five subjects are publishing, but there is no before-and-after impression, engagement or follower data, which is weaker evidence than a chart. Every engine from here ships with a 30-day baseline recorded before the first post.",
+        "Everything so far has been unpaid. Five engines, zero revenue. A deliberate portfolio decision, but it means the system has never been tested against a client who is paying and therefore demanding.",
+        "Quality problems were solved late. Fonts, dimensions, palette and em dashes were caught by iteration for several builds before they became specified constants. That should have been the first move, not the fourth.",
+        "Some early outputs were factually wrong. The verified-fact table and OPEN SLOT layer exist because that failure happened first.",
+        "The version history is not clean. Six artifacts for the first subject, a duplicated file, one misnumbered gap list. The output is disciplined. The workshop is not yet."
       ]
     }
   },
@@ -687,7 +697,7 @@ export const PROJECTS = [
     "category": "INFRASTRUCTURE",
     "title": "Phantom-Spend SaaS Auditor",
     "description": "Full-stack financial auditing tool ingesting CSV via webhook, using GPT-4-mini to identify redundant subscriptions - visualized in a React + Tailwind dashboard.",
-    "metric": "8–12 tools flagged / audit",
+    "metric": "8 to 12 tools flagged / audit",
     "proofUrl": "https://github.com/alimoizuddin/phantom-spend-saas-auditor",
     "abstract": 3,
     "image": {
@@ -713,7 +723,7 @@ export const PROJECTS = [
         "Operator decides what to cut - system never auto-cancels."
       ],
       "result": [
-        "8–12 redundant tools identified per audit on average.",
+        "8 to 12 redundant tools identified per audit on average.",
         "Converts opaque AP statements into a one-glance kill-list."
       ]
     }
@@ -1053,7 +1063,7 @@ export const EXPERIENCE = [
     "period": "Aug 2024 - May 2025",
     "bullets": [
       "Simplified complex academic theory (e.g. 'Ambivalence' through a breakup metaphor) - held attention of 150+ students across 10+ sessions.",
-      "Deployed for Rapid Response Teaching: compressed 3–4 weeks of context into single high-density sessions before major guest speaker events.",
+      "Deployed for Rapid Response Teaching: compressed 3 to 4 weeks of context into single high-density sessions before major guest speaker events.",
       "Designed premium handcrafted slide decks (0% AI), recognized by the HOD as the best presentation output in the Master's cohort.",
       "Ran voluntary performance workshops on active recall + spaced repetition - measurably improved retention in before/after testing.",
       "Improved writing clarity across 20+ student submissions through structured coaching and targeted feedback.",

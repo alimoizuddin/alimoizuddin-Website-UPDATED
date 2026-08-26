@@ -41,7 +41,7 @@ const buildDefaults = () => ({
     paragraphs: [
           "An MA in English Literature gave me the cognitive scaffolding - narrative theory, voice, and the architecture of meaning. AI gave me the tooling to operationalize it. Most operators have one or the other. The interdisciplinary moat is the entire point.",
           "Since Feb 2023, I have built 20+ AI-powered systems across personal operating systems, learning infrastructure, RAG, OCR/BM25 search, transcription, SDR research, job-application automation, browser-agent workflows, and full-stack AI-assisted prototypes. From Feb 2026, that systems work evolved into content infrastructure: voice-to-asset pipelines, identity-preserving LLMs, and publishing workflows.",
-          "The goal is simple: reduce manual repetition, structure messy inputs, and turn scattered workflows into repeatable operating infrastructure. The systems consistently target 40–60% less manual overhead while preserving human judgment, voice, and context."
+          "The goal is simple: reduce manual repetition, structure messy inputs, and turn scattered workflows into repeatable operating infrastructure. The systems consistently target 40 to 60% less manual overhead while preserving human judgment, voice, and context."
     ],
   },
   contactCards: DEFAULTS.CONTACT_CARDS,

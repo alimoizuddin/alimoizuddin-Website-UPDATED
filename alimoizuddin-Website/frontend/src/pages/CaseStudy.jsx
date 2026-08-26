@@ -284,6 +284,33 @@ export default function CaseStudy() {
           </motion.section>
         )}
 
+        {/* What I would do differently */}
+        {d.limitations && d.limitations.length > 0 && (
+          <motion.section
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="mt-20"
+          >
+            <div className="font-mono text-[12px] uppercase tracking-[0.26em] text-[#C9A84C] mb-5">
+              What I Would Do Differently
+            </div>
+            <ol className="space-y-5 max-w-3xl">
+              {d.limitations.map((item, i) => (
+                <li key={i} className="flex gap-5">
+                  <span className="font-mono text-[#888880] text-[13px] uppercase tracking-[0.22em] mt-2 flex-shrink-0 w-10">
+                    /{String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="text-[#888880] text-[17px] leading-[1.7]">
+                    {item}
+                  </span>
+                </li>
+              ))}
+            </ol>
+          </motion.section>
+        )}
+
         {/* CTA */}
         <motion.div
           variants={fadeUp}
