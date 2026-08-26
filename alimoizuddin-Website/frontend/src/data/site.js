@@ -224,6 +224,43 @@ export const PROJECTS = [
     }
   },
   {
+    "id": "linkedin-engine-factory",
+    "category": "AUTOMATION",
+    "title": "LinkedIn Engine Factory",
+    "description": "A content system factory that derives a self contained LinkedIn engine from verified facts, voice evidence, and a real asset calendar, then produces review ready posts, comment plans, and carousels.",
+    "metric": "14 hrs to 30 to 90 min",
+    "abstract": 1,
+    "image": {
+      "src": "/images/projects/linkedin-engine-factory.png",
+      "alt": "Split screen view of the LinkedIn Engine Factory configuration and a generated post with seven slide carousel",
+      "caption": "Engine setup on the left, a generated content package on the right."
+    },
+    "caseStudy": true,
+    "detail": {
+      "role": "Solo system design and automation",
+      "stack": [
+        "AI project workspace",
+        "Markdown",
+        "Structured prompts",
+        "Web research",
+        "PDF generation"
+      ],
+      "problem": "Building a rigorous LinkedIn content system by hand took 14 hours because positioning, voice rules, fact boundaries, and calendar structure were rebuilt for every subject. Early output also exposed a more serious risk: a plausible but unsupported claim could enter a polished draft.",
+      "approach": [
+        "Separated the portable chassis, including the workflow, QA checklist, and delivery contract, from the person-specific payload of voice, facts, positioning, brand, and calendar.",
+        "Required voice rules to be grounded in a subject's own writing and kept positioning diagnosis visible for human review before downstream drafting.",
+        "Added verified-fact tables, banned inflation pairs, and OPEN SLOT markers so missing evidence is surfaced as a question rather than converted into a plausible claim.",
+        "Made fixed visual specifications and preview checks part of the system, then produced each post, engagement plan, and carousel as one review-ready package."
+      ],
+      "result": [
+        "Documented engine setup time fell from 14 hours for the first hand built version to 30 to 90 minutes for later factory builds.",
+        "Five documented engine builds covered AI automation, student media, health coaching, HR, and brand strategy while keeping the payload specific to each subject.",
+        "The attached Row 13 package demonstrates the output: a finished LinkedIn post, comment plan, and seven slide carousel built around a verified refusal guardrail.",
+        "This remains an unpaid portfolio system. Audience baselines were not captured, so the case study does not claim growth or revenue results."
+      ]
+    }
+  },
+  {
     "id": "digital-twin",
     "category": "AUTOMATION",
     "title": "Hybrid Digital Twin & Large-Scale Knowledge Extraction Engine",
