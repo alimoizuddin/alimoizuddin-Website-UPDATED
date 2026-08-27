@@ -138,6 +138,33 @@ export default function CaseStudy() {
           </motion.figure>
         )}
 
+        {project.video?.src && (
+          <motion.section
+            variants={fadeUp}
+            initial="hidden"
+            animate="show"
+            custom={4}
+            className="mt-12"
+            aria-labelledby="case-video-title"
+          >
+            <div
+              id="case-video-title"
+              className="mb-5 font-mono text-[12px] uppercase tracking-[0.26em] text-[#C9A84C]"
+            >
+              {project.video.title || "Project walkthrough"}
+            </div>
+            <video
+              controls
+              preload="metadata"
+              poster={project.image?.src}
+              className="w-full border border-[#C9A84C]/15 bg-[#111116]"
+            >
+              <source src={project.video.src} type="video/mp4" />
+              Your browser does not support embedded video.
+            </video>
+          </motion.section>
+        )}
+
         {project.proofUrl && (
           <motion.a
             variants={fadeUp}

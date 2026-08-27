@@ -311,6 +311,10 @@ export const PROJECTS = [
       "alt": "Autonomous SDR engine workflow next to Google Sheets outreach output",
       "caption": "n8n SDR workflow connected to live outreach output."
     },
+    "video": {
+      "src": "/videos/autonomous-sdr-engine-executive-ghostwriting-pipeline.mp4",
+      "title": "Executive ghostwriting pipeline walkthrough"
+    },
     "caseStudy": true,
     "detail": {
       "role": "Solo build, architect and operator",
