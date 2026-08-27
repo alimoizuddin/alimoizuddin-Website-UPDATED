@@ -115,7 +115,7 @@ export default function CaseStudy() {
           {project.description}
         </motion.p>
 
-        {project.image?.src && (
+        {project.image?.src && !project.video?.src && (
           <motion.figure
             variants={fadeUp}
             initial="hidden"
