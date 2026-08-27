@@ -314,7 +314,7 @@ export const PROJECTS = [
     "video": {
       "src": "/videos/autonomous-sdr-engine-executive-ghostwriting-pipeline.mp4",
       "title": "Executive ghostwriting pipeline walkthrough",
-      "playbackRate": 1.25
+      "playbackRate": 1.15
     },
     "caseStudy": true,
     "detail": {
