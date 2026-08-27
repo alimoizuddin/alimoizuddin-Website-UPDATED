@@ -157,6 +157,11 @@ export default function CaseStudy() {
               controls
               preload="metadata"
               poster={project.image?.src}
+              onLoadedMetadata={(event) => {
+                const playbackRate = project.video.playbackRate || 1;
+                event.currentTarget.defaultPlaybackRate = playbackRate;
+                event.currentTarget.playbackRate = playbackRate;
+              }}
               className="w-full border border-[#C9A84C]/15 bg-[#111116]"
             >
               <source src={project.video.src} type="video/mp4" />
