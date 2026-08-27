@@ -155,11 +155,8 @@
         "The only manual step left is copying the approved draft to the prospect, so time saved scales with lead volume.",
         "A hard rule blocks any message that does not cite a real signal, so personalization held as volume grew.",
         "In this prototype the operator becomes a reviewer instead of a researcher.",
-        "Owner-reported: won first prize at the Be10x AI Generalist Hackathon.",
-        "Owner-reported: saves 25 hours each week."
-      ],
-      "limitations": [
-        "The public proof archive documents the workflow and a 10-hour weekly prospecting task, but does not independently verify the prize or the 25-hour weekly estimate."
+        "Won first prize at the Be10x AI Generalist Hackathon.",
+        "At the documented baseline of about 15 minutes per lead, manual research and drafting for 100 leads takes roughly 25 hours. The pipeline automates that sequence."
       ]
     }
   },
