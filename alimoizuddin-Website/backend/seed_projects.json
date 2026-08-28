@@ -7,9 +7,9 @@
     "metric": "8 silent defects closed pre-launch",
     "abstract": 2,
     "image": {
-      "src": "/images/projects/linkedin-lead-engine-architecture.png",
-      "alt": "Architecture diagram of the LinkedIn Lead Engine showing sourcing, enrichment, dual-model generation, and a human review gate",
-      "caption": "Repository architecture: two scheduled stages, one Google Sheet, and a human review gate."
+      "src": "/images/projects/linkedin-lead-engine-workflow.png",
+      "alt": "Simplified workflow diagram for the LinkedIn Lead Engine, from lead sourcing through draft generation and human review",
+      "caption": "Simplified workflow view based on the repository architecture. Drafts remain under human review."
     },
     "caseStudy": true,
     "detail": {
