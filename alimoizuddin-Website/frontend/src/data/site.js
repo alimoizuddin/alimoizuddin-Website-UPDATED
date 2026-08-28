@@ -192,7 +192,7 @@ export const PROJECTS = [
     "metric": "8 silent defects closed pre-launch",
     "abstract": 2,
     "image": {
-      "src": "/images/projects/linkedin-lead-engine-workflow.png",
+      "src": "/images/projects/linkedin-lead-engine-workflow-labeled.png",
       "alt": "Simplified workflow diagram for the LinkedIn Lead Engine, from lead sourcing through draft generation and human review",
       "caption": "Simplified workflow view based on the repository architecture. Drafts remain under human review."
     },
