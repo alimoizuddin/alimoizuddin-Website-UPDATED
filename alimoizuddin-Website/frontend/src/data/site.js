@@ -192,9 +192,9 @@ export const PROJECTS = [
     "metric": "8 silent defects closed pre-launch",
     "abstract": 2,
     "image": {
-      "src": "/images/projects/linkedin-lead-engine-realistic.png",
+      "src": "/images/projects/linkedin-lead-engine-architecture.png",
       "alt": "Architecture diagram of the LinkedIn Lead Engine showing sourcing, enrichment, dual-model generation, and a human review gate",
-      "caption": "Two scheduled stages coordinated through a single Google Sheet."
+      "caption": "Repository architecture: two scheduled stages, one Google Sheet, and a human review gate."
     },
     "caseStudy": true,
     "detail": {
