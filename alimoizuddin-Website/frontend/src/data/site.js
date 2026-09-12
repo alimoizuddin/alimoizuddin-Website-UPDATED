@@ -185,6 +185,21 @@ export const COMPETENCIES = [
 
 export const PROJECTS = [
   {
+    "id": "claude-omni",
+    "category": "INFRASTRUCTURE",
+    "title": "Claude Omni",
+    "description": "A two-lane Claude Code workspace that keeps native Claude Pro separate from a local OmniRoute lane, while both work in the same projects. The Omni lane uses a resilient Chief routing chain for external models.",
+    "metric": "2 isolated Claude Code lanes",
+    "proofUrl": "https://github.com/alimoizuddin/Claude-Omni",
+    "proofLabel": "Private repository",
+    "abstract": 4,
+    "image": {
+      "src": "/images/projects/claude-omni-workstation.png",
+      "alt": "Developer workstation running a local AI routing and coding setup",
+      "caption": "A local-first workspace for separate native and routed Claude Code lanes."
+    }
+  },
+  {
     "id": "linkedin-lead-engine",
     "category": "AUTOMATION",
     "title": "LinkedIn Lead Engine",
